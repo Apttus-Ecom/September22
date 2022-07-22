@@ -1,0 +1,788 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Conga Digital Commerce December &#x27;21</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Conga Digital Commerce December &#x27;21</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  HeaderComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>projects/ecommerce/src/app/components/header/header.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-header</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./header.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./header.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#modalRef" >modalRef</a>
+                            </li>
+                            <li>
+                                <a href="#pageTop" >pageTop</a>
+                            </li>
+                            <li>
+                                <a href="#profile" >profile</a>
+                            </li>
+                            <li>
+                                <a href="#storefront$" >storefront$</a>
+                            </li>
+                            <li>
+                                <a href="#user$" >user$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#doLogout" >doLogout</a>
+                            </li>
+                            <li>
+                                <a href="#onScroll" >onScroll</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostListeners</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#window:scroll" >window:scroll</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(storefrontService: <a href="../injectables/StorefrontService.html" target="_self">StorefrontService</a>, userService: <a href="../injectables/UserService.html" target="_self">UserService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>storefrontService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/StorefrontService.html" target="_self" >StorefrontService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>userService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+    <section>
+    <h3>HostListeners</h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="window:scroll"></a>
+                    <span class="name">
+                        <span ><b>window:scroll</b></span>
+                        <a href="#window:scroll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <i>Arguments : </i><code>'$event' </code>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>window:scroll(event)</code>
+                </td>
+            </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="doLogout"></a>
+                    <span class="name">
+                        <span ><b>doLogout</b></span>
+                        <a href="#doLogout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>doLogout()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onScroll"></a>
+                    <span class="name">
+                        <span ><b>onScroll</b></span>
+                        <a href="#onScroll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onScroll(event)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@HostListener(&#x27;window:scroll&#x27;, [&#x27;$event&#x27;])<br /></code>
+                </td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modalRef"></a>
+                    <span class="name">
+                        <span ><b>modalRef</b></span>
+                        <a href="#modalRef"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>BsModalRef</code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pageTop"></a>
+                    <span class="name">
+                        <span ><b>pageTop</b></span>
+                        <a href="#pageTop"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="profile"></a>
+                    <span class="name">
+                        <span ><b>profile</b></span>
+                        <a href="#profile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../components/MiniProfileComponent.html" target="_self" >MiniProfileComponent</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;profile&#x27;, {static: false})<br />
+                        </code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="storefront$"></a>
+                    <span class="name">
+                        <span ><b>storefront$</b></span>
+                        <a href="#storefront$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Storefront.html" target="_self" >Observable&lt;Storefront&gt;</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="user$"></a>
+                    <span class="name">
+                        <span ><b>user$</b></span>
+                        <a href="#user$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/User.html" target="_self" >Observable&lt;User&gt;</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;navbar navbar-light bg-white border-bottom fixed-top&quot;&gt;
+  &lt;div&gt;
+    &lt;button class&#x3D;&quot;navbar-toggler&quot; type&#x3D;&quot;button&quot; data-toggle&#x3D;&quot;collapse&quot; data-target&#x3D;&quot;#navbarSupportedContent&quot;
+      (click)&#x3D;&quot;menuModal.show()&quot;&gt;
+      &lt;span class&#x3D;&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt;
+    &lt;/button&gt;
+
+    &lt;ng-container *ngIf&#x3D;&quot;storefront$ | async as storefront&quot;&gt;
+      &lt;button class&#x3D;&quot;navbar-brand btn btn-link d-none d-md-inline-block&quot; [routerLink]&#x3D;&quot;[&#x27;/&#x27;]&quot;
+        *ngIf&#x3D;&quot;storefront?.Logo; else text&quot;&gt;
+        &lt;img [src]&#x3D;&quot;storefront?.Logo | image&quot; /&gt;
+      &lt;/button&gt;
+      &lt;ng-template #text&gt;
+        &lt;button class&#x3D;&quot;navbar-brand btn btn-link&quot; [routerLink]&#x3D;&quot;[&#x27;/&#x27;]&quot;&gt;{{storefront?.Name}}&lt;/button&gt;
+      &lt;/ng-template&gt;
+    &lt;/ng-container&gt;
+  &lt;/div&gt;
+  
+  &lt;div class&#x3D;&quot;actions d-flex align-items-center&quot;&gt;
+    &lt;apt-price-modal&gt;&lt;/apt-price-modal&gt;
+    &lt;apt-product-search [typeAheadLimit]&#x3D;&quot;7&quot;&gt;&lt;/apt-product-search&gt;
+    &lt;apt-mini-cart&gt;&lt;/apt-mini-cart&gt;
+    &lt;apt-cr-constraint-icon&gt;&lt;/apt-cr-constraint-icon&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;apt-mini-profile #profile&gt;&lt;/apt-mini-profile&gt;
+
+&lt;div bsModal #menuModal&#x3D;&quot;bs-modal&quot; class&#x3D;&quot;modal&quot; tabindex&#x3D;&quot;-1&quot; role&#x3D;&quot;dialog&quot; aria-labelledby&#x3D;&quot;dialog-sizes-name1&quot;&gt;
+  &lt;div class&#x3D;&quot;modal-dialog modal-lg menu&quot;&gt;
+    &lt;div class&#x3D;&quot;modal-content py-3&quot;&gt;
+      &lt;div class&#x3D;&quot;modal-header d-block p-0&quot; *ngIf&#x3D;&quot;user$ | async as user&quot;&gt;
+        &lt;div class&#x3D;&quot;d-flex justify-content-between align-items-start p-2&quot;&gt;
+          &lt;div class&#x3D;&quot;media p-2&quot;&gt;
+            &lt;img [src]&#x3D;&quot;user?.SmallPhotoUrl | image : null&quot; class&#x3D;&quot;img-circle&quot; width&#x3D;&quot;45&quot; /&gt;
+            &lt;div class&#x3D; &quot;ml-3&quot;&gt;
+              &lt;ng-container *ngIf&#x3D;&quot;user?.Alias !&#x3D;&#x3D; &#x27;guest&#x27;; else guest&quot;&gt;
+                &lt;h5 class&#x3D;&quot;my-0&quot;&gt;{{user?.FirstName}} {{user?.LastName}}&lt;/h5&gt;
+                &lt;small class&#x3D;&quot;d-block&quot;&gt;{{&#x27;HEADER.LAST_LOGIN&#x27; | translate}}
+                  {{user.LastLoginDate | date : &#x27;short&#x27;}}&lt;/small&gt;
+              &lt;/ng-container&gt;
+              &lt;ng-template #guest&gt;
+                &lt;h5 class&#x3D;&quot;my-0&quot;&gt;{{&#x27;HEADER.GUEST_USER&#x27; | translate}}&lt;/h5&gt;
+              &lt;/ng-template&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;list-group list-group-flush mt-3&quot;&gt;
+          &lt;a href&#x3D;&quot;javascript:void(0)&quot; [routerLink]&#x3D;&quot;[&#x27;/&#x27;]&quot; (click)&#x3D;&quot;menuModal.hide()&quot;
+            class&#x3D;&quot;list-group-item list-group-item-action&quot;&gt;
+            &lt;i class&#x3D;&quot;fas fa-home mr-4&quot;&gt;&lt;/i&gt;{{&#x27;HEADER.HOME&#x27; | translate}}
+          &lt;/a&gt;
+          &lt;a href&#x3D;&quot;javascript:void(0)&quot; [routerLink]&#x3D;&quot;[&#x27;/my-account&#x27;]&quot; (click)&#x3D;&quot;menuModal.hide()&quot;
+            class&#x3D;&quot;list-group-item list-group-item-action&quot; *ngIf&#x3D;&quot;user?.Alias !&#x3D;&#x3D; &#x27;guest&#x27;&quot;&gt;
+            &lt;i class&#x3D;&quot;fas fa-cog mr-4&quot;&gt;&lt;/i&gt;{{&#x27;HEADER.MY_ACCOUNT&#x27; | translate}}
+          &lt;/a&gt;
+          &lt;a href&#x3D;&quot;javascript:void(0)&quot; [routerLink]&#x3D;&quot;[&#x27;/assets&#x27;]&quot; (click)&#x3D;&quot;menuModal.hide()&quot;
+            class&#x3D;&quot;list-group-item list-group-item-action&quot; *ngIf&#x3D;&quot;user?.Alias !&#x3D;&#x3D; &#x27;guest&#x27;&quot;&gt;
+            &lt;i class&#x3D;&quot;fas fa-list mr-4&quot;&gt;&lt;/i&gt;{{&#x27;HEADER.INSTALLED_PRODUCTS&#x27; | translate}}
+          &lt;/a&gt;
+          &lt;a href&#x3D;&quot;javascript:void(0)&quot; [routerLink]&#x3D;&quot;[&#x27;/products&#x27;]&quot; (click)&#x3D;&quot;menuModal.hide()&quot;
+            class&#x3D;&quot;list-group-item list-group-item-action&quot;&gt;
+            &lt;i class&#x3D;&quot;fas fa-th mr-4&quot;&gt;&lt;/i&gt;{{&#x27;HEADER.PRODUCT_CATALOG&#x27; | translate}}
+          &lt;/a&gt;
+          &lt;a href&#x3D;&quot;javascript:void(0)&quot; class&#x3D;&quot;list-group-item list-group-item-action&quot;
+            *ngIf&#x3D;&quot;user?.Alias !&#x3D;&#x3D; &#x27;guest&#x27;&quot; (click)&#x3D;&quot;doLogout(); menuModal.hide();&quot;&gt;
+            &lt;i class&#x3D;&quot;fas fa-sign-out-alt mr-4&quot;&gt;&lt;/i&gt;{{&#x27;HEADER.LOG_OUT&#x27; | translate}}
+          &lt;/a&gt;
+          &lt;a href&#x3D;&quot;javascript:void(0)&quot; class&#x3D;&quot;list-group-item list-group-item-action&quot;
+            *ngIf&#x3D;&quot;user?.Alias &#x3D;&#x3D;&#x3D; &#x27;guest&#x27;&quot; (click)&#x3D;&quot;profile.openModal(&#x27;second&#x27;)&quot;&gt;
+            &lt;i class&#x3D;&quot;fas fa-sign-in-alt mr-4&quot;&gt;&lt;/i&gt;{{&#x27;HEADER.LOG_IN&#x27; | translate}}
+          &lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;ng-scrollbar&gt;
+        &lt;div class&#x3D;&quot;modal-body d-flex align-items-stretch&quot;&gt;
+          &lt;app-category-carousel [modalRef]&#x3D;&quot;menuModal&quot;&gt;&lt;/app-category-carousel&gt;
+        &lt;/div&gt;
+      &lt;/ng-scrollbar&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./header.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@use &#x27;sass:math&#x27;;
+@import &quot;variables&quot;;
+.navbar-brand img{
+    max-height: math.div($navbar-brand-height, 2);
+}
+.navbar{
+    height: $navbar-brand-height;
+    transition: margin 300ms;
+    transition: height 300ms;
+    &amp;.top{
+        margin-top: 0px;
+        box-shadow: 0 1px 3px rgba(50, 50, 50, 0.4);
+        height: $navbar-brand-height * .6;
+    }
+}
+.subnav{
+    transition: margin 300ms;
+    margin: 0px;
+    &amp;.top{
+        margin-top: -40px;
+    }
+}
+.actions&gt;*{
+    border-radius: 0px;
+    .oi{
+        font-size: 17px;
+    }
+    &amp; + *:not([hidden]){
+        border-left: 1px solid black;
+        height: 20px;
+    }
+    margin: 0;
+    padding: 0 1rem;
+    
+}
+.navbar-brand&gt;img{
+    transition: .45s;
+    &amp;.scale{
+        transform: scale(.725);
+    }
+    min-width: 30px;
+}
+
+.modal.show .modal-dialog.menu{
+    left: 0;
+}
+.modal-dialog.menu{
+    transition: left 300ms;
+    margin: -1px 0 0 0;
+    left: -20rem;
+    width: 20rem;
+    .modal-content{
+        height: 100vh;
+    }
+    .list-group-flush .list-group-item{
+        border: 0;
+    }
+}
+.store-list&gt;div:not(:last-child){
+    border-right: 1px solid $gray-300;
+}
+apt-spinner{
+    position: absolute;
+    right: 3rem;
+    top: 1.5rem;
+}
+
+app-category-carousel {
+    width: 100%;
+} 
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="navbar navbar-light bg-white border-bottom fixed-top">  <div>    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"      (click)="menuModal.show()">      <span class="navbar-toggler-icon"></span>    </button>    <ng-container *ngIf="storefront$ | async as storefront">      <button class="navbar-brand btn btn-link d-none d-md-inline-block" [routerLink]="[\'/\']"        *ngIf="storefront?.Logo; else text">        <img [src]="storefront?.Logo | image" />      </button>      <ng-template #text>        <button class="navbar-brand btn btn-link" [routerLink]="[\'/\']">{{storefront?.Name}}</button>      </ng-template>    </ng-container>  </div>    <div class="actions d-flex align-items-center">    <apt-price-modal></apt-price-modal>    <apt-product-search [typeAheadLimit]="7"></apt-product-search>    <apt-mini-cart></apt-mini-cart>    <apt-cr-constraint-icon></apt-cr-constraint-icon>  </div></div><apt-mini-profile #profile></apt-mini-profile><div bsModal #menuModal="bs-modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="dialog-sizes-name1">  <div class="modal-dialog modal-lg menu">    <div class="modal-content py-3">      <div class="modal-header d-block p-0" *ngIf="user$ | async as user">        <div class="d-flex justify-content-between align-items-start p-2">          <div class="media p-2">            <img [src]="user?.SmallPhotoUrl | image : null" class="img-circle" width="45" />            <div class= "ml-3">              <ng-container *ngIf="user?.Alias !== \'guest\'; else guest">                <h5 class="my-0">{{user?.FirstName}} {{user?.LastName}}</h5>                <small class="d-block">{{\'HEADER.LAST_LOGIN\' | translate}}                  {{user.LastLoginDate | date : \'short\'}}</small>              </ng-container>              <ng-template #guest>                <h5 class="my-0">{{\'HEADER.GUEST_USER\' | translate}}</h5>              </ng-template>            </div>          </div>        </div>        <div class="list-group list-group-flush mt-3">          <a href="javascript:void(0)" [routerLink]="[\'/\']" (click)="menuModal.hide()"            class="list-group-item list-group-item-action">            <i class="fas fa-home mr-4"></i>{{\'HEADER.HOME\' | translate}}          </a>          <a href="javascript:void(0)" [routerLink]="[\'/my-account\']" (click)="menuModal.hide()"            class="list-group-item list-group-item-action" *ngIf="user?.Alias !== \'guest\'">            <i class="fas fa-cog mr-4"></i>{{\'HEADER.MY_ACCOUNT\' | translate}}          </a>          <a href="javascript:void(0)" [routerLink]="[\'/assets\']" (click)="menuModal.hide()"            class="list-group-item list-group-item-action" *ngIf="user?.Alias !== \'guest\'">            <i class="fas fa-list mr-4"></i>{{\'HEADER.INSTALLED_PRODUCTS\' | translate}}          </a>          <a href="javascript:void(0)" [routerLink]="[\'/products\']" (click)="menuModal.hide()"            class="list-group-item list-group-item-action">            <i class="fas fa-th mr-4"></i>{{\'HEADER.PRODUCT_CATALOG\' | translate}}          </a>          <a href="javascript:void(0)" class="list-group-item list-group-item-action"            *ngIf="user?.Alias !== \'guest\'" (click)="doLogout(); menuModal.hide();">            <i class="fas fa-sign-out-alt mr-4"></i>{{\'HEADER.LOG_OUT\' | translate}}          </a>          <a href="javascript:void(0)" class="list-group-item list-group-item-action"            *ngIf="user?.Alias === \'guest\'" (click)="profile.openModal(\'second\')">            <i class="fas fa-sign-in-alt mr-4"></i>{{\'HEADER.LOG_IN\' | translate}}          </a>        </div>      </div>      <ng-scrollbar>        <div class="modal-body d-flex align-items-stretch">          <app-category-carousel [modalRef]="menuModal"></app-category-carousel>        </div>      </ng-scrollbar>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'ActionBarComponent', 'selector': 'app-action-bar'},{'name': 'AddressBookComponent', 'selector': 'app-address-book'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AlertComponent', 'selector': 'apt-alert'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssetActionFilterComponent', 'selector': 'app-asset-action-filter'},{'name': 'AssetActionFilterComponent', 'selector': 'app-asset-action-filter'},{'name': 'AssetDropdownButtonComponent', 'selector': 'apt-asset-dropdown-button'},{'name': 'AssetListComponent', 'selector': 'apt-asset-list'},{'name': 'AssetListComponent', 'selector': 'app-asset-list'},{'name': 'AssetListComponent', 'selector': 'ngsw-asset-list'},{'name': 'AttachmentComponent', 'selector': 'app-attachment'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'CardFormComponent', 'selector': 'app-card-form'},{'name': 'CardFormComponent', 'selector': 'app-card-form'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CartDetailComponent', 'selector': 'app-cart-detail'},{'name': 'CartListComponent', 'selector': 'app-cart-list'},{'name': 'CartListComponent', 'selector': 'app-cart-list'},{'name': 'CartSummaryComponent', 'selector': 'app-cart-summary'},{'name': 'CartSummaryComponent', 'selector': 'app-cart-summary'},{'name': 'CartTableComponent', 'selector': 'app-cart-table'},{'name': 'CartTableComponent', 'selector': 'app-cart-table'},{'name': 'CategoryCarouselComponent', 'selector': 'app-category-carousel'},{'name': 'CategoryCarouselComponent', 'selector': 'app-category-carousel'},{'name': 'CategoryFilterComponent', 'selector': 'apt-category-filter'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChangePasswordLayoutComponent', 'selector': 'app-change-password-layout'},{'name': 'ChartComponent', 'selector': 'apt-chart'},{'name': 'CheckoutComponent', 'selector': 'app-cart'},{'name': 'CompareLayoutComponent', 'selector': 'app-compare-layout'},{'name': 'ConstraintRuleAlertComponent', 'selector': 'apt-constraint-rule-alert'},{'name': 'ConstraintRuleSidebarComponent', 'selector': 'apt-constraint-rule-sidebar'},{'name': 'CreateQuoteComponent', 'selector': 'app-create-quote'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DashboardViewComponent', 'selector': 'app-dashboard-view'},{'name': 'DataFilterComponent', 'selector': 'apt-data-filter'},{'name': 'DetailSectionComponent', 'selector': 'app-detail-section'},{'name': 'DetailsLayoutComponent', 'selector': 'app-detail'},{'name': 'DotsComponent', 'selector': 'apt-dots'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GenerateDocumentComponent', 'selector': 'apt-generate-document'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputDateComponent', 'selector': 'apt-date-range-input'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputSelectComponent', 'selector': 'apt-input-select'},{'name': 'InstalledProductsLayoutComponent', 'selector': 'app-installed-products-layout'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'LineItemTableRowComponent', 'selector': 'apt-line-item-table-row'},{'name': 'LoginFormComponent', 'selector': 'apt-login-form'},{'name': 'LoginLayoutComponent', 'selector': 'app-login-layout'},{'name': 'LoginViewComponent', 'selector': 'app-login-view'},{'name': 'LogoutViewComponent', 'selector': 'app-login-view'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'ManageCartComponent', 'selector': 'app-manage-cart'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'MyAccountLayoutComponent', 'selector': 'app-my-account-layout'},{'name': 'NavAccountComponent', 'selector': 'nav-account'},{'name': 'OrderDetailComponent', 'selector': 'app-order-detail'},{'name': 'OrderDetailComponent', 'selector': 'app-order-detail'},{'name': 'OrderDetailComponent', 'selector': 'app-order-detail'},{'name': 'OrderHistoryLayoutComponent', 'selector': 'app-order-history-layout'},{'name': 'OrderListComponent', 'selector': 'app-order-list'},{'name': 'OrderListComponent', 'selector': 'app-order-list'},{'name': 'OutputFieldComponent', 'selector': 'apt-output-field'},{'name': 'PaymentComponent', 'selector': 'apt-payment'},{'name': 'PaymentDetailsComponent', 'selector': 'app-payment-details'},{'name': 'PaymentIFrameComponent', 'selector': 'apt-payment-iframe'},{'name': 'PaymentMesageComponent', 'selector': 'app-payment-message'},{'name': 'PaymentMessageComponent', 'selector': 'app-payment-message'},{'name': 'PgProductConfigurationComponent', 'selector': 'app-pg-product-configuration'},{'name': 'PgSummaryComponent', 'selector': 'app-pg-summary'},{'name': 'PresentDocumentComponent', 'selector': 'apt-present-document'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'PriceModalComponent', 'selector': 'apt-price-modal'},{'name': 'PriceSummaryComponent', 'selector': 'apt-price-summary'},{'name': 'PriceTypeFilterComponent', 'selector': 'app-price-type-filter'},{'name': 'PriceTypeFilterComponent', 'selector': 'app-price-type-filter'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductCompareComponent', 'selector': 'apt-product-compare'},{'name': 'ProductConfigurationComponent', 'selector': 'apt-product-configuration'},{'name': 'ProductConfigurationSummaryComponent', 'selector': 'apt-product-configuration-summary'},{'name': 'ProductDetailComponent', 'selector': 'app-product-detail'},{'name': 'ProductDetailComponent', 'selector': 'app-product-detail'},{'name': 'ProductDrawerComponent', 'selector': 'apt-product-drawer'},{'name': 'ProductFamilyFilterComponent', 'selector': 'app-product-family-filter'},{'name': 'ProductFamilyFilterComponent', 'selector': 'app-product-family-filter'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'},{'name': 'ProductListComponent', 'selector': 'app-product-list'},{'name': 'ProductListComponent', 'selector': 'app-product-list'},{'name': 'ProductSearchComponent', 'selector': 'apt-product-search'},{'name': 'ProductTypeFilterComponent', 'selector': 'apt-product-type-filter'},{'name': 'ProgressComponent', 'selector': 'app-progress'},{'name': 'PromotionComponent', 'selector': 'apt-promotion'},{'name': 'QuoteDetailComponent', 'selector': 'app-quote-details'},{'name': 'QuoteDetailsComponent', 'selector': 'app-quote-details'},{'name': 'QuoteListComponent', 'selector': 'app-quote-list'},{'name': 'RenewalFilterComponent', 'selector': 'app-renewal-filter'},{'name': 'RenewalFilterComponent', 'selector': 'app-renewal-filter'},{'name': 'RequestQuoteFormComponent', 'selector': 'app-request-quote-form'},{'name': 'ResultsComponent', 'selector': 'pl-results'},{'name': 'ResultsComponent', 'selector': 'pl-results'},{'name': 'RevalidateCartModalComponent', 'selector': 'apt-revalidate-cart-modal'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SpinnerComponent', 'selector': 'apt-spinner'},{'name': 'SummaryComponent', 'selector': 'cart-summary'},{'name': 'SummaryComponent', 'selector': 'cart-summary'},{'name': 'TabAttachmentsComponent', 'selector': 'pdp-tab-attachments'},{'name': 'TabAttachmentsComponent', 'selector': 'app-tab-attachments'},{'name': 'TabFeaturesComponent', 'selector': 'pdp-tab-features'},{'name': 'TabFeaturesComponent', 'selector': 'app-tab-features'},{'name': 'TableComponent', 'selector': 'apt-table'},{'name': 'TaxPopHoverComponent', 'selector': 'apt-tax-pophover'},{'name': 'WishlistsComponent', 'selector': 'app-wishlists'}];
+    var DIRECTIVES = [{'name': 'AutoFocusDirective', 'selector': '[aptAutoFocus]'}];
+    var ACTUAL_COMPONENT = {'name': 'HeaderComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'HeaderComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

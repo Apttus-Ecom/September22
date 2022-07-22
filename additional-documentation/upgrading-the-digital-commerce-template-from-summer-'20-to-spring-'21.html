@@ -1,0 +1,228 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Conga Digital Commerce Winter &#x27;21</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Conga Digital Commerce Winter &#x27;21</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content additional-page">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 id="upgrading-the-digital-commerce-template-from-summer-20-patch-1-to-spring-21">Upgrading the Digital Commerce Template from Summer &#39;20 Patch 1 to Spring &#39;21</h1>
+<h2 id="table-of-contents">Table Of Contents</h2>
+<ul>
+<li><a href="#upgrade-libs">Updating The Libraries</a></li>
+<li><a href="#upgrade-ang10">Upgrading To Angular 10</a></li>
+<li><a href="#replace-gallery">Replace ngx-gallery With ngx-gallery-9</a></li>
+<li><a href="#upgrade-others">Upgrade Your Other Dependencies</a></li>
+<li><a href="#ladd-and-core">Install &quot;ladda&quot; And &quot;core-js&quot;</a></li>
+<li><a href="#roboto">Roboto Font SCSS File</a></li>
+<li><a href="#ivy">Turn Off Ivy</a></li>
+<li><a href="#product-detail">Product Detail Component Updates</a></li>
+<li><a href="#resolver">Product Detail Resolver Updates</a></li>
+<li><a href="#pricingMode">Flag Required For Pricing Mode</a></li>
+</ul>
+<div id="upgrade-libs"/>
+ 
+<h2 id="updating-the-libraries">Updating The Libraries</h2>
+<p>You must update the following packages to the latest version:</p>
+<ul>
+<li><code>@apttus/core</code> <em>^2000.x.x --&gt;</em> <em><strong>^2101.x.x</strong></em></li>
+<li><code>@apttus/ecommerce</code> <em>^2000.x.x --&gt;</em> <em><strong>^2101.x.x</strong></em></li>
+<li><code>@apttus/elements</code> <em>^2000.x.x --&gt;</em> <em><strong>~2101.x.x</strong></em></li>
+</ul>
+<p>After updating the packages, verify if your <code>package.json</code> under dependencies reflects the latest version as under:</p>
+<div><pre class="line-numbers"><code class="language-json">    ...
+    &quot;&#64;apttus/core&quot;: &quot;^2101.x.x&quot;,
+    &quot;&#64;apttus/ecommerce&quot;: &quot;^2101.x.x&quot;,
+    &quot;&#64;apttus/elements&quot;: &quot;^2101.x.x&quot;,
+    ...</code></pre></div><div id="upgrade-ang10"/>
+
+<h2 id="upgrading-to-angular-10">Upgrading To Angular 10</h2>
+<p>Spring &#39;21 SDK is built on Angular 10 and to consume it you should upgrade your templates to Angular 10. </p>
+<p>To upgrade your template to Angular 10, run the following command:</p>
+<div><pre class="line-numbers"><code class="language-shell">ng update &#64;angular/cli &#64;angular/core —force</code></pre></div><p>For more information about Angular 10 upgrade, refer <a href="https://medium.com/@balramchavan/how-to-upgrade-angular-version-to-latest-release-version-10-48cd64ad21b3">document</a>.</p>
+<div id="replace-gallery"/>
+
+<h2 id="replacing-ngx-gallery-with-ngx-gallery-9">Replacing ngx-gallery With ngx-gallery-9</h2>
+<p>The &quot;ngx-gallery&quot; library that is used in product detail page no longer supports Angular 10. You should replace the &quot;ngx-gallery&quot;
+with &quot;ngx-gallery-9&quot; which is basically the same library but upgraded to Angular 9/10.</p>
+<div id="upgrade-others"/>
+
+<h2 id="upgrading-your-other-dependencies">Upgrading Your Other Dependencies</h2>
+<p>It is recommended that you update your other developments and run-time dependencies as well to work seamlessly with Angular 10. To update other dependencies you must install 
+the <code>npm-check-updates</code> library globally.</p>
+<div><pre class="line-numbers"><code class="language-shell">npm i -g npm-check-updates</code></pre></div><p>After you have updated the other dependencies, go to your project and run the following command.</p>
+<div><pre class="line-numbers"><code class="language-shell">ncu -u</code></pre></div><p>This updates all the dependencies of your package.json to the latest version. Also, you must<br>update the Apttus libraries to the latest spring version and then delete the &quot;node_modules&quot; and &quot;package-lock.json&quot;. Lastly, run a fresh npm install.</p>
+<div><pre class="line-numbers"><code class="language-shell">npm install</code></pre></div><div id="ladd-and-core"/>
+
+<h2 id="install-ladda-and-core-js">Install &quot;ladda&quot; And &quot;core-js&quot;</h2>
+<p>You must install &quot;ladda&quot; and &quot;core-js&quot; libraries separately to make your project build smoothly.</p>
+<div id="roboto"/>
+
+<h2 id="roboto-font-scss-file">Roboto Font SCSS File</h2>
+<p>Angular.json is loaded with roboto SCSS file. You must move the roboto SCSS file to &quot;styles.scss&quot; to avoid build issues with 
+angular 10 upgrade. You must update your &quot;styles.scss&quot; file as shown below.</p>
+<div><pre class="line-numbers"><code class="language-scss">$roboto-font-path: &#39;~roboto-fontface/fonts&#39;;
+&#64;import &quot;~roboto-fontface/css/roboto/sass/roboto-fontface-regular&quot;;</code></pre></div><div id="ivy"/>
+
+<h2 id="turn-off-ivy">Turn Off Ivy</h2>
+<p>Currently there are some issues in using the latest Angular Ivy compiler. You must turn it off in your 
+tsconfig.json file and then change the &quot;module&quot; to &quot;es2020&quot;.</p>
+<div><pre class="line-numbers"><code class="language-json">{
+  &quot;compileOnSave&quot;: false,
+  &quot;compilerOptions&quot;: {
+    &quot;module&quot; : &quot;es2020&quot;,
+    &quot;baseUrl&quot;: &quot;./&quot;,
+    &quot;outDir&quot;: &quot;./dist/out-tsc&quot;,
+    &quot;sourceMap&quot;: true,
+    &quot;declaration&quot;: false,
+    &quot;moduleResolution&quot;: &quot;node&quot;,
+    &quot;emitDecoratorMetadata&quot;: true,
+    &quot;experimentalDecorators&quot;: true,
+    &quot;downlevelIteration&quot;: true,
+    &quot;target&quot;: &quot;es5&quot;,
+    &quot;typeRoots&quot;: [
+      &quot;node_modules/&#64;types&quot;
+    ],
+    &quot;lib&quot;: [
+      &quot;es2017&quot;,
+      &quot;dom&quot;
+    ]
+  },
+  &quot;angularCompilerOptions&quot;: {
+    &quot;enableIvy&quot;: false
+  }
+}</code></pre></div><div id="product-detail"/>
+
+<h2 id="product-detail-component-updates">Product Detail Component Updates</h2>
+<p>The product configuration component (<code>&lt;apt-product-configuration&gt;</code>) has been updated with changes in the input and output parameters.
+You must pass the product ID as the input instead of the complete product. The component no longer provides the <code>configurationChange</code> output event. You must use the new <code>ProductConfigurationService</code> 
+to listen to configuration changes and more.</p>
+<p>Below are the important updates you must do in the <code>product-detail.component.html</code> and <code>product-detail.component.ts</code> files.</p>
+<div><pre class="line-numbers"><code class="language-html">&lt;apt-product-configuration
+  [productId]=&quot;viewState?.product?.Id&quot;
+  [relatedTo]=&quot;viewState?.relatedTo&quot;
+  (click)=&quot;configurationChanged = true&quot;&gt;
+&lt;/apt-product-configuration&gt;</code></pre></div><div><pre class="line-numbers"><code class="language-ts">ngOnInit() {
+    this.viewState$ = this.resolver.state();
+    this.subscriptions.push(this.productConfigurationService.configurationChange.subscribe(response =&gt; {
+      if (response &amp;&amp; _.has(response, &#39;configurationPending&#39;)) {
+        this.configurationPending = _.get(response, &#39;configurationPending&#39;);
+      } else {
+        this.product = _.get(response, &#39;product&#39;);
+        this.cartItemList = _.get(response, &#39;itemList&#39;);
+        this.configurationChanged = _.get(response, &#39;configurationFlags.optionChanged&#39;) || _.get(response, &#39;configurationFlags.attributeChanged&#39;);
+      }
+    }));
+}
+ngOnDestroy() {
+  _.forEach(this.subscriptions, item =&gt; {
+    if (item) item.unsubscribe();
+  });
+}</code></pre></div><div id="resolver"/>
+
+<h2 id="product-detail-resolver-updates">Product Detail Resolver Updates</h2>
+<p>Every-time the product detail page is loaded, a reset of some data is needed in the product configuration service. Add the command provided below at the beginning of the &#39;resolve&#39; method.</p>
+<div><pre class="line-numbers"><code class="language-ts">resolve(route: ActivatedRouteSnapshot): Observable&lt;ProductDetailsState&gt; {
+    this.productConfigurationService.onChangeConfiguration(null);
+    ...
+}    </code></pre></div><div id="pricingMode"/>
+
+<h2 id="flag-required-for-pricing-mode">Flag Required For Pricing Mode</h2>
+<p>A new flag <code>pricingMode</code> has been introduced that enables pricing through classic CPQ pricing or Turbo Pricing.
+pricingMode: &#39;Default&#39; | &#39;Turbo&#39;
+In Summer &#39;20 template, there were known issues while using pricingMode: &#39;Turbo&#39;. It is recommended to use &#39;Default&#39; mode.</p>
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'additional-page';
+            var COMPODOC_CURRENT_PAGE_URL = 'upgrading-the-digital-commerce-template-from-summer-&#x27;20-to-spring-&#x27;21.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

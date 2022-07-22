@@ -1,0 +1,317 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Conga Digital Commerce April &#x27;22</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Conga Digital Commerce April &#x27;22</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content additional-page">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 id="upgrading-the-digital-commerce-template-from-spring-21-to-april-22">Upgrading the Digital Commerce Template from Spring &#39;21 to April &#39;22</h1>
+<p>This guide is designed to step you through the process of upgrading partner commerce template from Spring &#39;21 release to April &#39;22 release.</p>
+<h2 id="table-of-contents">Table Of Contents</h2>
+<ul>
+<li><a href="#upgrade-libs">Updating the libraries</a></li>
+<li><a href="#update-references">Updating References to SDK libraries across all files</a></li>
+<li><a href="#update-npmrc">Updating npmrc file</a></li>
+<li><a href="#upgrade-ang12">Upgrading to Angular 12</a></li>
+<li><a href="#upgrade-others">Upgrade other dependencies</a></li>
+<li><a href="#lodash-and-local-currency">Move &quot;lodash&quot; and &quot;locale-currency&quot; to package dependencies</a></li>
+<li><a href="#ivy">Enabling Ivy</a></li>
+<li><a href="#angular-karma-updates">Updating Angular and Karma configurations</a></li>
+<li><a href="#pricingMode">Update pricing mode flag</a></li>
+<li><a href="#updateConfiguration">Update ProductConfiguration Input field</a></li>
+<li><a href="#installedProducts">Update asset-list.component file</a></li>
+</ul>
+<div id="upgrade-libs"/>
+
+<h2 id="updating-the-libraries">Updating the libraries</h2>
+<p>From April &#39;22 release onwards, below SDK packages are renamed and hence <em><strong>should be updated in your package.json file</strong></em>.</p>
+<ul>
+<li><code>@apttus/core</code> renamed to <code>@congacommerce/core</code></li>
+<li><code>@apttus/ecommerce</code> renamed to <code>@congacommerce/ecommerce</code></li>
+<li><code>@apttus/elements</code> renamed to <code>@congacommerce/elements</code></li>
+</ul>
+<p>You must point these packages to the latest version:</p>
+<ul>
+<li><code>@congacommerce/core</code> <em><strong>^2103.x.x</strong></em></li>
+<li><code>@congacommerce/ecommerce</code> <em><strong>^2103.x.x</strong></em></li>
+<li><code>@congacommerce/elements</code> <em><strong>^2103.x.x</strong></em></li>
+</ul>
+<p>After updating these packages, verify if your <code>package.json</code> under dependencies reflects the latest version as below:</p>
+<div><pre class="line-numbers"><code class="language-json">    ...
+    &quot;&#64;congacommerce/core&quot;: &quot;^2103.x.x&quot;,
+    &quot;&#64;congacommerce/ecommerce&quot;: &quot;^2103.x.x&quot;,
+    &quot;&#64;congacommerce/elements&quot;: &quot;^2103.x.x&quot;,
+    ...</code></pre></div><p><em><strong>Add &quot;downloadjs&quot; to package dependencies library</strong></em></p>
+<div><pre class="line-numbers"><code class="language-json">    ...
+    &quot;downloadjs&quot;: &quot;^1.4.7&quot;
+    ...</code></pre></div><div id="update-references"/>
+
+<h2 id="updating-references-to-sdk-libraries-across-all-files">Updating References to SDK libraries across all files</h2>
+<p>You must replace all references to SDK packages with the new package names. This change must be done across <em><strong>all files</strong></em> in your template, to ensure the project is built successfully.</p>
+<p><em><strong>Before Change</strong></em></p>
+<div><pre class="line-numbers"><code class="language-typescript">import { ConfigurationService } from &#39;&#64;apttus/core&#39;;
+import { PricingModule } from &#39;&#64;apttus/ecommerce&#39;;
+import { PriceSummaryComponent } from &#39;&#64;apttus/elements&#39;;</code></pre></div><p><em><strong>After Change</strong></em></p>
+<div><pre class="line-numbers"><code class="language-typescript">import { ConfigurationService } from &#39;&#64;congacommerce/core&#39;;
+import { PricingModule } from &#39;&#64;congacommerce/ecommerce&#39;;
+import { PriceSummaryComponent } from &#39;&#64;congacommerce/elements&#39;;</code></pre></div><div id="update-npmrc">
+
+<h2 id="updating-npmrc-file">Updating npmrc file</h2>
+<p>To install SDK libraries as npm packages, you must update <em><strong>.npmrc file</strong></em> to specify the github repository path where these packages are hosted.</p>
+<div><pre class="line-numbers"><code class="language-typescript">&#64;congacommerce:registry=https://npm.pkg.github.com</code></pre></div><p>As this is a public github repository with read permissions, you don&#39;t need any access to install these packages.</p>
+<div id="upgrade-ang12"/>
+
+<h2 id="upgrading-to-angular-12">Upgrading to Angular 12</h2>
+<p>April &#39;22 SDK is built on Angular 12, so you must also upgrade your templates to Angular 12. </p>
+<p>Please use below command to upgrade your template to Angular 12.</p>
+<div><pre class="line-numbers"><code class="language-shell">ng update &#64;angular/cli &#64;angular/core —force</code></pre></div><p>If you are moving across multiple major versions e.g., Angular 10 to Angular 12, it is recommended to run incremental upgrades using below commands:</p>
+<div><pre class="line-numbers"><code class="language-shell">ng update &#64;angular/core&#64;11 &#64;angular/cli&#64;11 --force
+ng update &#64;angular/core&#64;12 &#64;angular/cli&#64;12 --force</code></pre></div><p>For more information about Angular 12 upgrade, refer <a href="https://update.angular.io/?v=10.0-12.0">document</a>.</p>
+<div id="upgrade-others"/>
+
+<h2 id="upgrade-other-dependencies">Upgrade other dependencies</h2>
+<p>It is recommended that you update other development and run-time dependencies as well to work seamlessly with Angular 12. To update other dependencies you must install 
+the <code>npm-check-updates</code> library globally.</p>
+<div><pre class="line-numbers"><code class="language-shell">npm i -g npm-check-updates</code></pre></div><p>After you have updated the other dependencies, go to your project and run the following command.</p>
+<div><pre class="line-numbers"><code class="language-shell">ncu -u</code></pre></div><p>This updates all the dependencies of your package.json to the latest version. Also, you must<br>update the Conga libraries to the latest april version and then delete the &quot;node_modules&quot; and &quot;package-lock.json&quot;. Lastly, run a fresh npm install.</p>
+<div><pre class="line-numbers"><code class="language-shell">npm install</code></pre></div><div id="lodash-and-local-currency"/>
+
+<h2 id="move-lodash-and-locale-currency-to-package-dependencies">Move &quot;lodash&quot; and &quot;locale-currency&quot; to package dependencies</h2>
+<p>You must move &quot;lodash&quot; and &quot;locale-currency&quot; libraries from devDependencies to dependencies in your <em><strong>package.json</strong></em> file to make your project build smoothly.</p>
+<div id="ivy"/>
+
+<h2 id="enabling-ivy">Enabling Ivy</h2>
+<p>As Angular 12 uses Ivy as a default engine for its complication and rendering, you must enable Ivy in your project by updating <em><strong>angularCompilerOptions</strong></em> in <em><strong>tsconfig.json</strong></em> file. There are other configurations too that should be changed in this file for a smooth build.</p>
+<div><pre class="line-numbers"><code class="language-json">{
+  &quot;compileOnSave&quot;: false,
+  &quot;compilerOptions&quot;: {
+    &quot;baseUrl&quot;: &quot;./&quot;,
+    &quot;module&quot;: &quot;es2020&quot;,
+    &quot;outDir&quot;: &quot;./dist/out-tsc&quot;,
+    &quot;forceConsistentCasingInFileNames&quot;: true,
+    &quot;strict&quot;: false,
+    &quot;noImplicitReturns&quot;: false,
+    &quot;noFallthroughCasesInSwitch&quot;: true,
+    &quot;sourceMap&quot;: true,
+    &quot;declaration&quot;: false,
+    &quot;moduleResolution&quot;: &quot;node&quot;,
+    &quot;emitDecoratorMetadata&quot;: true,
+    &quot;experimentalDecorators&quot;: true,
+    &quot;downlevelIteration&quot;: true,
+    &quot;importHelpers&quot;: true,
+    &quot;target&quot;: &quot;es5&quot;,
+    &quot;lib&quot;: [
+      &quot;es2018&quot;,
+      &quot;dom&quot;
+    ],
+    &quot;noImplicitAny&quot;: false,
+    
+  },
+  &quot;angularCompilerOptions&quot;: {
+    &quot;enableI18nLegacyMessageIdFormat&quot;: false,
+    &quot;strictInjectionParameters&quot;: true,
+    &quot;strictInputAccessModifiers&quot;: true,
+    &quot;strictTemplates&quot;: false
+  }
+}</code></pre></div><div id="angular-karma-updates"/>
+
+<h2 id="updating-angular-and-karma-configurations">Updating Angular and Karma configurations</h2>
+<p>With Angular 12 upgrades, Ivy engine also expects below configuration changes in angular.json and karma.conf.js files.</p>
+<p><em><strong>angular.json</strong></em></p>
+<ul>
+<li>styleext property is deprecated in Angular 12 and must be replaced with style in angular schematics.</li>
+</ul>
+<p>Before changes</p>
+<div><pre class="line-numbers"><code class="language-json">&quot;schematics&quot;: {
+        &quot;&#64;schematics/angular:component&quot;: {
+          &quot;styleext&quot;: &quot;scss&quot;
+    }</code></pre></div><p> After changes</p>
+<div><pre class="line-numbers"><code class="language-json">&quot;schematics&quot;: {
+       &quot;&#64;schematics/angular:component&quot;: {
+         &quot;style&quot;: &quot;scss&quot;
+       }
+   }</code></pre></div><ul>
+<li>Add allowedCommonJSDependencies under architect build options to turn off warnings during Ivy compilation.</li>
+</ul>
+<div><pre class="line-numbers"><code class="language-json">&quot;allowedCommonJsDependencies&quot;: [
+    &quot;locale-currency&quot;,
+    &quot;class-transformer&quot;,
+    &quot;lodash-decorators&quot;,
+    &quot;chart.js&quot;,
+    &quot;currency-codes&quot;,
+    &quot;xml-js&quot;,
+    &quot;raven-js&quot;,
+    &quot;crypto-js&quot;,
+    &quot;safe-buffer&quot;
+]</code></pre></div><ul>
+<li>Remove below properties from assets configuration as these might not be required anymore.</li>
+</ul>
+<div><pre class="line-numbers"><code class="language-json">&quot;src/manifest.json&quot;,
+&quot;src/apttus-worker.js&quot;,
+&quot;src/web.config&quot;,
+&quot;src/caas.css&quot;,
+{
+&quot;glob&quot;: &quot;**/*&quot;,
+&quot;input&quot;: &quot;node_modules/crypto-js&quot;,
+&quot;output&quot;: &quot;/assets/scripts/&quot;
+}</code></pre></div><p><em><strong>karma.conf.js</strong></em></p>
+<div><pre class="line-numbers"><code class="language-typescript">module.exports = function (config) {
+  config.set({
+    basePath: &#39;&#39;,
+    frameworks: [&#39;jasmine&#39;, &#39;&#64;angular-devkit/build-angular&#39;],
+    plugins: [
+      require(&#39;karma-jasmine&#39;),
+      require(&#39;karma-chrome-launcher&#39;),
+      require(&#39;karma-jasmine-html-reporter&#39;),
+      require(&#39;karma-coverage&#39;),
+      require(&#39;&#64;angular-devkit/build-angular/plugins/karma&#39;)
+    ],
+    client: {
+      jasmine: {},
+      clearContext: false
+    },
+    jasmineHtmlReporter: {
+      suppressAll: true
+    },
+    coverageReporter: {
+      dir: require(&#39;path&#39;).join(__dirname, &#39;../../coverage/ecommerce&#39;),
+      subdir: &#39;.&#39;,
+      reporters: [
+        { type: &#39;html&#39; },
+        { type: &#39;text-summary&#39; }
+      ]
+    },
+    reporters: [&#39;progress&#39;, &#39;kjhtml&#39;],
+    port: 9876,
+    colors: true,
+    logLevel: config.LOG_INFO,
+    autoWatch: true,
+    browsers: [&#39;Chrome&#39;],
+    singleRun: false,
+    restartOnFileChange: true
+  });
+};</code></pre></div><p><em><strong>You may also choose to remove ServiceWorkerModule from imports in app.module.ts file.</strong></em></p>
+<div id="pricingMode"/>
+
+<h2 id="update-pricing-mode-flag">Update pricing mode flag</h2>
+<p>April &#39;22 release runs its pricing engine in turbo mode, so you must always run the application in &#39;turbo&#39; mode of pricing. This can be done by setting &#39;pricingMode&#39; flag in environment.ts file to &#39;turbo&#39; as highlighted below:</p>
+<div><pre class="line-numbers"><code class="language-typescript">pricingMode: &#39;turbo&#39;</code></pre></div><h2 id="update-productconfiguration-input-field">Update ProductConfiguration Input field.</h2>
+<p> In April &#39;22 release, you must update input field of productConfiguration component from <em><strong>&quot;productId&quot;</strong></em>  to <em><strong>&quot;product&quot;</strong></em> in your template, to ensure the project is built successfully.</p>
+<p>  <em><strong>Before Change</strong></em></p>
+<div><pre class="line-numbers"><code class="language-typescript">&lt;apt-product-configuration
+                    [productId]=&quot;viewState?.product?.Id&quot;
+                    [product]=&quot;viewState?.product?.Id&quot;
+                    [relatedTo]=&quot;viewState?.relatedTo&quot;
+                    [accordion]=&quot;true&quot;
+                    (click)=&quot;configurationChanged = true&quot;&gt;</code></pre></div><p><em><strong>After Change</strong></em></p>
+<div><pre class="line-numbers"><code class="language-typescript">&lt;apt-product-configuration
+                    [product]=&quot;viewState?.product?.Id&quot;
+                    [product]=&quot;viewState?.product?.Id&quot;
+                    [relatedTo]=&quot;viewState?.relatedTo&quot;
+                    [accordion]=&quot;true&quot;
+                    (click)=&quot;configurationChanged = true&quot;&gt;</code></pre></div><div id="installedProducts" />
+
+<h2 id="update-asset-listcomponent-file">Update asset-list.component file.</h2>
+<p>In April &#39;22 release, the reference for  <em><strong>AssetLineItem.Id</strong></em> needs to be updated with <em><strong>AssetLineItemId</strong></em> as the record will not have <em><strong>AssetLineItem</strong></em> object post ABO actions when pricing mode flag is turbo.</p>
+<p><em><strong>BeforeChange</strong></em></p>
+<div><pre class="line-numbers"><code class="language-typescript"> validate(record: AssetLineItemExtended, childRecords: Array&lt;AssetLineItemExtended&gt;): boolean {
+          return record.canRenew(childRecords) &amp;&amp; !(filter(get(cart, &#39;LineItems&#39;), (item) =&gt; get(item, &#39;AssetLineItem.Id&#39;) ===  record.Id).length &gt; 0);
+        }</code></pre></div><p><em><strong>AfterChange</strong></em></p>
+<div><pre class="line-numbers"><code class="language-typescript"> validate(record: AssetLineItemExtended, childRecords: Array&lt;AssetLineItemExtended&gt;): boolean {
+          return record.canRenew(childRecords) &amp;&amp; !(filter(get(cart, &#39;LineItems&#39;), (item) =&gt; get(item, &#39;AssetLineItemId&#39;) ===  record.Id).length &gt; 0);
+        }</code></pre></div>
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'additional-page';
+            var COMPODOC_CURRENT_PAGE_URL = 'upgrading-the-partner-commerce-template-from-spring-&#x27;21-to-april-&#x27;22.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

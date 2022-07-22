@@ -1,0 +1,843 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Conga Digital Commerce May &#x27;22</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Conga Digital Commerce May &#x27;22</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  ConstraintRuleSidebarComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>projects/congacommerce/elements/src/lib/constraint-rule/constraint-rule-sidebar/constraint-rule-sidebar.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Constraint rule sidebar is used to show a list of all the constraint rule messages that have been applied to the current cart.</p>
+<h3>Usage</h3>
+
+<div><pre class="line-numbers"><code class="language-typescript">import { ConstraintRuleModule } from &#39;&#64;congacommerce/elements&#39;;
+import { ModalModule } from &#39;ngx-bootstrap/modal&#39;;
+
+&#64;NgModule({
+imports: [ConstraintRuleModule, ModalModule, ...]
+})
+export class AppModule {}</code></pre></div><p>import { ConstraintRuleSidebarComponent } from &#39;@congacommerce/elements&#39;;
+import { BsModalService } from &#39;ngx-bootstrap/modal&#39;;</p>
+<p>constructor(private bsModalService: BsModalService) {}</p>
+<p>showSidebar() {
+      this.bsModalService.show(ConstraintRuleSidebarComponent, {
+             backdrop: false,
+             class: &#39;constraintRuleSidebar&#39;
+      });
+}</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>apt-constraint-rule-sidebar</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./constraint-rule-sidebar.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./constraint-rule-sidebar.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#bsModalRef" >bsModalRef</a>
+                            </li>
+                            <li>
+                                <a href="#showProductConfig" >showProductConfig</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#isItemSelected" >isItemSelected</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(bsModalRef: BsModalRef, constraintRuleMessageService: <a href="../classes/ConstraintRule.html" target="_self">ConstraintRuleMessageService</a>, clientConstraintRuleService: <a href="../injectables/ConstraintRuleService.html" target="_self">ClientConstraintRuleService</a>, productConfigurationService: <a href="../injectables/ProductConfigurationService.html" target="_self">ProductConfigurationService</a>)</code>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>bsModalRef</td>
+                                                  
+                                                        <td>
+                                                                    <code>BsModalRef</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>constraintRuleMessageService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/ConstraintRule.html" target="_self" >ConstraintRuleMessageService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>clientConstraintRuleService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ConstraintRuleService.html" target="_self" >ClientConstraintRuleService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>productConfigurationService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ProductConfigurationService.html" target="_self" >ProductConfigurationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isItemSelected"></a>
+                    <span class="name">
+                        <span ><b>isItemSelected</b></span>
+                        <a href="#isItemSelected"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isItemSelected(product: <a href="../classes/Product.html" target="_self">Product</a>, action?: "add" | "remove")</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method responsible to disable/enable the products in the sidebar to add/remove
+based on the rule configured and product selection.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>product</td>
+                                    <td>
+                                                <code><a href="../classes/Product.html" target="_self" >Product</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>instance of Product object.</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>action</td>
+                                    <td>
+                                            <code>&quot;add&quot; | &quot;remove&quot;</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>optional parameter accepts &#39;add&#39; or &#39;remove&#39; to perform add /remove action.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>boolean value is returned.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="bsModalRef"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>bsModalRef</b></span>
+                        <a href="#bsModalRef"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>BsModalRef</code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showProductConfig"></a>
+                    <span class="name">
+                        <span ><b>showProductConfig</b></span>
+                        <a href="#showProductConfig"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Flag used to specify if this component is showing product level constraint rules.
+If false this component will show cart level configuration rules.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ng-container *ngIf&#x3D;&quot;ruleDetailGroups$ | async as ruleDetailGroups&quot;&gt;
+  &lt;div class&#x3D;&quot;modal-header py-2 border-0&quot;&gt;
+    &lt;h5 class&#x3D;&quot;modal-title pull-left&quot;&gt;{{ &quot;CONSTRAINT_SIDE_MENU.VALIDATION_MESSAGES&quot; | translate }}&lt;/h5&gt;
+    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close pull-left&quot; aria-label&#x3D;&quot;Close&quot;&gt;
+      &lt;span aria-hidden&#x3D;&quot;true&quot; (click)&#x3D;&quot;bsModalRef.hide()&quot;&gt;&amp;times;&lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;modal-body p-0&quot;&gt;
+    &lt;!-- Errors --&gt;
+    &lt;div *ngIf&#x3D;&quot;ruleDetailGroups.errors.length &gt; 0&quot; class&#x3D;&quot;card border-0&quot;&gt;
+      &lt;div class&#x3D;&quot;card-header border-bottom-0 border-top&quot;&gt;
+        &lt;i class&#x3D;&quot;fas fa-exclamation-circle text-danger&quot;&gt;&lt;/i&gt; &lt;span&gt;
+          {{ (ruleDetailGroups.errors.length &gt; 1 ? &quot;CONSTRAINT_SIDE_MENU.NUM_OF_ERRORS.PLURAL&quot; : &quot;CONSTRAINT_SIDE_MENU.NUM_OF_ERRORS.ONE&quot;) | translate: {amount: ruleDetailGroups.errors.length} }}
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;ng-container *ngFor&#x3D;&quot;let error of ruleDetailGroups.errors; let i &#x3D; index&quot;&gt;
+        &lt;ng-container [ngSwitch]&#x3D;&quot;error.actionType&quot;&gt;
+          &lt;!-- Inclusions --&gt;
+          &lt;ng-container *ngSwitchCase&#x3D;&quot;&#x27;Inclusion&#x27;&quot;&gt;
+            &lt;div class&#x3D;&quot;card-body bg-white py-2 flex-column&quot; [class.border-top]&#x3D;&quot;i &gt; 0&quot;&gt;
+              &lt;ng-container *ngIf&#x3D;&quot;error.messageHtml !&#x3D;&#x3D; null;&quot;&gt;
+                &lt;div class&#x3D;&quot;mb-2&quot; [innerHtml]&#x3D;&quot;error.messageHtml&quot;&gt;&lt;/div&gt;
+              &lt;/ng-container&gt;
+              &lt;ng-container *ngFor&#x3D;&quot;let item of error.actionItems&quot;&gt;
+                &lt;div class&#x3D;&quot;py-3&quot;&gt;
+                  &lt;a class&#x3D;&quot;pt-2&quot; href&#x3D;&quot;javascript:void(0)&quot;
+                    [routerLink]&#x3D;&quot;[&#x27;/products/&#x27;, item.product.Id]&quot;&gt;{{item.product.Name}}&lt;/a&gt;
+                  &lt;div class&#x3D;&quot;d-flex py-2 align-items-center justify-content-between&quot;&gt;
+                    &lt;small class&#x3D;&quot;font-weight-bold&quot;&gt;{{item.chargeType}}&lt;/small&gt;
+                    &lt;small class&#x3D;&quot;font-weight-bold&quot;&gt;
+                      &lt;apt-price [record]&#x3D;&quot;item.product&quot;&gt;&lt;/apt-price&gt;
+                    &lt;/small&gt;
+                  &lt;/div&gt;
+                  &lt;div class&#x3D;&quot;d-flex align-items-center justify-content-end&quot;&gt;
+                    &lt;label [for]&#x3D;&quot;item.product.Name + i&quot; class&#x3D;&quot;mr-2 mb-0&quot;&gt;{{ &quot;COMMON.QTY&quot; | translate }}&lt;/label&gt;
+                    &lt;input class&#x3D;&quot;form-control mr-2 w-25&quot; [id]&#x3D;&quot;item.product.Name + i&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;1&quot;
+                      [(ngModel)]&#x3D;&quot;quantityControlValues[item.product.Name + i]&quot; placeholder&#x3D;&quot;1&quot;&gt;
+                    &lt;div class&#x3D;&quot;input-group-append&quot;&gt;
+                      &lt;button *ngIf&#x3D;&quot;!showProductConfig&quot; class&#x3D;&quot;btn btn-outline-primary&quot;
+                        (click)&#x3D;&quot;handleAddToCart(error, item.product, quantityControlValues[item.product.Name + i], item.product.Name + i)&quot;
+                        [ladda]&#x3D;&quot;loading[item.product.Name + i]&quot;
+                        data-style&#x3D;&quot;zoom-in&quot;&gt;{{ &quot;COMMON.ADD_TO_CART&quot; | translate }}&lt;/button&gt;
+                      &lt;button *ngIf&#x3D;&quot;showProductConfig&quot; class&#x3D;&quot;btn btn-outline-primary&quot;
+                        [disabled]&#x3D;&quot;isItemSelected(item.product)&quot;
+                        (click)&#x3D;&quot;handleAddToConfiguration(item.product, quantityControlValues[item.product.Name + i], item.product.Name + i, error.targetBundleNumber)&quot;
+                        [ladda]&#x3D;&quot;loading[item.product.Name + i]&quot;
+                        data-style&#x3D;&quot;zoom-in&quot;&gt;{{ &quot;COMMON.ADD&quot; | translate }}&lt;/button&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/ng-container&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;card-footer bg-white border-0 py-2&quot;&gt;
+            &lt;/div&gt;
+          &lt;/ng-container&gt;
+          &lt;!-- Exclusions --&gt;
+          &lt;ng-container *ngSwitchCase&#x3D;&quot;&#x27;Exclusion&#x27;&quot;&gt;
+            &lt;div class&#x3D;&quot;card-body bg-white py-2 flex-column&quot; [class.border-top]&#x3D;&quot;i &gt; 0&quot;&gt;
+              &lt;ng-container *ngIf&#x3D;&quot;error.messageHtml !&#x3D;&#x3D; null;&quot;&gt;
+                &lt;span [innerHtml]&#x3D;&quot;error.messageHtml&quot;&gt;&lt;/span&gt;
+              &lt;/ng-container&gt;
+              &lt;ng-container *ngFor&#x3D;&quot;let item of error.actionItems&quot;&gt;
+                &lt;div class&#x3D;&quot;py-3&quot;&gt;
+                  &lt;a class&#x3D;&quot;pt-2&quot; href&#x3D;&quot;javascript:void(0)&quot;
+                    [routerLink]&#x3D;&quot;[&#x27;/products/&#x27;, item.product.Id]&quot;&gt;{{item.product.Name}}&lt;/a&gt;
+                  &lt;div class&#x3D;&quot;d-flex py-2 align-items-center justify-content-between&quot;&gt;
+                    &lt;small class&#x3D;&quot;font-weight-bold&quot;&gt;{{item.chargeType}}&lt;/small&gt;
+                    &lt;small class&#x3D;&quot;font-weight-bold&quot;&gt;
+                      &lt;apt-price [record]&#x3D;&quot;item.product&quot;&gt;&lt;/apt-price&gt;
+                    &lt;/small&gt;
+                  &lt;/div&gt;
+                  &lt;div class&#x3D;&quot;d-flex align-items-center justify-content-end&quot;&gt;
+                    &lt;label [for]&#x3D;&quot;item.product.Name + i&quot; class&#x3D;&quot;mr-2 mb-0&quot;&gt;{{ &quot;COMMON.QTY&quot; | translate }}&lt;/label&gt;
+                    &lt;input class&#x3D;&quot;form-control mr-2 w-25&quot; [id]&#x3D;&quot;item.product.Name + i&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;1&quot;
+                      [(ngModel)]&#x3D;&quot;quantityControlValues[item.product.Name + i]&quot; placeholder&#x3D;&quot;1&quot;&gt;
+                    &lt;div class&#x3D;&quot;input-group-append&quot;&gt;
+                      &lt;button *ngIf&#x3D;&quot;!showProductConfig&quot; class&#x3D;&quot;btn btn-outline-danger&quot;
+                        (click)&#x3D;&quot;handleDeleteFromCart(error, item.product?.Name + i)&quot;
+                        [ladda]&#x3D;&quot;loading[item.product?.Name + i]&quot;
+                        data-style&#x3D;&quot;zoom-in&quot;&gt;{{ &quot;CONSTRAINT_SIDE_MENU.REMOVE_FROM_CART&quot; | translate }}&lt;/button&gt;
+                      &lt;button *ngIf&#x3D;&quot;showProductConfig&quot; class&#x3D;&quot;btn btn-outline-danger&quot;
+                        [disabled]&#x3D;&quot;!isItemSelected(item.product, &#x27;remove&#x27;)&quot;
+                        (click)&#x3D;&quot;handleRemoveFromBundle(item.product, error.triggeringProducts[0], item.product?.Name + i)&quot;
+                        [ladda]&#x3D;&quot;loading[item.product?.Name + i]&quot;
+                        data-style&#x3D;&quot;zoom-in&quot;&gt;{{ &quot;COMMON.REMOVE&quot; | translate }}&lt;/button&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/ng-container&gt;
+            &lt;/div&gt;
+            &lt;!-- &lt;div class&#x3D;&quot;card-footer bg-white border-0 py-2 d-flex justify-content-end&quot;&gt;
+              &lt;button *ngIf&#x3D;&quot;!showProductConfig&quot; class&#x3D;&quot;btn btn-outline-danger&quot; (click)&#x3D;&quot;handleDeleteFromCart(error, error.actionItems[0].product?.Name + i)&quot; [ladda]&#x3D;&quot;loading[error.actionItems[0].product?.Name + i]&quot; data-style&#x3D;&quot;zoom-in&quot;&gt;{{ &quot;CONSTRAINT_SIDE_MENU.REMOVE_FROM_CART&quot; | translate }}&lt;/button&gt;
+              &lt;button *ngIf&#x3D;&quot;showProductConfig&quot; class&#x3D;&quot;btn btn-outline-danger&quot; [disabled]&#x3D;&quot;isItemSelected(error.actionItems[0].product)&quot; (click)&#x3D;&quot;handleRemoveFromBundle(error.actionItems[0].product, error.triggeringProducts[0], error.actionItems[0].product?.Name + i)&quot; [ladda]&#x3D;&quot;loading[error.actionItems[0].product?.Name + i]&quot; data-style&#x3D;&quot;zoom-in&quot;&gt;{{ &quot;COMMON.REMOVE&quot; | translate }}&lt;/button&gt;
+            &lt;/div&gt; --&gt;
+            &lt;div class&#x3D;&quot;card-footer bg-white border-0 py-2&quot;&gt;
+            &lt;/div&gt;
+          &lt;/ng-container&gt;
+          &lt;!-- Validation --&gt;
+          &lt;ng-container *ngSwitchCase&#x3D;&quot;&#x27;Validation&#x27;&quot;&gt;
+            &lt;div class&#x3D;&quot;card-body bg-white py-2 d-flex-column&quot; [class.border-top]&#x3D;&quot;i &gt; 0&quot;&gt;
+              &lt;ng-container *ngIf&#x3D;&quot;error.messageHtml !&#x3D;&#x3D; null;&quot;&gt;
+                &lt;div class&#x3D;&quot;mb-2&quot; [innerHtml]&#x3D;&quot;error.messageHtml&quot;&gt;&lt;/div&gt;
+              &lt;/ng-container&gt;
+            &lt;/div&gt;
+          &lt;/ng-container&gt;
+          &lt;!-- Recommendation --&gt;
+          &lt;ng-container *ngSwitchCase&#x3D;&quot;&#x27;Recommendation&#x27;&quot;&gt;
+            &lt;div class&#x3D;&quot;card-body bg-white py-2 d-flex-column&quot; [class.border-top]&#x3D;&quot;i &gt; 0&quot;&gt;
+              &lt;ng-container *ngIf&#x3D;&quot;error.messageHtml !&#x3D;&#x3D; null;&quot;&gt;
+                &lt;div class&#x3D;&quot;mb-2&quot; [innerHtml]&#x3D;&quot;error.messageHtml&quot;&gt;&lt;/div&gt;
+              &lt;/ng-container&gt;
+            &lt;/div&gt;
+          &lt;/ng-container&gt;
+          &lt;!-- Replacement --&gt;
+          &lt;ng-container *ngSwitchCase&#x3D;&quot;&#x27;Replacement&#x27;&quot;&gt;
+            &lt;div class&#x3D;&quot;card-body bg-white py-2 d-flex-column&quot; [class.border-top]&#x3D;&quot;i &gt; 0&quot;&gt;
+              &lt;ng-container *ngIf&#x3D;&quot;error.messageHtml !&#x3D;&#x3D; null;&quot;&gt;
+                &lt;div class&#x3D;&quot;mb-2&quot; [innerHtml]&#x3D;&quot;error.messageHtml&quot;&gt;&lt;/div&gt;
+              &lt;/ng-container&gt;
+            &lt;/div&gt;
+          &lt;/ng-container&gt;
+        &lt;/ng-container&gt;
+      &lt;/ng-container&gt;
+    &lt;/div&gt;
+    &lt;!-- Warnings --&gt;
+    &lt;div *ngIf&#x3D;&quot;ruleDetailGroups.warnings.length &gt; 0&quot; class&#x3D;&quot;card border-0&quot;&gt;
+      &lt;div class&#x3D;&quot;card-header border-bottom-0 border-top&quot;&gt;
+        &lt;i class&#x3D;&quot;fas fa-exclamation-triangle text-warning&quot;&gt;&lt;/i&gt; &lt;span&gt;
+          {{ (ruleDetailGroups.warnings.length &gt; 1 ? &quot;CONSTRAINT_SIDE_MENU.NUM_OF_WARNINGS.PLURAL&quot; : &quot;CONSTRAINT_SIDE_MENU.NUM_OF_WARNINGS.ONE&quot;) | translate: {amount: ruleDetailGroups.warnings.length} }}&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;ng-container *ngFor&#x3D;&quot;let warning of ruleDetailGroups.warnings; let i &#x3D; index&quot;&gt;
+        &lt;ng-container [ngSwitch]&#x3D;&quot;warning.actionType&quot;&gt;
+          &lt;!-- Inclusion --&gt;
+          &lt;ng-container *ngSwitchCase&#x3D;&quot;&#x27;Inclusion&#x27;&quot;&gt;
+            &lt;div class&#x3D;&quot;card-body bg-white py-2 flex-column&quot; [class.border-top]&#x3D;&quot;i &gt; 0&quot;&gt;
+              &lt;ng-container *ngIf&#x3D;&quot;warning.messageHtml !&#x3D;&#x3D; null;&quot;&gt;
+                &lt;div class&#x3D;&quot;mb-2&quot; [innerHtml]&#x3D;&quot;warning.messageHtml&quot;&gt;&lt;/div&gt;
+              &lt;/ng-container&gt;
+              &lt;ng-container *ngFor&#x3D;&quot;let item of warning.actionItems&quot;&gt;
+                &lt;div class&#x3D;&quot;py-3&quot;&gt;
+                  &lt;a class&#x3D;&quot;pt-2&quot; href&#x3D;&quot;javascript:void(0)&quot;
+                    [routerLink]&#x3D;&quot;[&#x27;/products/&#x27;, item.product.Id]&quot;&gt;{{item.product.Name}}&lt;/a&gt;
+                  &lt;div class&#x3D;&quot;d-flex py-2 align-items-center justify-content-between&quot;&gt;
+                    &lt;small class&#x3D;&quot;font-weight-bold&quot;&gt;{{item.chargeType}}&lt;/small&gt;
+                    &lt;small class&#x3D;&quot;font-weight-bold&quot;&gt;
+                      &lt;apt-price [record]&#x3D;&quot;item.product&quot;&gt;&lt;/apt-price&gt;
+                    &lt;/small&gt;
+                  &lt;/div&gt;
+                  &lt;div class&#x3D;&quot;d-flex align-items-center justify-content-end&quot;&gt;
+                    &lt;label [for]&#x3D;&quot;item.product.Name + i&quot; class&#x3D;&quot;mr-2 mb-0&quot;&gt;{{ &quot;COMMON.QTY&quot; | translate }}&lt;/label&gt;
+                    &lt;input class&#x3D;&quot;form-control mr-2 w-25&quot; [id]&#x3D;&quot;item.product.Name + i&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;1&quot;
+                      [(ngModel)]&#x3D;&quot;quantityControlValues[item.product.Name + i]&quot; placeholder&#x3D;&quot;1&quot;&gt;
+                    &lt;div class&#x3D;&quot;input-group-append&quot;&gt;
+                      &lt;button *ngIf&#x3D;&quot;!showProductConfig&quot; class&#x3D;&quot;btn btn-outline-primary&quot;
+                        (click)&#x3D;&quot;handleAddToCart(warning, item.product, quantityControlValues[item.product.Name + i], item.product.Name + i)&quot;
+                        [ladda]&#x3D;&quot;loading[item.product.Name + i]&quot;
+                        data-style&#x3D;&quot;zoom-in&quot;&gt;{{ &quot;COMMON.ADD_TO_CART&quot; | translate }}&lt;/button&gt;
+                      &lt;button *ngIf&#x3D;&quot;showProductConfig&quot; class&#x3D;&quot;btn btn-outline-primary&quot;
+                        [disabled]&#x3D;&quot;isItemSelected(item.product)&quot;
+                        (click)&#x3D;&quot;handleAddToConfiguration(item.product, quantityControlValues[item.product.Name + i], item.product.Name + i, warning.targetBundleNumber)&quot;
+                        [ladda]&#x3D;&quot;loading[item.product.Name + i]&quot;
+                        data-style&#x3D;&quot;zoom-in&quot;&gt;{{ &quot;COMMON.ADD&quot; | translate }}&lt;/button&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/ng-container&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;card-footer bg-white border-0 py-2&quot;&gt;
+            &lt;/div&gt;
+          &lt;/ng-container&gt;
+          &lt;!-- Exclusion --&gt;
+          &lt;ng-container *ngSwitchCase&#x3D;&quot;&#x27;Exclusion&#x27;&quot;&gt;
+            &lt;div class&#x3D;&quot;card-body bg-white py-2 flex-column&quot; [class.border-top]&#x3D;&quot;i &gt; 0&quot;&gt;
+              &lt;ng-container *ngIf&#x3D;&quot;warning.messageHtml !&#x3D;&#x3D; null;&quot;&gt;
+                &lt;span [innerHtml]&#x3D;&quot;warning.messageHtml&quot;&gt;&lt;/span&gt;
+              &lt;/ng-container&gt;
+              &lt;ng-container *ngFor&#x3D;&quot;let item of warning.actionItems&quot;&gt;
+                &lt;div class&#x3D;&quot;py-3&quot;&gt;
+                  &lt;a class&#x3D;&quot;pt-2&quot; href&#x3D;&quot;javascript:void(0)&quot;
+                    [routerLink]&#x3D;&quot;[&#x27;/products/&#x27;, item.product.Id]&quot;&gt;{{item.product.Name}}&lt;/a&gt;
+                  &lt;div class&#x3D;&quot;d-flex py-2 align-items-center justify-content-between&quot;&gt;
+                    &lt;small class&#x3D;&quot;font-weight-bold&quot;&gt;{{item.chargeType}}&lt;/small&gt;
+                    &lt;small class&#x3D;&quot;font-weight-bold&quot;&gt;
+                      &lt;apt-price [record]&#x3D;&quot;item.product&quot;&gt;&lt;/apt-price&gt;
+                    &lt;/small&gt;
+                  &lt;/div&gt;
+                  &lt;div class&#x3D;&quot;d-flex align-items-center justify-content-end&quot;&gt;
+                    &lt;label [for]&#x3D;&quot;item.product.Name + i&quot; class&#x3D;&quot;mr-2 mb-0&quot;&gt;{{ &quot;COMMON.QTY&quot; | translate }}&lt;/label&gt;
+                    &lt;input class&#x3D;&quot;form-control mr-2 w-25&quot; [id]&#x3D;&quot;item.product.Name + i&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;1&quot;
+                      [(ngModel)]&#x3D;&quot;quantityControlValues[item.product.Name + i]&quot; placeholder&#x3D;&quot;1&quot;&gt;
+                    &lt;div class&#x3D;&quot;input-group-append&quot;&gt;
+                      &lt;button *ngIf&#x3D;&quot;!showProductConfig&quot; class&#x3D;&quot;btn btn-outline-danger&quot;
+                        (click)&#x3D;&quot;handleDeleteFromCart(warning, item.product?.Name + i)&quot;
+                        [ladda]&#x3D;&quot;loading[item.product?.Name + i]&quot;
+                        data-style&#x3D;&quot;zoom-in&quot;&gt;{{ &quot;CONSTRAINT_SIDE_MENU.REMOVE_FROM_CART&quot; | translate }}&lt;/button&gt;
+                      &lt;button *ngIf&#x3D;&quot;showProductConfig&quot; class&#x3D;&quot;btn btn-outline-danger&quot;
+                        [disabled]&#x3D;&quot;!isItemSelected(item.product, &#x27;remove&#x27;)&quot;
+                        (click)&#x3D;&quot;handleRemoveFromBundle(item.product, warning.triggeringProducts[0], item.product?.Name + i)&quot;
+                        [ladda]&#x3D;&quot;loading[item.product?.Name + i]&quot;
+                        data-style&#x3D;&quot;zoom-in&quot;&gt;{{ &quot;COMMON.REMOVE&quot; | translate }}&lt;/button&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/ng-container&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;card-footer bg-white border-0 py-2&quot;&gt;
+            &lt;/div&gt;
+            &lt;!-- &lt;div class&#x3D;&quot;card-footer bg-white border-0 py-2 d-flex justify-content-end&quot;&gt;
+              &lt;button *ngIf&#x3D;&quot;!showProductConfig&quot; class&#x3D;&quot;btn btn-outline-danger&quot;
+                (click)&#x3D;&quot;handleDeleteFromCart(warning, warning.actionItems[0].product?.Name + i)&quot;
+                [ladda]&#x3D;&quot;loading[warning.actionItems[0].product?.Name + i]&quot;
+                data-style&#x3D;&quot;zoom-in&quot;&gt;{{ &quot;CONSTRAINT_SIDE_MENU.REMOVE_FROM_CART&quot; | translate }}&lt;/button&gt;
+              &lt;button *ngIf&#x3D;&quot;showProductConfig&quot; class&#x3D;&quot;btn btn-outline-danger&quot;
+                [disabled]&#x3D;&quot;isItemSelected(warning.actionItems[0].product)&quot;
+                (click)&#x3D;&quot;handleRemoveFromBundle(warning.actionItems[0].product, warning.triggeringProducts[0], warning.actionItems[0].product?.Name + i)&quot;
+                [ladda]&#x3D;&quot;loading[warning.actionItems[0].product?.Name + i]&quot;
+                data-style&#x3D;&quot;zoom-in&quot;&gt;{{ &quot;COMMON.REMOVE&quot; | translate }}&lt;/button&gt;
+            &lt;/div&gt; --&gt;
+          &lt;/ng-container&gt;
+          &lt;!-- Validation --&gt;
+          &lt;ng-container *ngSwitchCase&#x3D;&quot;&#x27;Validation&#x27;&quot;&gt;
+            &lt;div class&#x3D;&quot;card-body bg-white py-2 d-flex-column&quot; [class.border-top]&#x3D;&quot;i &gt; 0&quot;&gt;
+              &lt;ng-container *ngIf&#x3D;&quot;warning.messageHtml !&#x3D;&#x3D; null;&quot;&gt;
+                &lt;div class&#x3D;&quot;mb-2&quot; [innerHtml]&#x3D;&quot;warning.messageHtml&quot;&gt;&lt;/div&gt;
+              &lt;/ng-container&gt;
+            &lt;/div&gt;
+          &lt;/ng-container&gt;
+          &lt;!-- Recommendation --&gt;
+          &lt;ng-container *ngSwitchCase&#x3D;&quot;&#x27;Recommendation&#x27;&quot;&gt;
+            &lt;div class&#x3D;&quot;card-body bg-white py-2 d-flex-column&quot; [class.border-top]&#x3D;&quot;i &gt; 0&quot;&gt;
+              &lt;ng-container *ngIf&#x3D;&quot;warning.messageHtml !&#x3D;&#x3D; null;&quot;&gt;
+                &lt;div class&#x3D;&quot;mb-2&quot; [innerHtml]&#x3D;&quot;warning.messageHtml&quot;&gt;&lt;/div&gt;
+              &lt;/ng-container&gt;
+            &lt;/div&gt;
+          &lt;/ng-container&gt;
+          &lt;!-- Replacement --&gt;
+          &lt;ng-container *ngSwitchCase&#x3D;&quot;&#x27;Replacement&#x27;&quot;&gt;
+            &lt;div class&#x3D;&quot;card-body bg-white py-2 d-flex-column&quot; [class.border-top]&#x3D;&quot;i &gt; 0&quot;&gt;
+              &lt;ng-container *ngIf&#x3D;&quot;warning.messageHtml !&#x3D;&#x3D; null;&quot;&gt;
+                &lt;div class&#x3D;&quot;mb-2&quot; [innerHtml]&#x3D;&quot;warning.messageHtml&quot;&gt;&lt;/div&gt;
+              &lt;/ng-container&gt;
+            &lt;/div&gt;
+          &lt;/ng-container&gt;
+        &lt;/ng-container&gt;
+      &lt;/ng-container&gt;
+    &lt;/div&gt;
+    &lt;!-- Info Messages --&gt;
+    &lt;!-- &lt;div *ngIf&#x3D;&quot;ruleDetailGroups.info.length &gt; 0&quot; class&#x3D;&quot;card border-0&quot;&gt;
+      &lt;div class&#x3D;&quot;card-header border-bottom-0 border-top&quot;&gt;
+        &lt;i class&#x3D;&quot;fas fa-info-circle&quot;&gt;&lt;/i&gt; &lt;span&gt; {{ruleDetailGroups.info.length}}&lt;/span&gt; {{ruleDetailGroups.info.length &gt; 1 ? &#x27;Information Messages&#x27; : &#x27;Information Message&#x27;}}
+      &lt;/div&gt;
+      &lt;ng-container *ngFor&#x3D;&quot;let info of data.infoMessages; let i &#x3D; index&quot;&gt;
+        &lt;div class&#x3D;&quot;card-body bg-white py-2&quot; [class.border-top]&#x3D;&quot;i &gt; 0&quot;&gt;
+          &lt;strong&gt;{{info.includedProduct.name}}&lt;/strong&gt; is included with product &lt;a href&#x3D;&quot;javascript:void(0)&quot;&gt;{{info.product.name}}&lt;/a&gt;.
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;card-footer bg-white border-0 py-2&quot;&gt;
+          &lt;div class&#x3D;&quot;d-flex justify-content-end&quot;&gt;
+            &lt;button class&#x3D;&quot;btn btn-outline-danger&quot;&gt;Delete All&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/ng-container&gt;
+    &lt;/div&gt; --&gt;
+    &lt;!-- Success Messages --&gt;
+    &lt;div *ngIf&#x3D;&quot;ruleDetailGroups.success.length &gt; 0&quot; class&#x3D;&quot;card border-0&quot;&gt;
+      &lt;div class&#x3D;&quot;card-header border-bottom-0 border-top&quot;&gt;
+        &lt;i class&#x3D;&quot;fas fa-info-circle&quot;&gt;&lt;/i&gt; &lt;span&gt;
+          {{ (ruleDetailGroups.success.length &gt; 1 ? &quot;CONSTRAINT_SIDE_MENU.NUM_OF_INFO_MESSAGES.PLURAL&quot; : &quot;CONSTRAINT_SIDE_MENU.NUM_OF_INFO_MESSAGES.ONE&quot;) | translate: {amount: ruleDetailGroups.success.length} }}&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;ng-container *ngFor&#x3D;&quot;let success of ruleDetailGroups.success; let i &#x3D; index&quot;&gt;
+        &lt;div class&#x3D;&quot;card-body bg-white py-2&quot; [class.border-top]&#x3D;&quot;i &gt; 0&quot;&gt;
+          &lt;ng-container *ngIf&#x3D;&quot;success.message !&#x3D;&#x3D; null;&quot;&gt;
+            &lt;span [innerHtml]&#x3D;&quot;success.message&quot;&gt;&lt;/span&gt;
+          &lt;/ng-container&gt;
+        &lt;/div&gt;
+      &lt;/ng-container&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/ng-container&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./constraint-rule-sidebar.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.modal.show {
+  div.constraintRuleSidebar.modal-dialog {
+    right: -1px;
+  }
+}
+
+.modal {
+  div.constraintRuleSidebar.modal-dialog {
+    position: absolute;
+    transition: right 300ms;
+    margin: -1px 0px 0px 0px;
+    right: -20rem;
+    width: 20rem;
+    .modal-content{
+        height: 100vh;
+        overflow-y: auto;
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="ruleDetailGroups$ | async as ruleDetailGroups">  <div class="modal-header py-2 border-0">    <h5 class="modal-title pull-left">{{ "CONSTRAINT_SIDE_MENU.VALIDATION_MESSAGES" | translate }}</h5>    <button type="button" class="close pull-left" aria-label="Close">      <span aria-hidden="true" (click)="bsModalRef.hide()">&times;</span>    </button>  </div>  <div class="modal-body p-0">    <!-- Errors -->    <div *ngIf="ruleDetailGroups.errors.length > 0" class="card border-0">      <div class="card-header border-bottom-0 border-top">        <i class="fas fa-exclamation-circle text-danger"></i> <span>          {{ (ruleDetailGroups.errors.length > 1 ? "CONSTRAINT_SIDE_MENU.NUM_OF_ERRORS.PLURAL" : "CONSTRAINT_SIDE_MENU.NUM_OF_ERRORS.ONE") | translate: {amount: ruleDetailGroups.errors.length} }}        </span>      </div>      <ng-container *ngFor="let error of ruleDetailGroups.errors; let i = index">        <ng-container [ngSwitch]="error.actionType">          <!-- Inclusions -->          <ng-container *ngSwitchCase="\'Inclusion\'">            <div class="card-body bg-white py-2 flex-column" [class.border-top]="i > 0">              <ng-container *ngIf="error.messageHtml !== null;">                <div class="mb-2" [innerHtml]="error.messageHtml"></div>              </ng-container>              <ng-container *ngFor="let item of error.actionItems">                <div class="py-3">                  <a class="pt-2" href="javascript:void(0)"                    [routerLink]="[\'/products/\', item.product.Id]">{{item.product.Name}}</a>                  <div class="d-flex py-2 align-items-center justify-content-between">                    <small class="font-weight-bold">{{item.chargeType}}</small>                    <small class="font-weight-bold">                      <apt-price [record]="item.product"></apt-price>                    </small>                  </div>                  <div class="d-flex align-items-center justify-content-end">                    <label [for]="item.product.Name + i" class="mr-2 mb-0">{{ "COMMON.QTY" | translate }}</label>                    <input class="form-control mr-2 w-25" [id]="item.product.Name + i" type="number" min="1"                      [(ngModel)]="quantityControlValues[item.product.Name + i]" placeholder="1">                    <div class="input-group-append">                      <button *ngIf="!showProductConfig" class="btn btn-outline-primary"                        (click)="handleAddToCart(error, item.product, quantityControlValues[item.product.Name + i], item.product.Name + i)"                        [ladda]="loading[item.product.Name + i]"                        data-style="zoom-in">{{ "COMMON.ADD_TO_CART" | translate }}</button>                      <button *ngIf="showProductConfig" class="btn btn-outline-primary"                        [disabled]="isItemSelected(item.product)"                        (click)="handleAddToConfiguration(item.product, quantityControlValues[item.product.Name + i], item.product.Name + i, error.targetBundleNumber)"                        [ladda]="loading[item.product.Name + i]"                        data-style="zoom-in">{{ "COMMON.ADD" | translate }}</button>                    </div>                  </div>                </div>              </ng-container>            </div>            <div class="card-footer bg-white border-0 py-2">            </div>          </ng-container>          <!-- Exclusions -->          <ng-container *ngSwitchCase="\'Exclusion\'">            <div class="card-body bg-white py-2 flex-column" [class.border-top]="i > 0">              <ng-container *ngIf="error.messageHtml !== null;">                <span [innerHtml]="error.messageHtml"></span>              </ng-container>              <ng-container *ngFor="let item of error.actionItems">                <div class="py-3">                  <a class="pt-2" href="javascript:void(0)"                    [routerLink]="[\'/products/\', item.product.Id]">{{item.product.Name}}</a>                  <div class="d-flex py-2 align-items-center justify-content-between">                    <small class="font-weight-bold">{{item.chargeType}}</small>                    <small class="font-weight-bold">                      <apt-price [record]="item.product"></apt-price>                    </small>                  </div>                  <div class="d-flex align-items-center justify-content-end">                    <label [for]="item.product.Name + i" class="mr-2 mb-0">{{ "COMMON.QTY" | translate }}</label>                    <input class="form-control mr-2 w-25" [id]="item.product.Name + i" type="number" min="1"                      [(ngModel)]="quantityControlValues[item.product.Name + i]" placeholder="1">                    <div class="input-group-append">                      <button *ngIf="!showProductConfig" class="btn btn-outline-danger"                        (click)="handleDeleteFromCart(error, item.product?.Name + i)"                        [ladda]="loading[item.product?.Name + i]"                        data-style="zoom-in">{{ "CONSTRAINT_SIDE_MENU.REMOVE_FROM_CART" | translate }}</button>                      <button *ngIf="showProductConfig" class="btn btn-outline-danger"                        [disabled]="!isItemSelected(item.product, \'remove\')"                        (click)="handleRemoveFromBundle(item.product, error.triggeringProducts[0], item.product?.Name + i)"                        [ladda]="loading[item.product?.Name + i]"                        data-style="zoom-in">{{ "COMMON.REMOVE" | translate }}</button>                    </div>                  </div>                </div>              </ng-container>            </div>            <!-- <div class="card-footer bg-white border-0 py-2 d-flex justify-content-end">              <button *ngIf="!showProductConfig" class="btn btn-outline-danger" (click)="handleDeleteFromCart(error, error.actionItems[0].product?.Name + i)" [ladda]="loading[error.actionItems[0].product?.Name + i]" data-style="zoom-in">{{ "CONSTRAINT_SIDE_MENU.REMOVE_FROM_CART" | translate }}</button>              <button *ngIf="showProductConfig" class="btn btn-outline-danger" [disabled]="isItemSelected(error.actionItems[0].product)" (click)="handleRemoveFromBundle(error.actionItems[0].product, error.triggeringProducts[0], error.actionItems[0].product?.Name + i)" [ladda]="loading[error.actionItems[0].product?.Name + i]" data-style="zoom-in">{{ "COMMON.REMOVE" | translate }}</button>            </div> -->            <div class="card-footer bg-white border-0 py-2">            </div>          </ng-container>          <!-- Validation -->          <ng-container *ngSwitchCase="\'Validation\'">            <div class="card-body bg-white py-2 d-flex-column" [class.border-top]="i > 0">              <ng-container *ngIf="error.messageHtml !== null;">                <div class="mb-2" [innerHtml]="error.messageHtml"></div>              </ng-container>            </div>          </ng-container>          <!-- Recommendation -->          <ng-container *ngSwitchCase="\'Recommendation\'">            <div class="card-body bg-white py-2 d-flex-column" [class.border-top]="i > 0">              <ng-container *ngIf="error.messageHtml !== null;">                <div class="mb-2" [innerHtml]="error.messageHtml"></div>              </ng-container>            </div>          </ng-container>          <!-- Replacement -->          <ng-container *ngSwitchCase="\'Replacement\'">            <div class="card-body bg-white py-2 d-flex-column" [class.border-top]="i > 0">              <ng-container *ngIf="error.messageHtml !== null;">                <div class="mb-2" [innerHtml]="error.messageHtml"></div>              </ng-container>            </div>          </ng-container>        </ng-container>      </ng-container>    </div>    <!-- Warnings -->    <div *ngIf="ruleDetailGroups.warnings.length > 0" class="card border-0">      <div class="card-header border-bottom-0 border-top">        <i class="fas fa-exclamation-triangle text-warning"></i> <span>          {{ (ruleDetailGroups.warnings.length > 1 ? "CONSTRAINT_SIDE_MENU.NUM_OF_WARNINGS.PLURAL" : "CONSTRAINT_SIDE_MENU.NUM_OF_WARNINGS.ONE") | translate: {amount: ruleDetailGroups.warnings.length} }}</span>      </div>      <ng-container *ngFor="let warning of ruleDetailGroups.warnings; let i = index">        <ng-container [ngSwitch]="warning.actionType">          <!-- Inclusion -->          <ng-container *ngSwitchCase="\'Inclusion\'">            <div class="card-body bg-white py-2 flex-column" [class.border-top]="i > 0">              <ng-container *ngIf="warning.messageHtml !== null;">                <div class="mb-2" [innerHtml]="warning.messageHtml"></div>              </ng-container>              <ng-container *ngFor="let item of warning.actionItems">                <div class="py-3">                  <a class="pt-2" href="javascript:void(0)"                    [routerLink]="[\'/products/\', item.product.Id]">{{item.product.Name}}</a>                  <div class="d-flex py-2 align-items-center justify-content-between">                    <small class="font-weight-bold">{{item.chargeType}}</small>                    <small class="font-weight-bold">                      <apt-price [record]="item.product"></apt-price>                    </small>                  </div>                  <div class="d-flex align-items-center justify-content-end">                    <label [for]="item.product.Name + i" class="mr-2 mb-0">{{ "COMMON.QTY" | translate }}</label>                    <input class="form-control mr-2 w-25" [id]="item.product.Name + i" type="number" min="1"                      [(ngModel)]="quantityControlValues[item.product.Name + i]" placeholder="1">                    <div class="input-group-append">                      <button *ngIf="!showProductConfig" class="btn btn-outline-primary"                        (click)="handleAddToCart(warning, item.product, quantityControlValues[item.product.Name + i], item.product.Name + i)"                        [ladda]="loading[item.product.Name + i]"                        data-style="zoom-in">{{ "COMMON.ADD_TO_CART" | translate }}</button>                      <button *ngIf="showProductConfig" class="btn btn-outline-primary"                        [disabled]="isItemSelected(item.product)"                        (click)="handleAddToConfiguration(item.product, quantityControlValues[item.product.Name + i], item.product.Name + i, warning.targetBundleNumber)"                        [ladda]="loading[item.product.Name + i]"                        data-style="zoom-in">{{ "COMMON.ADD" | translate }}</button>                    </div>                  </div>                </div>              </ng-container>            </div>            <div class="card-footer bg-white border-0 py-2">            </div>          </ng-container>          <!-- Exclusion -->          <ng-container *ngSwitchCase="\'Exclusion\'">            <div class="card-body bg-white py-2 flex-column" [class.border-top]="i > 0">              <ng-container *ngIf="warning.messageHtml !== null;">                <span [innerHtml]="warning.messageHtml"></span>              </ng-container>              <ng-container *ngFor="let item of warning.actionItems">                <div class="py-3">                  <a class="pt-2" href="javascript:void(0)"                    [routerLink]="[\'/products/\', item.product.Id]">{{item.product.Name}}</a>                  <div class="d-flex py-2 align-items-center justify-content-between">                    <small class="font-weight-bold">{{item.chargeType}}</small>                    <small class="font-weight-bold">                      <apt-price [record]="item.product"></apt-price>                    </small>                  </div>                  <div class="d-flex align-items-center justify-content-end">                    <label [for]="item.product.Name + i" class="mr-2 mb-0">{{ "COMMON.QTY" | translate }}</label>                    <input class="form-control mr-2 w-25" [id]="item.product.Name + i" type="number" min="1"                      [(ngModel)]="quantityControlValues[item.product.Name + i]" placeholder="1">                    <div class="input-group-append">                      <button *ngIf="!showProductConfig" class="btn btn-outline-danger"                        (click)="handleDeleteFromCart(warning, item.product?.Name + i)"                        [ladda]="loading[item.product?.Name + i]"                        data-style="zoom-in">{{ "CONSTRAINT_SIDE_MENU.REMOVE_FROM_CART" | translate }}</button>                      <button *ngIf="showProductConfig" class="btn btn-outline-danger"                        [disabled]="!isItemSelected(item.product, \'remove\')"                        (click)="handleRemoveFromBundle(item.product, warning.triggeringProducts[0], item.product?.Name + i)"                        [ladda]="loading[item.product?.Name + i]"                        data-style="zoom-in">{{ "COMMON.REMOVE" | translate }}</button>                    </div>                  </div>                </div>              </ng-container>            </div>            <div class="card-footer bg-white border-0 py-2">            </div>            <!-- <div class="card-footer bg-white border-0 py-2 d-flex justify-content-end">              <button *ngIf="!showProductConfig" class="btn btn-outline-danger"                (click)="handleDeleteFromCart(warning, warning.actionItems[0].product?.Name + i)"                [ladda]="loading[warning.actionItems[0].product?.Name + i]"                data-style="zoom-in">{{ "CONSTRAINT_SIDE_MENU.REMOVE_FROM_CART" | translate }}</button>              <button *ngIf="showProductConfig" class="btn btn-outline-danger"                [disabled]="isItemSelected(warning.actionItems[0].product)"                (click)="handleRemoveFromBundle(warning.actionItems[0].product, warning.triggeringProducts[0], warning.actionItems[0].product?.Name + i)"                [ladda]="loading[warning.actionItems[0].product?.Name + i]"                data-style="zoom-in">{{ "COMMON.REMOVE" | translate }}</button>            </div> -->          </ng-container>          <!-- Validation -->          <ng-container *ngSwitchCase="\'Validation\'">            <div class="card-body bg-white py-2 d-flex-column" [class.border-top]="i > 0">              <ng-container *ngIf="warning.messageHtml !== null;">                <div class="mb-2" [innerHtml]="warning.messageHtml"></div>              </ng-container>            </div>          </ng-container>          <!-- Recommendation -->          <ng-container *ngSwitchCase="\'Recommendation\'">            <div class="card-body bg-white py-2 d-flex-column" [class.border-top]="i > 0">              <ng-container *ngIf="warning.messageHtml !== null;">                <div class="mb-2" [innerHtml]="warning.messageHtml"></div>              </ng-container>            </div>          </ng-container>          <!-- Replacement -->          <ng-container *ngSwitchCase="\'Replacement\'">            <div class="card-body bg-white py-2 d-flex-column" [class.border-top]="i > 0">              <ng-container *ngIf="warning.messageHtml !== null;">                <div class="mb-2" [innerHtml]="warning.messageHtml"></div>              </ng-container>            </div>          </ng-container>        </ng-container>      </ng-container>    </div>    <!-- Info Messages -->    <!-- <div *ngIf="ruleDetailGroups.info.length > 0" class="card border-0">      <div class="card-header border-bottom-0 border-top">        <i class="fas fa-info-circle"></i> <span> {{ruleDetailGroups.info.length}}</span> {{ruleDetailGroups.info.length > 1 ? \'Information Messages\' : \'Information Message\'}}      </div>      <ng-container *ngFor="let info of data.infoMessages; let i = index">        <div class="card-body bg-white py-2" [class.border-top]="i > 0">          <strong>{{info.includedProduct.name}}</strong> is included with product <a href="javascript:void(0)">{{info.product.name}}</a>.        </div>        <div class="card-footer bg-white border-0 py-2">          <div class="d-flex justify-content-end">            <button class="btn btn-outline-danger">Delete All</button>          </div>        </div>      </ng-container>    </div> -->    <!-- Success Messages -->    <div *ngIf="ruleDetailGroups.success.length > 0" class="card border-0">      <div class="card-header border-bottom-0 border-top">        <i class="fas fa-info-circle"></i> <span>          {{ (ruleDetailGroups.success.length > 1 ? "CONSTRAINT_SIDE_MENU.NUM_OF_INFO_MESSAGES.PLURAL" : "CONSTRAINT_SIDE_MENU.NUM_OF_INFO_MESSAGES.ONE") | translate: {amount: ruleDetailGroups.success.length} }}</span>      </div>      <ng-container *ngFor="let success of ruleDetailGroups.success; let i = index">        <div class="card-body bg-white py-2" [class.border-top]="i > 0">          <ng-container *ngIf="success.message !== null;">            <span [innerHtml]="success.message"></span>          </ng-container>        </div>      </ng-container>    </div>  </div></ng-container></div>'
+    var COMPONENTS = [{'name': 'AdditionalInformationComponent', 'selector': 'apt-additional-information'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AlertComponent', 'selector': 'apt-alert'},{'name': 'AssetDropdownButtonComponent', 'selector': 'apt-asset-dropdown-button'},{'name': 'AssetListComponent', 'selector': 'apt-asset-list'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'CategoryFilterComponent', 'selector': 'apt-category-filter'},{'name': 'ChartComponent', 'selector': 'apt-chart'},{'name': 'ConstraintRuleAlertComponent', 'selector': 'apt-constraint-rule-alert'},{'name': 'ConstraintRuleSidebarComponent', 'selector': 'apt-constraint-rule-sidebar'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'DataFilterComponent', 'selector': 'apt-data-filter'},{'name': 'DotsComponent', 'selector': 'apt-dots'},{'name': 'FavoriteModalComponent', 'selector': 'apt-favorite-modal'},{'name': 'FilesComponent', 'selector': 'apt-files'},{'name': 'GenerateDocumentComponent', 'selector': 'apt-generate-document'},{'name': 'InputDateComponent', 'selector': 'apt-date-range-input'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputSelectComponent', 'selector': 'apt-input-select'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'LineitemCardComponent', 'selector': 'apt-lineitem-card'},{'name': 'LineItemMenuComponent', 'selector': 'apt-line-item-menu'},{'name': 'LineItemTableRowComponent', 'selector': 'apt-line-item-table-row'},{'name': 'LoginFormComponent', 'selector': 'apt-login-form'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'OutputFieldComponent', 'selector': 'apt-output-field'},{'name': 'PaymentComponent', 'selector': 'apt-payment'},{'name': 'PaymentIFrameComponent', 'selector': 'apt-payment-iframe'},{'name': 'PresentDocumentComponent', 'selector': 'apt-present-document'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'PriceModalComponent', 'selector': 'apt-price-modal'},{'name': 'PriceSummaryComponent', 'selector': 'apt-price-summary'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductCompareComponent', 'selector': 'apt-product-compare'},{'name': 'ProductConfigurationComponent', 'selector': 'apt-product-configuration'},{'name': 'ProductConfigurationSummaryComponent', 'selector': 'apt-product-configuration-summary'},{'name': 'ProductDrawerComponent', 'selector': 'apt-product-drawer'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'},{'name': 'ProductSearchComponent', 'selector': 'apt-product-search'},{'name': 'ProductTypeFilterComponent', 'selector': 'apt-product-type-filter'},{'name': 'PromotionComponent', 'selector': 'apt-promotion'},{'name': 'PromotionModalComponent', 'selector': 'apt-pr-modal'},{'name': 'RevalidateCartModalComponent', 'selector': 'apt-revalidate-cart-modal'},{'name': 'SelectAllComponent', 'selector': 'apt-select-all'},{'name': 'SpinnerComponent', 'selector': 'apt-spinner'},{'name': 'TableComponent', 'selector': 'apt-table'},{'name': 'TaxPopHoverComponent', 'selector': 'apt-tax-pophover'}];
+    var DIRECTIVES = [{'name': 'AutoFocusDirective', 'selector': '[aptAutoFocus]'}];
+    var ACTUAL_COMPONENT = {'name': 'ConstraintRuleSidebarComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ConstraintRuleSidebarComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

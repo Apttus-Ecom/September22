@@ -1,0 +1,1159 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Conga Digital Commerce May &#x27;22</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Conga Digital Commerce May &#x27;22</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  OutputFieldComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>projects/congacommerce/elements/src/lib/output-field/output-field.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Output field component is used to create a label value paired output that can be displayed as an editable field with an optional popover that shows related information about the field.</p>
+<h3>Usage</h3>
+
+<div><pre class="line-numbers"><code class="language-typescript">import { OutputFieldModule } from &#39;&#64;congacommerce/elements&#39;;
+
+&#64;ngModule({
+imports: [OutputFieldModule, ...]
+})</code></pre></div><p>&lt;apt-output-field
+             [record]=&quot;quote&quot;
+             [field]=&quot;CreatedDate&quot;
+             layout=&quot;inline&quot;
+             [editable]=&quot;false&quot;</p>
+<blockquote>
+</apt-output-field>
+</blockquote>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>apt-output-field</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./output-field.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./output-field.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getPopoverFields" >getPopoverFields</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#dateFormat" >dateFormat</a>
+                            </li>
+                            <li>
+                                <a href="#default" >default</a>
+                            </li>
+                            <li>
+                                <a href="#displayValue" >displayValue</a>
+                            </li>
+                            <li>
+                                <a href="#editable" >editable</a>
+                            </li>
+                            <li>
+                                <a href="#field" >field</a>
+                            </li>
+                            <li>
+                                <a href="#label" >label</a>
+                            </li>
+                            <li>
+                                <a href="#labelClass" >labelClass</a>
+                            </li>
+                            <li>
+                                <a href="#labelOnly" >labelOnly</a>
+                            </li>
+                            <li>
+                                <a href="#layout" >layout</a>
+                            </li>
+                            <li>
+                                <a href="#lookupOptions" >lookupOptions</a>
+                            </li>
+                            <li>
+                                <a href="#maxCharacterLength" >maxCharacterLength</a>
+                            </li>
+                            <li>
+                                <a href="#record" >record</a>
+                            </li>
+                            <li>
+                                <a href="#required" >required</a>
+                            </li>
+                            <li>
+                                <a href="#showQuickView" >showQuickView</a>
+                            </li>
+                            <li>
+                                <a href="#valueClass" >valueClass</a>
+                            </li>
+                            <li>
+                                <a href="#valueOnly" >valueOnly</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#onChange" >onChange</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(aobjectService: AObjectService, elRef: <a href="https://angular.io/api/core/ElementRef" target="_blank">ElementRef</a>, metadataService: MetadataService)</code>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>aobjectService</td>
+                                                  
+                                                        <td>
+                                                                    <code>AObjectService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>elRef</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>metadataService</td>
+                                                  
+                                                        <td>
+                                                                    <code>MetadataService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dateFormat"></a>
+                        <b>dateFormat</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Format option passed into the date pipe used for date fields</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="default"></a>
+                        <b>default</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Use default value of value is undefined</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="displayValue"></a>
+                        <b>displayValue</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>the field property to use to render the value</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="editable"></a>
+                        <b>editable</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Flag to set this field as editable.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="field"></a>
+                        <b>field</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>field property of the model class</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="label"></a>
+                        <b>label</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Label string override</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="labelClass"></a>
+                        <b>labelClass</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>String of bootstrap classes for additional styling on output field label</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="labelOnly"></a>
+                        <b>labelOnly</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Flag to display only field label</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="layout"></a>
+                        <b>layout</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>&quot;stacked&quot; | &quot;inline&quot;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;stacked&#x27;</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The layout for the displayed label and value</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="lookupOptions"></a>
+                        <b>lookupOptions</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>LookupOptions</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Object to set primary text field, secondary text field, thumbnail field, conditions, filters etc</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="maxCharacterLength"></a>
+                        <b>maxCharacterLength</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Maximum number of characters to show on string type fields.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="record"></a>
+                        <b>record</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>AObject</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>An instance of an object</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="required"></a>
+                        <b>required</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Flag to set this input as required.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="showQuickView"></a>
+                        <b>showQuickView</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Flag to show the quick view lookup popover for this field.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="valueClass"></a>
+                        <b>valueClass</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>String of bootstrap classes for additional styling on output field value</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="valueOnly"></a>
+                        <b>valueOnly</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onChange"></a>
+                        <b>onChange</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPopoverFields"></a>
+                    <span class="name">
+                        <span ><b>getPopoverFields</b></span>
+                        <a href="#getPopoverFields"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getPopoverFields(instance: AObject)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>instance</td>
+                                    <td>
+                                            <code>AObject</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Array&lt;FieldLabel&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;span [class.align-items-baseline]&#x3D;&quot;layout &#x3D;&#x3D;&#x3D; &#x27;inline&#x27;&quot; [class.inline]&#x3D;&quot;layout &#x3D;&#x3D;&#x3D; &#x27;inline&#x27;&quot; [class.d-flex]&#x3D;&quot;layout &#x3D;&#x3D;&#x3D; &#x27;inline&#x27;&quot; [class.label-only]&#x3D;&quot;labelOnly&quot; *ngIf&#x3D;&quot;view$ | async as view&quot;&gt;
+  
+  
+    &lt;dt [ngClass]&#x3D;&quot;labelClass&quot; *ngIf&#x3D;&quot;!valueOnly&quot;&gt;
+      {{view?.label}}
+    &lt;/dt&gt;
+    &lt;dd *ngIf&#x3D;&quot;!labelOnly&quot; class&#x3D;&quot;m-0 py-2 position-relative&quot;  [class.px-1]&#x3D;&quot;layout &#x3D;&#x3D;&#x3D; &#x27;inline&#x27;&quot; [class.py-1]&#x3D;&quot;layout &#x3D;&#x3D;&#x3D; &#x27;stacked&#x27;&quot; [class.empty]&#x3D;&quot;!view.value&quot; [ngClass]&#x3D;&quot;valueClass&quot; [ngSwitch]&#x3D;&quot;true&quot;&gt;
+      &lt;ng-container *ngSwitchCase&#x3D;&quot;view.recordMetadata?.type &#x3D;&#x3D;&#x3D; &#x27;date&#x27; || view.recordMetadata?.type &#x3D;&#x3D;&#x3D; &#x27;datetime&#x27;&quot;&gt;{{view.value | date:getDateFormat(view.metadata)}}&lt;/ng-container&gt;
+  
+      &lt;ng-container *ngSwitchCase&#x3D;&quot;view?.recordMetadata?.type &#x3D;&#x3D;&#x3D; &#x27;currency&#x27;&quot;&gt;{{view?.value | localCurrency | async}}&lt;/ng-container&gt;
+  
+      &lt;ng-container *ngSwitchCase&#x3D;&quot;view?.recordMetadata?.type &#x3D;&#x3D;&#x3D; &#x27;address&#x27;&quot;&gt;
+        &lt;apt-address [value]&#x3D;&quot;view?.value&quot; [readonly]&#x3D;&quot;true&quot;&gt;&lt;/apt-address&gt;
+      &lt;/ng-container&gt;
+  
+      &lt;ng-container *ngSwitchCase&#x3D;&quot;view?.recordMetadata?.type &#x3D;&#x3D;&#x3D; &#x27;double&#x27;&quot;&gt;
+        {{view?.value | number:&#x27;1.0-&#x27; + view.metadata.scale}}
+      &lt;/ng-container&gt;
+
+      &lt;ng-container *ngSwitchCase&#x3D;&quot;view?.recordMetadata?.type &#x3D;&#x3D;&#x3D; &#x27;boolean&#x27;&quot;&gt;
+        &lt;span [innerHTML]&#x3D;&quot;view?.value ? (&#x27;COMMON.YES&#x27; | translate) : (&#x27;COMMON.NO&#x27; | translate)&quot;&gt;&lt;/span&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container *ngSwitchCase&#x3D;&quot;view?.recordMetadata?.type &#x3D;&#x3D;&#x3D; &#x27;reference&#x27; || view?.recordMetadata?.type &#x3D;&#x3D;&#x3D; &#x27;string&#x27;&quot;&gt;
+        &lt;ng-container *ngIf&#x3D;&quot;view?.recordMetadata?.type &#x3D;&#x3D;&#x3D; &#x27;string&#x27; &amp;&amp; !showQuickView;&quot;&gt;
+          &lt;ng-container [ngTemplateOutlet]&#x3D;&quot;view?.nonTruncatedValue ? popOverTemplate : simple&quot; 
+          [ngTemplateOutletContext]&#x3D;&quot;{view:view}&quot; &gt;
+          &lt;/ng-container&gt;
+        &lt;/ng-container&gt;
+
+        &lt;ng-container *ngIf&#x3D;&quot;view?.recordMetadata?.type &#x3D;&#x3D;&#x3D; &#x27;reference&#x27; &amp;&amp; !showQuickView&quot;&gt;
+          &lt;a href&#x3D;&quot;javascript:void(0)&quot; *ngIf&#x3D;&quot;view?.referenceFieldInstance?.Id &amp;&amp; view?.titleIsLink; else noLinkReference&quot; [routerLink]&#x3D;&quot;[&#x27;/&#x27; + view?.labelPlural, view?.referenceFieldInstance?.Id]&quot; [innerHTML]&#x3D;&quot;view?.value&quot; target&#x3D;&quot;_blank&quot;&gt;&lt;/a&gt;
+        &lt;/ng-container&gt;
+        &lt;ng-template #noLinkReference&gt;
+          &lt;span [innerHTML]&#x3D;&quot;view?.value&quot;&gt;&lt;/span&gt;
+        &lt;/ng-template&gt;
+
+        &lt;ng-container *ngIf&#x3D;&quot;showQuickView&quot;&gt;
+          &lt;span
+            [ngClass]&#x3D;&quot;showQuickView ? &#x27;btn-link popoverLink&#x27; : &#x27;&#x27;&quot;
+            #lookupPop&#x3D;&quot;bs-popover&quot;
+            [popover]&#x3D;&quot;lookupPopTemplate&quot;
+            (click)&#x3D;&quot;handleLookupPopClick()&quot;
+            triggers&#x3D;&quot;&quot;
+            container&#x3D;&quot;body&quot;
+            containerClass&#x3D;&quot;lookupPopover&quot;
+            [outsideClick]&#x3D;&quot;true&quot;
+            [placement]&#x3D;&quot;onShown()&quot;
+            [innerHTML]&#x3D;&quot;view?.value&quot;&gt;&lt;/span&gt;
+        &lt;/ng-container&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container *ngSwitchCase&#x3D;&quot;view?.recordMetadata?.type &#x3D;&#x3D;&#x3D; &#x27;textarea&#x27;&quot;&gt;
+        &lt;ng-container [ngTemplateOutlet]&#x3D;&quot;view?.nonTruncatedValue ? popOverTemplate : simple&quot;&gt;
+        &lt;/ng-container&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container *ngSwitchDefault&gt;
+        &lt;ng-container [ngTemplateOutlet]&#x3D;&quot;simple&quot;&gt;
+        &lt;/ng-container&gt;
+      &lt;/ng-container&gt;
+
+      &lt;i
+        *ngIf&#x3D;&quot;editable&quot;
+        #pop&#x3D;&quot;bs-popover&quot;
+        class&#x3D;&quot;fa fa-pencil edit-icon ml-3&quot;
+        [popover]&#x3D;&quot;editable ? popTemplate : null&quot;
+        container&#x3D;&quot;body&quot;
+        containerClass&#x3D;&quot;editPopover&quot;
+        [outsideClick]&#x3D;&quot;false&quot;
+        (onShown)&#x3D;&quot;hidePopover()&quot;
+      &gt;&lt;/i&gt;
+    &lt;/dd&gt;
+
+
+
+
+
+    &lt;ng-template #lookupPopTemplate&gt;
+      &lt;div class&#x3D;&quot;popHeader p-3 mb-1&quot; [ngClass]&#x3D;&quot;expanded ? &#x27;bg-dark text-white&#x27; : &#x27;bg-white text-dark&#x27;&quot;&gt;
+        &lt;div class&#x3D;&quot;titleSection pb-2 border-bottom d-flex justify-content-between align-items-baseline&quot;&gt;
+          &lt;ng-container&gt;
+            &lt;a class&#x3D;&quot;h5 btn-link&quot; href&#x3D;&quot;javascript:void(0)&quot; *ngIf&#x3D;&quot;view?.referenceFieldInstance?.Id &amp;&amp; view?.titleIsLink; else noLinkPopoverTitle&quot; [routerLink]&#x3D;&quot;[&#x27;/&#x27; + view?.labelPlural, view?.referenceFieldInstance?.Id]&quot; [innerHTML]&#x3D;&quot;view?.value&quot; target&#x3D;&quot;_blank&quot;&gt;&lt;/a&gt;
+          &lt;/ng-container&gt;
+          &lt;ng-template #noLinkPopoverTitle&gt;
+            &lt;h5 [innerHTML]&#x3D;&quot;view?.value&quot;&gt;&lt;/h5&gt;
+          &lt;/ng-template&gt;
+          &lt;button aria-label&#x3D;&quot;Close&quot; [ngClass]&#x3D;&quot;{&#x27;text-white&#x27;: expanded}&quot; class&#x3D;&quot;close&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;hidePopover()&quot;&gt;×&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;fieldSection container-fluid py-2&quot;&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div *ngFor&#x3D;&quot;let field of view?.popoverFields | slice:0:6&quot; class&#x3D;&quot;col-6 pl-0 d-flex flex-column&quot;&gt;
+              &lt;apt-output-field
+                [record]&#x3D;&quot;view?.referenceFieldInstance&quot;
+                [field]&#x3D;&quot;field.field&quot;
+                [label]&#x3D;&quot;field.label&quot;
+                layout&#x3D;&quot;stacked&quot;
+                [editable]&#x3D;&quot;false&quot;
+                [showQuickView]&#x3D;&quot;false&quot;
+              &gt;&lt;/apt-output-field&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div *ngIf&#x3D;&quot;!expanded&quot; class&#x3D;&quot;bottomBar bg-dark&quot;&gt;&lt;/div&gt;
+        &lt;div
+          *ngIf&#x3D;&quot;view?.popoverFields?.length &gt; 6&quot;
+          class&#x3D;&quot;toggleButton justify-content-center align-items-center border d-flex&quot;
+          [ngClass]&#x3D;&quot;hovering ? &#x27;bg-primary&#x27; : &#x27;bg-white&#x27;&quot;
+          (mouseover)&#x3D;&quot;hovering &#x3D; true&quot;
+          (mouseout)&#x3D;&quot;hovering &#x3D; false&quot;
+          (click)&#x3D;&quot;expanded &#x3D; !expanded&quot;
+        &gt;
+          &lt;i class&#x3D;&quot;fa&quot; [ngClass]&#x3D;&quot;{&#x27;fa-chevron-up&#x27;: expanded, &#x27;fa-chevron-down&#x27;: !expanded, &#x27;text-white&#x27;: hovering, &#x27;text-primary&#x27;: !hovering}&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div *ngIf&#x3D;&quot;expanded&quot; class&#x3D;&quot;expandSection p-3&quot;&gt;
+        &lt;div class&#x3D;&quot;container-fluid&quot;&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div *ngFor&#x3D;&quot;let field of view?.popoverFields | slice:6&quot; class&#x3D;&quot;col-6 pl-0 d-flex flex-column&quot;&gt;
+              &lt;apt-output-field
+                [record]&#x3D;&quot;view?.referenceFieldInstance&quot;
+                [field]&#x3D;&quot;field.field&quot;
+                [label]&#x3D;&quot;field.label&quot;
+                layout&#x3D;&quot;stacked&quot;
+                [editable]&#x3D;&quot;false&quot;
+                [showQuickView]&#x3D;&quot;false&quot;
+              &gt;&lt;/apt-output-field&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/ng-template&gt;
+
+  &lt;ng-template #popTemplate&gt;
+    &lt;form class&#x3D;&quot;p-3&quot; (ngSubmit)&#x3D;&quot;update(view)&quot;&gt;
+      &lt;apt-input-field [(ngModel)]&#x3D;&quot;view.recordInstance[view.field]&quot; [field]&#x3D;&quot;view.field&quot; [entity]&#x3D;&quot;view.recordInstance&quot; [name]&#x3D;&quot;view.field&quot; [lookupOptions]&#x3D;&quot;lookupOptions&quot;&gt;&lt;/apt-input-field&gt;
+      &lt;div class&#x3D;&quot;d-flex justify-content-end&quot;&gt;
+        &lt;button class&#x3D;&quot;btn-link btn&quot; (click)&#x3D;&quot;handleHidePop(view)&quot;&gt;{{&#x27;COMMON.CANCEL&#x27; | translate}}&lt;/button&gt;
+        &lt;button class&#x3D;&quot;btn btn-primary btn-raised&quot; type&#x3D;&quot;submit&quot; [ladda]&#x3D;&quot;loading&quot;&gt;{{&#x27;COMMON.UPDATE&#x27; | translate}}&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/ng-template&gt;
+
+  &lt;ng-template #popOverTemplate&gt;
+    &lt;span
+    [innerHTML]&#x3D;&quot;view?.value&quot;
+    [popover]&#x3D;&quot;view?.nonTruncatedValue&quot;
+    triggers&#x3D;&quot;mouseenter:mouseleave&quot;
+    container&#x3D;&quot;body&quot;
+  &gt;&lt;/span&gt;
+  &lt;/ng-template&gt;
+
+  &lt;ng-template #simple&gt;
+    &lt;span [innerHTML]&#x3D;&quot;!!view?.value ? view?.value : (&#x27;COMMON.NO_DATA&#x27; | translate)&quot;&gt;&lt;/span&gt;
+  &lt;/ng-template&gt;
+
+  &lt;ng-content&gt;&lt;/ng-content&gt;
+&lt;/span&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./output-field.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">apt-output-field{
+    .edit-icon{
+        display: inline-block;
+        cursor: pointer;
+        opacity: .5;
+
+        &amp;:hover {
+            opacity: 1;
+        }
+    }
+    .popoverLink {
+        cursor: pointer;
+        text-decoration: underline;    
+    }
+    .hover:hover{
+        background-color: lightgray;
+        cursor: pointer;
+        position: relative;
+        i.edit-icon{
+            display: block;
+            position: absolute;
+            right: 2%;
+            top: 22%;
+        }
+    }
+    apt-input-field{
+        min-width: 300px;
+    }
+    popover-container.popover{
+        max-width: inherit;
+    }
+    .inline:not(.label-only){
+        dt{
+            white-space: nowrap;
+            &amp;::after{
+                content: &quot;:&quot;;
+                margin: 0 2px 0 -2px;
+            }
+        }
+    }
+    dd.empty::after {
+        content: &quot;\200b&quot;; // unicode zero width space character
+    }
+
+    dd {
+        width: initial;
+    }
+
+}
+
+.lookupPopover {
+    max-width: unset;
+    width: 322px;
+    border-radius: 4px;
+
+    .popover-body {
+        padding: 0px;
+    }
+
+    .popHeader {
+        position: relative;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
+
+    .bottomBar {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: -4px;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        height: 10px;
+    }
+
+    .toggleButton {
+        position: absolute;
+        right: 20px;
+        bottom: -17px;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 5;
+
+        i {
+            font-size: 18px;
+        }
+    }
+
+    .expandSection {
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+}
+
+.editPopover {
+    min-width: 322px;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><span [class.align-items-baseline]="layout === \'inline\'" [class.inline]="layout === \'inline\'" [class.d-flex]="layout === \'inline\'" [class.label-only]="labelOnly" *ngIf="view$ | async as view">        <dt [ngClass]="labelClass" *ngIf="!valueOnly">      {{view?.label}}    </dt>    <dd *ngIf="!labelOnly" class="m-0 py-2 position-relative"  [class.px-1]="layout === \'inline\'" [class.py-1]="layout === \'stacked\'" [class.empty]="!view.value" [ngClass]="valueClass" [ngSwitch]="true">      <ng-container *ngSwitchCase="view.recordMetadata?.type === \'date\' || view.recordMetadata?.type === \'datetime\'">{{view.value | date:getDateFormat(view.metadata)}}</ng-container>        <ng-container *ngSwitchCase="view?.recordMetadata?.type === \'currency\'">{{view?.value | localCurrency | async}}</ng-container>        <ng-container *ngSwitchCase="view?.recordMetadata?.type === \'address\'">        <apt-address [value]="view?.value" [readonly]="true"></apt-address>      </ng-container>        <ng-container *ngSwitchCase="view?.recordMetadata?.type === \'double\'">        {{view?.value | number:\'1.0-\' + view.metadata.scale}}      </ng-container>      <ng-container *ngSwitchCase="view?.recordMetadata?.type === \'boolean\'">        <span [innerHTML]="view?.value ? (\'COMMON.YES\' | translate) : (\'COMMON.NO\' | translate)"></span>      </ng-container>      <ng-container *ngSwitchCase="view?.recordMetadata?.type === \'reference\' || view?.recordMetadata?.type === \'string\'">        <ng-container *ngIf="view?.recordMetadata?.type === \'string\' && !showQuickView;">          <ng-container [ngTemplateOutlet]="view?.nonTruncatedValue ? popOverTemplate : simple"           [ngTemplateOutletContext]="{view:view}" >          </ng-container>        </ng-container>        <ng-container *ngIf="view?.recordMetadata?.type === \'reference\' && !showQuickView">          <a href="javascript:void(0)" *ngIf="view?.referenceFieldInstance?.Id && view?.titleIsLink; else noLinkReference" [routerLink]="[\'/\' + view?.labelPlural, view?.referenceFieldInstance?.Id]" [innerHTML]="view?.value" target="_blank"></a>        </ng-container>        <ng-template #noLinkReference>          <span [innerHTML]="view?.value"></span>        </ng-template>        <ng-container *ngIf="showQuickView">          <span            [ngClass]="showQuickView ? \'btn-link popoverLink\' : \'\'"            #lookupPop="bs-popover"            [popover]="lookupPopTemplate"            (click)="handleLookupPopClick()"            triggers=""            container="body"            containerClass="lookupPopover"            [outsideClick]="true"            [placement]="onShown()"            [innerHTML]="view?.value"></span>        </ng-container>      </ng-container>      <ng-container *ngSwitchCase="view?.recordMetadata?.type === \'textarea\'">        <ng-container [ngTemplateOutlet]="view?.nonTruncatedValue ? popOverTemplate : simple">        </ng-container>      </ng-container>      <ng-container *ngSwitchDefault>        <ng-container [ngTemplateOutlet]="simple">        </ng-container>      </ng-container>      <i        *ngIf="editable"        #pop="bs-popover"        class="fa fa-pencil edit-icon ml-3"        [popover]="editable ? popTemplate : null"        container="body"        containerClass="editPopover"        [outsideClick]="false"        (onShown)="hidePopover()"      ></i>    </dd>    <ng-template #lookupPopTemplate>      <div class="popHeader p-3 mb-1" [ngClass]="expanded ? \'bg-dark text-white\' : \'bg-white text-dark\'">        <div class="titleSection pb-2 border-bottom d-flex justify-content-between align-items-baseline">          <ng-container>            <a class="h5 btn-link" href="javascript:void(0)" *ngIf="view?.referenceFieldInstance?.Id && view?.titleIsLink; else noLinkPopoverTitle" [routerLink]="[\'/\' + view?.labelPlural, view?.referenceFieldInstance?.Id]" [innerHTML]="view?.value" target="_blank"></a>          </ng-container>          <ng-template #noLinkPopoverTitle>            <h5 [innerHTML]="view?.value"></h5>          </ng-template>          <button aria-label="Close" [ngClass]="{\'text-white\': expanded}" class="close" type="button" (click)="hidePopover()">×</button>        </div>        <div class="fieldSection container-fluid py-2">          <div class="row">            <div *ngFor="let field of view?.popoverFields | slice:0:6" class="col-6 pl-0 d-flex flex-column">              <apt-output-field                [record]="view?.referenceFieldInstance"                [field]="field.field"                [label]="field.label"                layout="stacked"                [editable]="false"                [showQuickView]="false"              ></apt-output-field>            </div>          </div>        </div>        <div *ngIf="!expanded" class="bottomBar bg-dark"></div>        <div          *ngIf="view?.popoverFields?.length > 6"          class="toggleButton justify-content-center align-items-center border d-flex"          [ngClass]="hovering ? \'bg-primary\' : \'bg-white\'"          (mouseover)="hovering = true"          (mouseout)="hovering = false"          (click)="expanded = !expanded"        >          <i class="fa" [ngClass]="{\'fa-chevron-up\': expanded, \'fa-chevron-down\': !expanded, \'text-white\': hovering, \'text-primary\': !hovering}" aria-hidden="true"></i>        </div>      </div>      <div *ngIf="expanded" class="expandSection p-3">        <div class="container-fluid">          <div class="row">            <div *ngFor="let field of view?.popoverFields | slice:6" class="col-6 pl-0 d-flex flex-column">              <apt-output-field                [record]="view?.referenceFieldInstance"                [field]="field.field"                [label]="field.label"                layout="stacked"                [editable]="false"                [showQuickView]="false"              ></apt-output-field>            </div>          </div>        </div>      </div>    </ng-template>  <ng-template #popTemplate>    <form class="p-3" (ngSubmit)="update(view)">      <apt-input-field [(ngModel)]="view.recordInstance[view.field]" [field]="view.field" [entity]="view.recordInstance" [name]="view.field" [lookupOptions]="lookupOptions"></apt-input-field>      <div class="d-flex justify-content-end">        <button class="btn-link btn" (click)="handleHidePop(view)">{{\'COMMON.CANCEL\' | translate}}</button>        <button class="btn btn-primary btn-raised" type="submit" [ladda]="loading">{{\'COMMON.UPDATE\' | translate}}</button>      </div>    </form>  </ng-template>  <ng-template #popOverTemplate>    <span    [innerHTML]="view?.value"    [popover]="view?.nonTruncatedValue"    triggers="mouseenter:mouseleave"    container="body"  ></span>  </ng-template>  <ng-template #simple>    <span [innerHTML]="!!view?.value ? view?.value : (\'COMMON.NO_DATA\' | translate)"></span>  </ng-template>  <ng-content></ng-content></span></div>'
+    var COMPONENTS = [{'name': 'AdditionalInformationComponent', 'selector': 'apt-additional-information'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AlertComponent', 'selector': 'apt-alert'},{'name': 'AssetDropdownButtonComponent', 'selector': 'apt-asset-dropdown-button'},{'name': 'AssetListComponent', 'selector': 'apt-asset-list'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'CategoryFilterComponent', 'selector': 'apt-category-filter'},{'name': 'ChartComponent', 'selector': 'apt-chart'},{'name': 'ConstraintRuleAlertComponent', 'selector': 'apt-constraint-rule-alert'},{'name': 'ConstraintRuleSidebarComponent', 'selector': 'apt-constraint-rule-sidebar'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'DataFilterComponent', 'selector': 'apt-data-filter'},{'name': 'DotsComponent', 'selector': 'apt-dots'},{'name': 'FavoriteModalComponent', 'selector': 'apt-favorite-modal'},{'name': 'FilesComponent', 'selector': 'apt-files'},{'name': 'GenerateDocumentComponent', 'selector': 'apt-generate-document'},{'name': 'InputDateComponent', 'selector': 'apt-date-range-input'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputSelectComponent', 'selector': 'apt-input-select'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'LineitemCardComponent', 'selector': 'apt-lineitem-card'},{'name': 'LineItemMenuComponent', 'selector': 'apt-line-item-menu'},{'name': 'LineItemTableRowComponent', 'selector': 'apt-line-item-table-row'},{'name': 'LoginFormComponent', 'selector': 'apt-login-form'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'OutputFieldComponent', 'selector': 'apt-output-field'},{'name': 'PaymentComponent', 'selector': 'apt-payment'},{'name': 'PaymentIFrameComponent', 'selector': 'apt-payment-iframe'},{'name': 'PresentDocumentComponent', 'selector': 'apt-present-document'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'PriceModalComponent', 'selector': 'apt-price-modal'},{'name': 'PriceSummaryComponent', 'selector': 'apt-price-summary'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductCompareComponent', 'selector': 'apt-product-compare'},{'name': 'ProductConfigurationComponent', 'selector': 'apt-product-configuration'},{'name': 'ProductConfigurationSummaryComponent', 'selector': 'apt-product-configuration-summary'},{'name': 'ProductDrawerComponent', 'selector': 'apt-product-drawer'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'},{'name': 'ProductSearchComponent', 'selector': 'apt-product-search'},{'name': 'ProductTypeFilterComponent', 'selector': 'apt-product-type-filter'},{'name': 'PromotionComponent', 'selector': 'apt-promotion'},{'name': 'PromotionModalComponent', 'selector': 'apt-pr-modal'},{'name': 'RevalidateCartModalComponent', 'selector': 'apt-revalidate-cart-modal'},{'name': 'SelectAllComponent', 'selector': 'apt-select-all'},{'name': 'SpinnerComponent', 'selector': 'apt-spinner'},{'name': 'TableComponent', 'selector': 'apt-table'},{'name': 'TaxPopHoverComponent', 'selector': 'apt-tax-pophover'}];
+    var DIRECTIVES = [{'name': 'AutoFocusDirective', 'selector': '[aptAutoFocus]'}];
+    var ACTUAL_COMPONENT = {'name': 'OutputFieldComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'OutputFieldComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

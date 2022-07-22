@@ -1,0 +1,160 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Conga Digital Commerce May &#x27;22</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Conga Digital Commerce May &#x27;22</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content additional-page">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 id="upgrading-the-digital-commerce-template-from-december-21-to-may-22">Upgrading the Digital Commerce Template from December &#39;21 to May &#39;22</h1>
+<p>This guide is designed to step you through the process of upgrading digital commerce template from December &#39;21 release to May &#39;22 release.</p>
+<h2 id="table-of-contents">Table Of Contents</h2>
+<ul>
+<li><a href="#upgrade-libs">Updating the libraries</a></li>
+<li><a href="#update-npmrc">Updating npmrc file</a></li>
+<li><a href="#updateConfiguration">Update ProductConfiguration Input field</a></li>
+<li><a href="#installedProducts">Update installed-products-layout.component file</a></li>
+</ul>
+<div id="upgrade-libs"/>
+
+<h2 id="updating-the-libraries">Updating the libraries</h2>
+<p>You must point these packages to the latest version:</p>
+<ul>
+<li><code>@congacommerce/core</code> <em><strong>^2103.x.x</strong></em></li>
+<li><code>@congacommerce/ecommerce</code> <em><strong>^2103.x.x</strong></em></li>
+<li><code>@congacommerce/elements</code> <em><strong>^2103.x.x</strong></em></li>
+</ul>
+<p>After updating these packages, verify if your <code>package.json</code> under dependencies reflects the latest version as below:</p>
+<div><pre class="line-numbers"><code class="language-json">    ...
+    &quot;&#64;congacommerce/core&quot;: &quot;^2103.x.x&quot;,
+    &quot;&#64;congacommerce/ecommerce&quot;: &quot;^2103.x.x&quot;,
+    &quot;&#64;congacommerce/elements&quot;: &quot;^2103.x.x&quot;,
+    ...</code></pre></div><p><em><strong>Add &quot;downloadjs&quot; to package dependencies library</strong></em></p>
+<div><pre class="line-numbers"><code class="language-json">    ...
+    &quot;downloadjs&quot;: &quot;^1.4.7&quot;
+    ...</code></pre></div><div id="update-npmrc">
+
+<h2 id="updating-npmrc-file">Updating npmrc file</h2>
+<p>To install SDK libraries as npm packages, you must update <em><strong>.npmrc file</strong></em> to specify the github repository path where these packages are hosted.</p>
+<div><pre class="line-numbers"><code class="language-typescript">&#64;congacommerce:registry=https://npm.pkg.github.com</code></pre></div><p>As this is a public github repository with read permissions, you don&#39;t need any access to install these packages.</p>
+<div id="updateConfiguration"/>
+
+<h2 id="update-productconfiguration-input-field">Update ProductConfiguration Input field.</h2>
+<p> In May &#39;22 release, you must update input field of productConfiguration component from <em><strong>&quot;productId&quot;</strong></em>  to <em><strong>&quot;product&quot;</strong></em> in your template, to ensure the project is built successfully.</p>
+<p>  <em><strong>Before Change</strong></em></p>
+<div><pre class="line-numbers"><code class="language-typescript">&lt;apt-product-configuration
+                    [productId]=&quot;viewState?.product?.Id&quot;
+                    [product]=&quot;viewState?.product?.Id&quot;
+                    [relatedTo]=&quot;viewState?.relatedTo&quot;
+                    [accordion]=&quot;true&quot;
+                    (click)=&quot;configurationChanged = true&quot;&gt;</code></pre></div><p><em><strong>After Change</strong></em></p>
+<div><pre class="line-numbers"><code class="language-typescript">&lt;apt-product-configuration
+                    [product]=&quot;viewState?.product?.Id&quot;
+                    [product]=&quot;viewState?.product?.Id&quot;
+                    [relatedTo]=&quot;viewState?.relatedTo&quot;
+                    [accordion]=&quot;true&quot;
+                    (click)=&quot;configurationChanged = true&quot;&gt;</code></pre></div><div id="installedProducts" />
+
+<h2 id="update-installed-products-layoutcomponent-file">Update installed-products-layout.component file.</h2>
+<p>In May &#39;22 release, the reference for  <em><strong>AssetLineItem.Id</strong></em> needs to be updated with <em><strong>AssetLineItemId</strong></em> as the record will not have <em><strong>AssetLineItem</strong></em> object post ABO actions when pricing mode flag is turbo.</p>
+<p><em><strong>BeforeChange</strong></em></p>
+<div><pre class="line-numbers"><code class="language-typescript"> validate(record: AssetLineItemExtended, childRecords: Array&lt;AssetLineItemExtended&gt;): boolean {
+          return record.canRenew(childRecords) &amp;&amp; !(filter(get(cart, &#39;LineItems&#39;), (item) =&gt; get(item, &#39;AssetLineItem.Id&#39;) ===  record.Id).length &gt; 0);
+        }</code></pre></div><p><em><strong>AfterChange</strong></em></p>
+<div><pre class="line-numbers"><code class="language-typescript"> validate(record: AssetLineItemExtended, childRecords: Array&lt;AssetLineItemExtended&gt;): boolean {
+          return record.canRenew(childRecords) &amp;&amp; !(filter(get(cart, &#39;LineItems&#39;), (item) =&gt; get(item, &#39;AssetLineItemId&#39;) ===  record.Id).length &gt; 0);
+        }</code></pre></div>
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'additional-page';
+            var COMPODOC_CURRENT_PAGE_URL = 'upgrading-the-partner-commerce-template-from-december-&#x27;21-to-may-&#x27;22.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
