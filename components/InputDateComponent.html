@@ -82,26 +82,20 @@ When the user selects a date in the start date or end date inputs the onStartDat
 &#64;NgModule({
 imports: [InputDateModule, ...]
 })
-export class AppModule {}</code></pre></div><p>// Basic Usage.
-&lt;apt-date-range-input
+export class AppModule {}</code></pre></div><p>// Basic Usage.</p>
+<div><pre class="line-numbers"><code class="language-typescript">&lt;apt-date-range-input
             [cartItem]=&quot;item&quot;
             (onStartDateChange)=&quot;handleStartChange($event, item)&quot;
-            (onEndDateChange)=&quot;handleEndDateChange($event, item)&quot;</p>
-<blockquote>
-</apt-date-range-input>
-</blockquote>
-<p>// Implementation with custom options.
-&lt;apt-date-range-input
+            (onEndDateChange)=&quot;handleEndDateChange($event, item)&quot;
+&gt;&lt;/apt-date-range-input&gt;</code></pre></div><p>// Implementation with custom options.</p>
+<div><pre class="line-numbers"><code class="language-typescript">&lt;apt-date-range-input
             (onStartDateChange)=&quot;handleStartChange($event, item)&quot;
             (onEndDateChange)=&quot;handleEndDateChange($event, item)&quot;
             [cartItem]=&quot;item&quot;
             [disableStartDate]=&quot;disableStartDate&quot;
             [disableEndDate]=&quot;disableEndDate&quot;
-            [readonly]=&quot;false&quot;</p>
-<blockquote>
-</apt-date-range-input>
-</blockquote>
-
+            [readonly]=&quot;false&quot;
+&gt;&lt;/apt-date-range-input&gt;</code></pre></div>
     </p>
 
 

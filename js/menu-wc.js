@@ -49,16 +49,16 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="additional-pages"' : 'id="xs-additional-pages"' }>
                                     <li class="link ">
-                                        <a href="additional-documentation/upgrading-the-digital-commerce-template-from-december-&#x27;21-to-may-&#x27;22.html" data-type="entity-link" data-context-id="additional">Upgrading the Digital Commerce Template from December &#x27;21 to May &#x27;22</a>
+                                        <a href="additional-documentation/upgrading-the-digital-commerce-template-from-december-&#x27;21-to-september-&#x27;22.html" data-type="entity-link" data-context-id="additional">Upgrading the Digital Commerce Template from December &#x27;21 to September &#x27;22</a>
                                     </li>
                                     <li class="link ">
-                                        <a href="additional-documentation/upgrading-the-partner-commerce-template-from-december-&#x27;21-to-may-&#x27;22.html" data-type="entity-link" data-context-id="additional">Upgrading the Partner Commerce Template from December &#x27;21 to May &#x27;22</a>
+                                        <a href="additional-documentation/upgrading-the-partner-commerce-template-from-december-&#x27;21-to-september-&#x27;22.html" data-type="entity-link" data-context-id="additional">Upgrading the Partner Commerce Template from December &#x27;21 to September &#x27;22</a>
                                     </li>
                                     <li class="link ">
-                                        <a href="additional-documentation/upgrading-the-digital-commerce-template-from-spring-&#x27;21-to-may-&#x27;22.html" data-type="entity-link" data-context-id="additional">Upgrading the Digital Commerce Template from Spring &#x27;21 to May &#x27;22</a>
+                                        <a href="additional-documentation/upgrading-the-digital-commerce-template-from-may-&#x27;22-to-september-&#x27;22.html" data-type="entity-link" data-context-id="additional">Upgrading the Digital Commerce Template from May &#x27;22 to September &#x27;22</a>
                                     </li>
                                     <li class="link ">
-                                        <a href="additional-documentation/upgrading-the-partner-commerce-template-from-spring-&#x27;21-to-may-&#x27;22.html" data-type="entity-link" data-context-id="additional">Upgrading the Partner Commerce Template from Spring &#x27;21 to May &#x27;22</a>
+                                        <a href="additional-documentation/upgrading-the-partner-commerce-template-from-may-&#x27;22-to-september-&#x27;22.html" data-type="entity-link" data-context-id="additional">Upgrading the Partner Commerce Template from May &#x27;22 to September &#x27;22</a>
                                     </li>
                         </ul>
                     </li>
@@ -843,12 +843,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="injectables/AppliedRuleActionInfoService.html" data-type="entity-link" >AppliedRuleActionInfoService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/AppliedRuleInfoService.html" data-type="entity-link" >AppliedRuleInfoService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="injectables/AppLoader.html" data-type="entity-link" >AppLoader</a>
-                                </li>
-                                <li class="link">
                                     <a href="injectables/AssetSelectionService.html" data-type="entity-link" >AssetSelectionService</a>
                                 </li>
                                 <li class="link">
@@ -960,6 +954,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="injectables/ProductDrawerService.html" data-type="entity-link" >ProductDrawerService</a>
                                 </li>
                                 <li class="link">
+                                    <a href="injectables/ProductFeatureValueService.html" data-type="entity-link" >ProductFeatureValueService</a>
+                                </li>
+                                <li class="link">
                                     <a href="injectables/ProductInformationService.html" data-type="entity-link" >ProductInformationService</a>
                                 </li>
                                 <li class="link">
@@ -1064,13 +1061,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/ActionItem.html" data-type="entity-link" >ActionItem</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ActionItem-1.html" data-type="entity-link" >ActionItem</a>
-                            </li>
-                            <li class="link">
                                 <a href="interfaces/ActionToPerform.html" data-type="entity-link" >ActionToPerform</a>
-                            </li>
-                            <li class="link">
-                                <a href="interfaces/Attachment.html" data-type="entity-link" >Attachment</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/BreadcrumbLink.html" data-type="entity-link" >BreadcrumbLink</a>
@@ -1136,9 +1127,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/PerformAction.html" data-type="entity-link" >PerformAction</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/PromptActionItems.html" data-type="entity-link" >PromptActionItems</a>
-                            </li>
-                            <li class="link">
                                 <a href="interfaces/SearchResults.html" data-type="entity-link" >SearchResults</a>
                             </li>
                             <li class="link">
@@ -1158,19 +1146,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                         </ul>
                     </li>
-                        <li class="chapter">
-                            <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#pipes-links"' :
-                                'data-target="#xs-pipes-links"' }>
-                                <span class="icon ion-md-add"></span>
-                                <span>Pipes</span>
-                                <span class="icon ion-ios-arrow-down"></span>
-                            </div>
-                            <ul class="links collapse " ${ isNormalMode ? 'id="pipes-links"' : 'id="xs-pipes-links"' }>
-                                <li class="link">
-                                    <a href="pipes/CreditCardExtractorPipe.html" data-type="entity-link" >CreditCardExtractorPipe</a>
-                                </li>
-                            </ul>
-                        </li>
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#miscellaneous-links"'
                             : 'data-target="#xs-miscellaneous-links"' }>

@@ -1,0 +1,187 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Conga Digital Commerce September &#x27;22</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Conga Digital Commerce September &#x27;22</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content additional-page">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 id="upgrading-the-digital-commerce-template-from-december-21-to-september-22">Upgrading the Digital Commerce Template from December &#39;21 to September &#39;22</h1>
+<p>This guide is designed to step you through the process of upgrading digital commerce template to consume SDK from December &#39;21 release to September &#39;22 release.</p>
+<h2 id="table-of-contents">Table Of Contents</h2>
+<ul>
+<li><a href="#upgrade-libs">Updating the libraries</a></li>
+<li><a href="#update-npmrc">Updating npmrc file</a></li>
+<li><a href="#updateOrderDetail">Update order detail component</a></li>
+<li><a href="#assetListComponent">Update asset list component</a></li>
+<li><a href="#translationFiles">Update translation files</a></li>
+<li><a href="#cartViewSettings">Update cart line column settings in salesforce org</a></li>
+<li><a href="#styleCartPage">Style cart Page</a></li>
+</ul>
+<div id="upgrade-libs"/>
+
+<h2 id="updating-the-libraries">Updating the libraries</h2>
+<p>You must point below packages to the latest version:</p>
+<ul>
+<li><code>@congacommerce/core</code> <strong><em>^2202.x.x</em></strong></li>
+<li><code>@congacommerce/ecommerce</code> <strong><em>^2202.x.x</em></strong></li>
+<li><code>@congacommerce/elements</code> <strong><em>^2202.x.x</em></strong></li>
+</ul>
+<p>After updating these packages, verify if your <code>package.json</code> under dependencies reflects the latest version as below:</p>
+<div><pre class="line-numbers"><code class="language-json">    ...
+    &quot;&#64;congacommerce/core&quot;: &quot;^2202.x.x&quot;,
+    &quot;&#64;congacommerce/ecommerce&quot;: &quot;^2202.x.x&quot;,
+    &quot;&#64;congacommerce/elements&quot;: &quot;^2202.x.x&quot;,
+    ...</code></pre></div><p><strong><em>Add &quot;downloadjs&quot; to package dependencies library</em></strong></p>
+<div><pre class="line-numbers"><code class="language-json">    ...
+    &quot;downloadjs&quot;: &quot;^1.4.7&quot;
+    ...</code></pre></div><div id="update-npmrc">
+
+<h2 id="updating-npmrc-file">Updating npmrc file</h2>
+<p>To install SDK libraries as npm packages, you must update <strong><em>.npmrc file</em></strong> to specify the github repository path where these packages are hosted.</p>
+<div><pre class="line-numbers"><code class="language-typescript">&#64;congacommerce:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken={{GITHUB AUTH TOKEN}}</code></pre></div><p>As this is a public github repository with read permissions, you don&#39;t need any access to install these packages.</p>
+<div id="updateOrderDetail"/>
+
+<h2 id="update-order-detail-component">Update Order detail component.</h2>
+<p>In September &#39;22 release, you must update confirmOrder method in Order detail component to call <strong><em>&quot;statusChangeNotification()&quot;</em></strong> instead of <strong><em>&quot;orderStatusChangeNotification()&quot;</em></strong>. This change is required in your template, to ensure the project is built successfully.</p>
+<p><strong><em>Before Change</em></strong></p>
+<div><pre class="line-numbers"><code class="language-typescript">confirmOrder(orderId: string, primaryContactId: string) {
+    ...
+      if (res) {
+        ...
+        this.emailService.orderStatusChangeNotification(&#39;CustomerOrderEmailNotificationsTemplate&#39;, orderId, primaryContactId).pipe(take(1)).subscribe();
+        ...
+      }
+    ...
+  }</code></pre></div><p><strong><em>After Change</em></strong></p>
+<div><pre class="line-numbers"><code class="language-typescript">confirmOrder(orderId: string, primaryContactId: string) {
+    ...
+      if (res) {
+        ...
+        this.emailService.statusChangeNotification(&#39;CustomerOrderEmailNotificationsTemplate&#39;, orderId, primaryContactId).pipe(take(1)).subscribe();
+        ...
+      }
+    ...
+  }</code></pre></div><div id="assetListComponent" />
+
+<h2 id="update-asset-list-component">Update Asset List component.</h2>
+<p>In September &#39;22 release, you must update asset list component and replace all occurences of <strong><em>&quot;AssetLineItem.Id&quot;</em></strong> with <strong><em>&quot;AssetLineItemId&quot;</em></strong>.</p>
+<div id="translationFiles" />
+
+<h2 id="update-translation-files">Update translation files.</h2>
+<p>In September &#39;22 release, you must update translation files including <strong>en_US.json</strong>, <strong>es.json</strong>, <strong>fr.json</strong>, <strong>it.json</strong> to ensure static text and toast messages are translated based on the user locale.</p>
+<div id="cartViewSettings" />
+
+<h2 id="update-cart-line-column-setting-in-salesforce-org">Update Cart line column setting in Salesforce org.</h2>
+<p>Update Cart Line Columns setting to select fields as added in below screenshot. The selected fields will be shown in cart page, as supported in Digital Commerce.</p>
+<p><img src="../assets/cart_line_columns_setting.png" alt="Screenshot" class="img-responsive"></p>
+<p>The additional fields on cart line items will now be part of Additional Information section.</p>
+<p><img src="../assets/cart_line_columns_setting.png" alt="Screenshot" class="img-responsive"></p>
+<div id="styleCartPage" />
+
+<h2 id="style-cart-page">Style Cart Page.</h2>
+<p>Add below CSS changes in style.scss file to remove checkboxes against line items on cart page.</p>
+<div><pre class="line-numbers"><code class="language-typescript">apt-line-item-table-row {
+    tr:first-child {
+        &gt;td:first-child {
+            &gt;div:first-child {
+                display: none;
+            }
+        }
+    }
+}</code></pre></div>
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'additional-page';
+            var COMPODOC_CURRENT_PAGE_URL = 'upgrading-the-partner-commerce-template-from-december-&#x27;21-to-september-&#x27;22.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

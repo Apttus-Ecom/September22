@@ -84,10 +84,9 @@
 &#64;NgModule({
 imports: [ButtonModule, ...]
 })
-export class AppModule {}</code></pre></div><p>// Basic Usage
-&lt;apt-add-to-cart [product]=&quot;product&quot;&gt;</apt-add-to-cart></p>
-<p>// All input and output options.
-&lt;apt-add-to-cart
+export class AppModule {}</code></pre></div><p>// Basic Usage</p>
+<div><pre class="line-numbers"><code class="language-typescript">&lt;apt-add-to-cart [product]=&quot;product&quot;&gt;&lt;/apt-add-to-cart&gt;</code></pre></div><p>// All input and output options.</p>
+<div><pre class="line-numbers"><code class="language-typescript">&lt;apt-add-to-cart
             [product]=&quot;product&quot;
             [showQuantityControls]=&quot;quantityControlsShowing&quot;
             [disabled]=&quot;isDisabled&quot;
@@ -97,11 +96,7 @@ export class AppModule {}</code></pre></div><p>// Basic Usage
             [trigger]=&quot;willTrigger&quot;
             [btnClass]=&quot;classOfButton&quot;
             [size]=&quot;lg&quot;
-            (onAddToCart)=&quot;handleAddToCart($event)&quot;</p>
-<blockquote>
-</apt-add-to-cart>
-</blockquote>
-
+            (onAddToCart)=&quot;handleAddToCart($event)&quot;&gt;&lt;/apt-add-to-cart&gt;</code></pre></div>
     </p>
 
 
@@ -177,6 +172,20 @@ export class AppModule {}</code></pre></div><p>// Basic Usage
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addToCart" >addToCart</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -724,7 +733,48 @@ export class AppModule {}</code></pre></div><p>// Basic Usage
 </section>
 
 
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addToCart"></a>
+                    <span class="name">
+                        <span ><b>addToCart</b></span>
+                        <a href="#addToCart"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addToCart()</code>
+                </td>
+            </tr>
 
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The method is fired when user clicks on Add to Cart button.
+Runs a constraint rule engine to look for any product recommendations for the selected cart line item.
+Fetches the price of the selected line item, opens up a modal window to display the price, quantity and name of the selected line item.
+The selected item is also added to user&#39;s current active cart.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
     <section>
     
     <h3 id="inputs">

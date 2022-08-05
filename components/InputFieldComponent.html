@@ -78,16 +78,13 @@
 &#64;NgModule({
 imports: [InputFieldModule, ...]
 })
-export class AppModule {}</code></pre></div><p>// Basic Usage
-&lt;apt-input-field
+export class AppModule {}</code></pre></div><p>// Basic Usage</p>
+<div><pre class="line-numbers"><code class="language-typescript">&lt;apt-input-field
             [(ngModel)]=&quot;myModel&quot;
             [field]=&quot;fieldApiName&quot;
-            [entity]=&quot;entityApiName&quot;</p>
-<blockquote>
-</apt-input-field>
-</blockquote>
-<p>// All inputs and outputs
-&lt;apt-input-field
+            [entity]=&quot;entityApiName&quot;
+&gt;&lt;/apt-input-field&gt;</code></pre></div><p>// All inputs and outputs</p>
+<div><pre class="line-numbers"><code class="language-typescript">&lt;apt-input-field
             [(ngModel)]=&quot;myModel&quot;
             (ngModelChange)=&quot;handleChange($event)&quot;
             [field]=&quot;fieldApiName&quot;
@@ -110,11 +107,8 @@ export class AppModule {}</code></pre></div><p>// Basic Usage
             [hide]=&quot;true&quot;
             [defaultValue]=&quot;true&quot;
             [enableValues]=&quot;values&quot;
-            [lookupOptions]=&quot;lookupOptions&quot;</p>
-<blockquote>
-</apt-input-field>
-</blockquote>
-
+            [lookupOptions]=&quot;lookupOptions&quot;
+&gt;&lt;/apt-input-field&gt;</code></pre></div>
     </p>
 
 

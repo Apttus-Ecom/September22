@@ -78,25 +78,19 @@
 &#64;NgModule({
 imports: [FilterModule, ...]
 })
-export class AppModule {}</code></pre></div><p>// Basic Usage
-&lt;apt-category-filter
+export class AppModule {}</code></pre></div><p>// Basic Usage</p>
+<div><pre class="line-numbers"><code class="language-typescript">&lt;apt-category-filter
             [category]=&quot;category&quot;
-            (onChange)=&quot;handleCategoryChange($event)&quot;</p>
-<blockquote>
-</apt-category-filter>
-</blockquote>
-<p>// Setting multiselection on peer categories with a custom limit and title.
-&lt;apt-category-filter
+            (onChange)=&quot;handleCategoryChange($event)&quot;
+&gt;&lt;/apt-category-filter&gt;</code></pre></div><p>// Setting multiselection on peer categories with a custom limit and title.</p>
+<div><pre class="line-numbers"><code class="language-typescript">&lt;apt-category-filter
             [category]=&quot;category&quot;
             selection=&quot;multi&quot;
             relationship=&quot;peers&quot;
             limit=&quot;15&quot;
             title=&quot;Similar Categories&quot;
-            (onChange)=&quot;handleCategoryChange($event)&quot;</p>
-<blockquote>
-</apt-category-filter>
-</blockquote>
-
+            (onChange)=&quot;handleCategoryChange($event)&quot;
+&gt;&lt;/apt-category-filter&gt;</code></pre></div>
     </p>
 
 

@@ -79,16 +79,17 @@ import { ModalModule } from &#39;ngx-bootstrap/modal&#39;;
 &#64;NgModule({
 imports: [ConstraintRuleModule, ModalModule, ...]
 })
-export class AppModule {}</code></pre></div><p>import { ConstraintRuleSidebarComponent } from &#39;@congacommerce/elements&#39;;
-import { BsModalService } from &#39;ngx-bootstrap/modal&#39;;</p>
-<p>constructor(private bsModalService: BsModalService) {}</p>
-<p>showSidebar() {
+export class AppModule {}</code></pre></div><div><pre class="line-numbers"><code class="language-typescript">import { ConstraintRuleSidebarComponent } from &#39;&#64;congacommerce/elements&#39;;
+import { BsModalService } from &#39;ngx-bootstrap/modal&#39;;
+
+constructor(private bsModalService: BsModalService) {}
+
+showSidebar() {
       this.bsModalService.show(ConstraintRuleSidebarComponent, {
              backdrop: false,
              class: &#39;constraintRuleSidebar&#39;
       });
-}</p>
-
+}</code></pre></div>
     </p>
 
 

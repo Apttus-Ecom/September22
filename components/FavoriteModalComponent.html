@@ -73,7 +73,13 @@
         <p>Favorite modal lets you add products/cartline items from the drawer to the Favorite Configuration.
 The modal provides option to choose from existing favorites or allow
 user to create new favorite and  update/add  items to the favorite configuartion.</p>
+<h3>Usage</h3>
 
+<div><pre class="line-numbers"><code class="language-typescript">import { FavoriteModalModule } from &#39;&#64;congacommerce/elements&#39;;
+&#64;NgModule({
+imports: [FavoriteModalModule, ...]
+})
+export class AppModule {}</code></pre></div><div><pre class="line-numbers"><code class="language-typescript">&lt;apt-favorite-modal&gt;&lt;/apt-favorite-modal&gt;</code></pre></div>
     </p>
 
 
@@ -336,8 +342,7 @@ user to create new favorite and  update/add  items to the favorite configuartion
             <tr>
                 <td class="col-md-4">
                     <div class="io-description"><p>Method Addfavorite is responsible for adding the products or lineitems
-to the already existing Favorite configuration fro the drawer.
-This method internally invokes  this.favService.addFavorite method.</p>
+to the already existing Favorite configuration from the drawer.</p>
 </div>
 
                     <div class="io-description">
@@ -371,10 +376,7 @@ This method internally invokes  this.favService.addFavorite method.</p>
             <tr>
                 <td class="col-md-4">
                     <div class="io-description"><p>Method createFavorite is responsible for creating new favorite and
-adding the products or lineitems to the newly created favorite configuration.
-This method internally invokes  this.favService.createFavorite method
-for creating new favorite and  this.favService.addFavorite method for
-updating the items in the favorite configuration,</p>
+adding the products or lineitems to the newly created favorite configuration.</p>
 </div>
 
                     <div class="io-description">
