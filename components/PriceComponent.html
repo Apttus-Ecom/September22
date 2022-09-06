@@ -68,7 +68,12 @@
     </p>
     <p class="comment">
         <p>Wrapper component for displaying the price of a record. Supports cart, product, cart item, product options and orders.
-Change detection on this component has been tuned, so use this component in favor of using the price pipes directly.</p>
+Change detection on this component has been tuned, so use this component in favor of using the price pipes directly.
+ <h3>Preview</h3>
+ <div>
+   <h4>Price component used to display prices on mini cart</h4>
+   <img src="https://raw.githubusercontent.com/Apttus-Ecom/Summer19/master/res/price.PNG" style="max-width: 100%">
+ </div></p>
 <h3>Usage</h3>
 
 <div><pre class="line-numbers"><code class="language-typescript">import { PriceModule } from &#39;&#64;congacommerce/elements&#39;;
@@ -76,21 +81,17 @@ Change detection on this component has been tuned, so use this component in favo
 &#64;NgModule({
 imports: [PriceModule, ...]
 })
-export class AppModule {}</code></pre></div><p>// Basic Usage
-&lt;apt-price [record]=&quot;product&quot;&gt;</apt-price></p>
-<p>// All inputs and outputs.
-&lt;apt-price
+export class AppModule {}</code></pre></div><p>// Basic Usage</p>
+<div><pre class="line-numbers"><code class="language-typescript">&lt;apt-price [record]=&quot;product&quot;&gt;&lt;/apt-price&gt;</code></pre></div><p>// All inputs and outputs.</p>
+<div><pre class="line-numbers"><code class="language-typescript">&lt;apt-price
             [record]=&quot;product&quot;
             [quantity]=&quot;1&quot;
             [attributeValue]=&quot;attributeValue&quot;
             [formatted]=&quot;false&quot;
             [type]=&quot;total&quot;
             [term]=&quot;term&quot;
-            [bundle]=&quot;true&quot;</p>
-<blockquote>
-</apt-price>
-</blockquote>
-
+            [bundle]=&quot;true&quot;
+&gt;&lt;/apt-price&gt;</code></pre></div>
     </p>
 
 

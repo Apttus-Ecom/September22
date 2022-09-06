@@ -71,6 +71,8 @@
     </p>
     <p class="comment">
         <p>Line item menu component is used to display configurable view of cart item fields for a user on cart page.</p>
+<h3>Preview</h3>
+<img src="https://github.com/Apttus-Ecom/Summer19/blob/master/res/line-item-menu.png" style="max-width: 100%">
 <h3>Usage</h3>
 
 <div><pre class="line-numbers"><code class="language-typescript">import { LineItemTableRowModule } from &#39;&#64;congacommerce/elements&#39;;
@@ -78,8 +80,7 @@
 &#64;NgModule({
 imports: [LineItemTableRowModule, ...]
 })
-export class AppModule {}</code></pre></div><p><apt-line-item-menu></apt-line-item-menu></p>
-
+export class AppModule {}</code></pre></div><div><pre class="line-numbers"><code class="language-typescript">&lt;apt-line-item-menu&gt;&lt;/apt-line-item-menu&gt;</code></pre></div>
     </p>
 
 
@@ -392,36 +393,35 @@ export class AppModule {}</code></pre></div><p><apt-line-item-menu></apt-line-it
                     <code>./line-item-menu.component.scss</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss">.dropdown-menu &gt; span:hover {
-    background-color: rgb(195, 230, 203);
+  background-color: rgb(195, 230, 203);
 }
 
 .dropdown-menu {
-    min-width: 12rem;
-    max-height: 17rem;
+  min-width: 12rem;
+  max-height: 17rem;
 }
 
 button {
-    font-size: medium;
+  font-size: medium;
 }
 
 ::-webkit-scrollbar {
-    width: 0.35rem;
-    background: white;
+  width: 0.35rem;
+  background: white;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgb(222, 222, 222);
-    border-radius: 0.35rem;
+  background: rgb(222, 222, 222);
+  border-radius: 0.35rem;
 }
 .dropdown-menu {
-
-    .dropdown-item{
-
-        line-height: unset;
-        padding-bottom: unset;
-        min-height: unset;
-    }
-}</code></pre>
+  .dropdown-item {
+    line-height: unset;
+    padding-bottom: unset;
+    min-height: unset;
+  }
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">

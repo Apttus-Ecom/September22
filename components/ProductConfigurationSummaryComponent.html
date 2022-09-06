@@ -80,10 +80,9 @@ The view is a tree like structure containing selected attributes and values with
 &#64;NgModule({
 imports: [ProductConfigurationSummaryModule, ...]
 })
-export class AppModule {}</code></pre></div><p>// Basic Usage
-&lt;apt-product-configuration-summary [product]=&quot;product&quot;&gt;</apt-product-configuration-summary></p>
-<p>// All inputs and outputs.
-&lt;apt-product-configuration-summary
+export class AppModule {}</code></pre></div><p>// Basic Usage</p>
+<div><pre class="line-numbers"><code class="language-typescript">&lt;apt-product-configuration-summary [product]=&quot;product&quot;&gt;&lt;/apt-product-configuration-summary&gt;</code></pre></div><p>// All inputs and outputs.</p>
+<div><pre class="line-numbers"><code class="language-typescript">&lt;apt-product-configuration-summary
             [product]=&quot;product&quot;
             [relatedTo]=&quot;lineItem&quot;
             [changes]=&quot;lineItems&quot;
@@ -91,8 +90,7 @@ export class AppModule {}</code></pre></div><p>// Basic Usage
             [position]=&quot;&#39;top&#39;&quot;
             (onProductAdd)=&quot;closeModal()&quot;
             (onNavigate)=&quot;closeModal()&quot;&gt;
-</apt-product-configuration-summary></p>
-
+&lt;/apt-product-configuration-summary&gt;</code></pre></div>
     </p>
 
 

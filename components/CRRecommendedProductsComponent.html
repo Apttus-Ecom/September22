@@ -71,6 +71,9 @@
     </p>
     <p class="comment">
         <p>The Constraint Rules Recommended Products Component is used for displaying recommended products for items in cart.</p>
+<h3>Preview</h3>
+<img src="https://raw.githubusercontent.com/Apttus-Ecom/Summer19/master/res/recommendedProducts.png" style="max-width: 100%">
+
 <h3>Usage</h3>
 
 <div><pre class="line-numbers"><code class="language-typescript">import { RecommendedProductsModule } from &#39;&#64;congacommerce/elements&#39;;
@@ -78,13 +81,10 @@
 &#64;NgModule({
 imports: [RecommendedProductsModule, ...]
 })
-export class AppModule {}</code></pre></div><p>&lt;apt-cr-recommended-products
+export class AppModule {}</code></pre></div><div><pre class="line-numbers"><code class="language-typescript">&lt;apt-cr-recommended-products
             [productList]=&quot;cartProducts&quot;
-            [cart]=&quot;cart$ | async&quot;</p>
-<blockquote>
-</apt-cr-recommended-products>
-</blockquote>
-
+            [cart]=&quot;cart$ | async&quot;
+&gt;&lt;/apt-cr-recommended-products&gt;</code></pre></div>
     </p>
 
 

@@ -69,7 +69,7 @@
     <p class="comment">
         <p>Animated blinking dots built from the bootstrap library to be used to show loading status.</p>
 <h3>Preview</h3>
-<img class="jumbotron" src="https://raw.githubusercontent.com/Apttus-Ecom/Summer19/master/res/loadingDots.png" style="max-width: 100%">
+<img src="https://raw.githubusercontent.com/Apttus-Ecom/Summer19/master/res/loadingDots.png" style="max-width: 100%">
 <h3>Usage</h3>
 
 <div><pre class="line-numbers"><code class="language-typescript">import { IconModule } from &#39;&#64;congacommerce/elements&#39;;
@@ -224,27 +224,13 @@ export class AppModule {}</code></pre></div><p>// Basic Usage</p>
 
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div
-  [class]&#x3D;&quot;&#x27;spinner-grow &#x27; + color&quot;
-  [class.spinner-grow-sm]&#x3D;&quot;!large&quot;
-  role&#x3D;&quot;status&quot;
-&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div [class]&#x3D;&quot;&#x27;spinner-grow &#x27; + color&quot; [class.spinner-grow-sm]&#x3D;&quot;!large&quot; role&#x3D;&quot;status&quot;&gt;
   &lt;span class&#x3D;&quot;sr-only&quot;&gt;Loading...&lt;/span&gt;
 &lt;/div&gt;
-&lt;div 
-  [class]&#x3D;&quot;&#x27;spinner-grow &#x27; + color&quot;
-  [class.spinner-grow-sm]&#x3D;&quot;!large&quot;
-  role&#x3D;&quot;status&quot;
-  style&#x3D;&quot;animation-delay: .1s;&quot;
-&gt;
+&lt;div [class]&#x3D;&quot;&#x27;spinner-grow &#x27; + color&quot; [class.spinner-grow-sm]&#x3D;&quot;!large&quot; role&#x3D;&quot;status&quot; style&#x3D;&quot;animation-delay: .1s;&quot;&gt;
   &lt;span class&#x3D;&quot;sr-only&quot;&gt;Loading...&lt;/span&gt;
 &lt;/div&gt;
-&lt;div
-  [class]&#x3D;&quot;&#x27;spinner-grow &#x27; + color&quot;
-  [class.spinner-grow-sm]&#x3D;&quot;!large&quot;
-  role&#x3D;&quot;status&quot;
-  style&#x3D;&quot;animation-delay: .2s;&quot;
-&gt;
+&lt;div [class]&#x3D;&quot;&#x27;spinner-grow &#x27; + color&quot; [class.spinner-grow-sm]&#x3D;&quot;!large&quot; role&#x3D;&quot;status&quot; style&#x3D;&quot;animation-delay: .2s;&quot;&gt;
   &lt;span class&#x3D;&quot;sr-only&quot;&gt;Loading...&lt;/span&gt;
 &lt;/div&gt;</code></pre>
     </div>
@@ -275,7 +261,7 @@ export class AppModule {}</code></pre></div><p>// Basic Usage</p>
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div  [class]="\'spinner-grow \' + color"  [class.spinner-grow-sm]="!large"  role="status">  <span class="sr-only">Loading...</span></div><div   [class]="\'spinner-grow \' + color"  [class.spinner-grow-sm]="!large"  role="status"  style="animation-delay: .1s;">  <span class="sr-only">Loading...</span></div><div  [class]="\'spinner-grow \' + color"  [class.spinner-grow-sm]="!large"  role="status"  style="animation-delay: .2s;">  <span class="sr-only">Loading...</span></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div [class]="\'spinner-grow \' + color" [class.spinner-grow-sm]="!large" role="status">  <span class="sr-only">Loading...</span></div><div [class]="\'spinner-grow \' + color" [class.spinner-grow-sm]="!large" role="status" style="animation-delay: .1s;">  <span class="sr-only">Loading...</span></div><div [class]="\'spinner-grow \' + color" [class.spinner-grow-sm]="!large" role="status" style="animation-delay: .2s;">  <span class="sr-only">Loading...</span></div></div>'
     var COMPONENTS = [{'name': 'AdditionalInformationComponent', 'selector': 'apt-additional-information'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AlertComponent', 'selector': 'apt-alert'},{'name': 'AssetDropdownButtonComponent', 'selector': 'apt-asset-dropdown-button'},{'name': 'AssetListComponent', 'selector': 'apt-asset-list'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'CategoryFilterComponent', 'selector': 'apt-category-filter'},{'name': 'ChartComponent', 'selector': 'apt-chart'},{'name': 'ConstraintRuleAlertComponent', 'selector': 'apt-constraint-rule-alert'},{'name': 'ConstraintRuleSidebarComponent', 'selector': 'apt-constraint-rule-sidebar'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'DataFilterComponent', 'selector': 'apt-data-filter'},{'name': 'DotsComponent', 'selector': 'apt-dots'},{'name': 'FavoriteModalComponent', 'selector': 'apt-favorite-modal'},{'name': 'FilesComponent', 'selector': 'apt-files'},{'name': 'GenerateDocumentComponent', 'selector': 'apt-generate-document'},{'name': 'InputDateComponent', 'selector': 'apt-date-range-input'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputSelectComponent', 'selector': 'apt-input-select'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'LineitemCardComponent', 'selector': 'apt-lineitem-card'},{'name': 'LineItemMenuComponent', 'selector': 'apt-line-item-menu'},{'name': 'LineItemTableRowComponent', 'selector': 'apt-line-item-table-row'},{'name': 'LoginFormComponent', 'selector': 'apt-login-form'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'OutputFieldComponent', 'selector': 'apt-output-field'},{'name': 'PaymentComponent', 'selector': 'apt-payment'},{'name': 'PaymentIFrameComponent', 'selector': 'apt-payment-iframe'},{'name': 'PresentDocumentComponent', 'selector': 'apt-present-document'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'PriceModalComponent', 'selector': 'apt-price-modal'},{'name': 'PriceSummaryComponent', 'selector': 'apt-price-summary'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductCompareComponent', 'selector': 'apt-product-compare'},{'name': 'ProductConfigurationComponent', 'selector': 'apt-product-configuration'},{'name': 'ProductConfigurationSummaryComponent', 'selector': 'apt-product-configuration-summary'},{'name': 'ProductDrawerComponent', 'selector': 'apt-product-drawer'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'},{'name': 'ProductSearchComponent', 'selector': 'apt-product-search'},{'name': 'ProductTypeFilterComponent', 'selector': 'apt-product-type-filter'},{'name': 'PromotionComponent', 'selector': 'apt-promotion'},{'name': 'PromotionModalComponent', 'selector': 'apt-pr-modal'},{'name': 'RevalidateCartModalComponent', 'selector': 'apt-revalidate-cart-modal'},{'name': 'SelectAllComponent', 'selector': 'apt-select-all'},{'name': 'SpinnerComponent', 'selector': 'apt-spinner'},{'name': 'TableComponent', 'selector': 'apt-table'},{'name': 'TaxPopHoverComponent', 'selector': 'apt-tax-pophover'}];
     var DIRECTIVES = [{'name': 'AutoFocusDirective', 'selector': '[aptAutoFocus]'}];
     var ACTUAL_COMPONENT = {'name': 'DotsComponent'};

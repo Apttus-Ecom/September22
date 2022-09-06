@@ -70,9 +70,11 @@
         <h3>Description</h3>
     </p>
     <p class="comment">
-        <p>Favorite modal lets you add products/cartline items from the drawer to the Favorite Configuration.
+        <p>Favorite modal lets you add products/cart line items from the drawer to the Favorite Configuration.
 The modal provides option to choose from existing favorites or allow
-user to create new favorite and  update/add  items to the favorite configuartion.</p>
+users to create new favorite and add/update items to the favorite configuartion.</p>
+<h3>Preview</h3>
+<img src="https://github.com/Apttus-Ecom/Summer19/blob/master/res/favorite%20modal.png" style="max-width: 100%">
 <h3>Usage</h3>
 
 <div><pre class="line-numbers"><code class="language-typescript">import { FavoriteModalModule } from &#39;&#64;congacommerce/elements&#39;;
@@ -454,7 +456,7 @@ adding the products or lineitems to the newly created favorite configuration.</p
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>&quot;AddExistingFav&quot;</code>
+                        <i>Default value : </i><code>&#x27;AddExistingFav&#x27;</code>
                     </td>
                 </tr>
 
@@ -533,8 +535,8 @@ adding the products or lineitems to the newly created favorite configuration.</p
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>{
-    primaryTextField: &quot;Name&quot;,
-    fieldList: [&quot;Id&quot;, &quot;Name&quot;],
+    primaryTextField: &#x27;Name&#x27;,
+    fieldList: [&#x27;Id&#x27;, &#x27;Name&#x27;],
   }</code>
                     </td>
                 </tr>
@@ -710,39 +712,34 @@ adding the products or lineitems to the newly created favorite configuration.</p
         &lt;div class&#x3D;&quot;row&quot;&gt;
             &lt;div class&#x3D;&quot;col-12 col-md-12&quot;&gt;
                 &lt;div class&#x3D;&quot;form-group&quot;&gt;
-                    &lt;label  [class.col-form-label-sm]&#x3D;&quot;small&quot; class&#x3D;&quot;font-weight-bold&quot;&gt;{{&#x27;FAVORITE.FAVORITE_MODAL.SEARCH_OR_ADD_FAV&#x27; | translate}}&lt;/label&gt;
-                    &lt;ng-select
-                    class&#x3D;&quot;form-control aptFavLookup p-0&quot; [class.form-control-sm]&#x3D;&quot;small&quot;
-                    [(ngModel)]&#x3D;&quot;value&quot;
-                    [items]&#x3D;&quot;lookupResults&quot;
-                    bindLabel&#x3D;&quot;Name&quot;
-                    (search)&#x3D;&quot;onLookupSearch($event)&quot;
-                    bindValue&#x3D;&quot;Id&quot;
-                    bindLabel&#x3D;&quot;Name&quot;
-                    placeholder&#x3D;&quot;{{&#x27;FAVORITE.FAVORITE_MODAL.ENTER_FAVORITE_NAME&#x27; | translate}}&quot;
-                    [loading]&#x3D;&quot;lookUpLoading&quot;
-                    [ngClass]&#x3D;&quot;{ &#x27;is-invalid&#x27;: select.invalid &amp;&amp; (select.touched || select.dirty) }&quot;
-                    (clear)&#x3D;&quot;setFavLookupFieldData()&quot; (focus)&#x3D;&quot;setFavLookupFieldData()&quot;
-                    #select&#x3D;&quot;ngModel&quot; &gt;
-                    &lt;ng-template ng-option-tmp let-item&#x3D;&quot;item&quot; let-index&#x3D;&quot;index&quot; let-search&#x3D;&quot;search&quot;&gt;
-                        &lt;div class&#x3D;&quot;d-flex align-items-center&quot;&gt;
-                            &lt;div class&#x3D;&quot;d-flex flex-column h-100 justify-content-around&quot;&gt;
-                                &lt;span [ngOptionHighlight]&#x3D;&quot;search&quot;&gt;{{item[&#x27;Name&#x27;]}}&lt;/span&gt;
-                                &lt;i class&#x3D;&quot;small&quot; *ngIf&#x3D;&quot;lookupOptions?.secondaryTextField&quot;&gt;{{item[&#x27;Name&#x27;]}}&lt;/i&gt;
+                    &lt;label [class.col-form-label-sm]&#x3D;&quot;small&quot;
+                        class&#x3D;&quot;font-weight-bold&quot;&gt;{{&#x27;FAVORITE.FAVORITE_MODAL.SEARCH_OR_ADD_FAV&#x27; | translate}}&lt;/label&gt;
+                    &lt;ng-select class&#x3D;&quot;form-control aptFavLookup p-0&quot; [class.form-control-sm]&#x3D;&quot;small&quot; [(ngModel)]&#x3D;&quot;value&quot;
+                        [items]&#x3D;&quot;lookupResults&quot; bindLabel&#x3D;&quot;Name&quot; (search)&#x3D;&quot;onLookupSearch($event)&quot; bindValue&#x3D;&quot;Id&quot;
+                        bindLabel&#x3D;&quot;Name&quot; placeholder&#x3D;&quot;{{&#x27;FAVORITE.FAVORITE_MODAL.ENTER_FAVORITE_NAME&#x27; | translate}}&quot;
+                        [loading]&#x3D;&quot;lookUpLoading&quot;
+                        [ngClass]&#x3D;&quot;{ &#x27;is-invalid&#x27;: select.invalid &amp;&amp; (select.touched || select.dirty) }&quot;
+                        (clear)&#x3D;&quot;setFavLookupFieldData()&quot; (focus)&#x3D;&quot;setFavLookupFieldData()&quot; #select&#x3D;&quot;ngModel&quot;&gt;
+                        &lt;ng-template ng-option-tmp let-item&#x3D;&quot;item&quot; let-index&#x3D;&quot;index&quot; let-search&#x3D;&quot;search&quot;&gt;
+                            &lt;div class&#x3D;&quot;d-flex align-items-center&quot;&gt;
+                                &lt;div class&#x3D;&quot;d-flex flex-column h-100 justify-content-around&quot;&gt;
+                                    &lt;span [ngOptionHighlight]&#x3D;&quot;search&quot;&gt;{{item[&#x27;Name&#x27;]}}&lt;/span&gt;
+                                    &lt;i class&#x3D;&quot;small&quot; *ngIf&#x3D;&quot;lookupOptions?.secondaryTextField&quot;&gt;{{item[&#x27;Name&#x27;]}}&lt;/i&gt;
+                                &lt;/div&gt;
                             &lt;/div&gt;
-                        &lt;/div&gt;
-                    &lt;/ng-template&gt;
-                    &lt;ng-template ng-footer-tmp let-search&#x3D;&quot;search&quot;&gt;
-                        &lt;button  type&#x3D;&quot;button&quot;  class&#x3D;&quot;btn btn-link&quot; (click)&#x3D;&quot;layout &#x3D; &#x27;AddNewFav&#x27;&quot;&gt;
-                            &lt;small class&#x3D;&quot;d-block&quot;&gt;
-                                &lt;i class&#x3D;&quot;fa fa-plus mr-2&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;
-                                &lt;small  [innerHTML]&#x3D;&quot;&#x27;FAVORITE.FAVORITE_MODAL.ADD_NEW_FAVORITE&#x27; | translate: {search: searchTerm}&quot;&gt;&lt;/small&gt;
-                            &lt;/small&gt;
-                        &lt;/button&gt;
-                    &lt;/ng-template&gt;
-                    &lt;ng-template ng-loadingspinner-tmp&gt;
-                        &lt;apt-spinner&gt;&lt;/apt-spinner&gt;
-                    &lt;/ng-template&gt;
+                        &lt;/ng-template&gt;
+                        &lt;ng-template ng-footer-tmp let-search&#x3D;&quot;search&quot;&gt;
+                            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-link&quot; (click)&#x3D;&quot;layout &#x3D; &#x27;AddNewFav&#x27;&quot;&gt;
+                                &lt;small class&#x3D;&quot;d-block&quot;&gt;
+                                    &lt;i class&#x3D;&quot;fa fa-plus mr-2&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;
+                                    &lt;small
+                                        [innerHTML]&#x3D;&quot;&#x27;FAVORITE.FAVORITE_MODAL.ADD_NEW_FAVORITE&#x27; | translate: {search: searchTerm}&quot;&gt;&lt;/small&gt;
+                                &lt;/small&gt;
+                            &lt;/button&gt;
+                        &lt;/ng-template&gt;
+                        &lt;ng-template ng-loadingspinner-tmp&gt;
+                            &lt;apt-spinner&gt;&lt;/apt-spinner&gt;
+                        &lt;/ng-template&gt;
                     &lt;/ng-select&gt;
 
                 &lt;/div&gt;
@@ -751,8 +748,8 @@ adding the products or lineitems to the newly created favorite configuration.</p
     &lt;/div&gt;
     &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
         &lt;div class&#x3D;&quot;form-group d-flex justify-content-end&quot;&gt;
-            &lt;button class&#x3D;&quot;btn btn-primary btn-raised&quot;  type&#x3D;&quot;button&quot;  (click)&#x3D;&quot;addFavorite()&quot; [disabled]&#x3D;&quot;!value&quot; [ladda]&#x3D;&quot;loading&quot;
-            data-style&#x3D;&quot;zoom-in&quot;&gt;{{ &quot;COMMON.UPDATE&quot; | translate }}&lt;/button&gt;
+            &lt;button class&#x3D;&quot;btn btn-primary btn-raised&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;addFavorite()&quot; [disabled]&#x3D;&quot;!value&quot;
+                [ladda]&#x3D;&quot;loading&quot; data-style&#x3D;&quot;zoom-in&quot;&gt;{{ &quot;COMMON.UPDATE&quot; | translate }}&lt;/button&gt;
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/ng-template&gt;
@@ -761,35 +758,36 @@ adding the products or lineitems to the newly created favorite configuration.</p
         &lt;div class&#x3D;&quot;row&quot;&gt;
             &lt;div class&#x3D;&quot;col-12 col-md-12&quot;&gt;
                 &lt;div class&#x3D;&quot;form-group&quot;&gt;
-                    &lt;apt-input-field  [entity]&#x3D;&quot;favorite&quot; [field]&#x3D;&quot;&#x27;Name&#x27;&quot;  [(ngModel)]&#x3D;&quot;favoriteName&quot; [label]&#x3D;&quot;&#x27;Name&#x27;&quot;&gt;
+                    &lt;apt-input-field [entity]&#x3D;&quot;favorite&quot; [field]&#x3D;&quot;&#x27;Name&#x27;&quot; [(ngModel)]&#x3D;&quot;favoriteName&quot; [label]&#x3D;&quot;&#x27;Name&#x27;&quot;&gt;
                     &lt;/apt-input-field&gt;
                 &lt;/div&gt;
                 &lt;div class&#x3D;&quot;form-group&quot;&gt;
-                    &lt;apt-input-field  [entity]&#x3D;&quot;favorite&quot; [field]&#x3D;&quot;&#x27;Description&#x27;&quot; 
-                    [(ngModel)]&#x3D;&quot;favorite.Description&quot;&gt;&lt;/apt-input-field&gt;
+                    &lt;apt-input-field [entity]&#x3D;&quot;favorite&quot; [field]&#x3D;&quot;&#x27;Description&#x27;&quot; [(ngModel)]&#x3D;&quot;favorite.Description&quot;&gt;
+                    &lt;/apt-input-field&gt;
                 &lt;/div&gt;
                 &lt;div class&#x3D;&quot;form-group custom-control custom-checkbox pl-3&quot;&gt;
                     &lt;input type&#x3D;&quot;checkbox&quot; [checked]&#x3D;&quot;fav_checked&quot; id&#x3D;&quot;favScope&quot; class&#x3D;&quot;custom-control-input&quot;
-                    [(ngModel)]&#x3D;&quot;fav_checked&quot; (ngModelChange)&#x3D;&quot;fav_checked ? favorite.Scope &#x3D; &#x27;Public&#x27;: favorite.Scope &#x3D; &#x27;Private&#x27;&quot;&gt;
-                    &lt;label class&#x3D;&quot;ml-2 custom-control-label&quot; for&#x3D;&quot;favScope&quot;&gt;{{&#x27;FAVORITE.FAVORITE_MODAL.MAKE_PUBLICLY_VISIBILE&#x27; | translate}}&lt;/label&gt;
+                        [(ngModel)]&#x3D;&quot;fav_checked&quot;
+                        (ngModelChange)&#x3D;&quot;fav_checked ? favorite.Scope &#x3D; &#x27;Public&#x27;: favorite.Scope &#x3D; &#x27;Private&#x27;&quot;&gt;
+                    &lt;label class&#x3D;&quot;ml-2 custom-control-label&quot;
+                        for&#x3D;&quot;favScope&quot;&gt;{{&#x27;FAVORITE.FAVORITE_MODAL.MAKE_PUBLICLY_VISIBILE&#x27; | translate}}&lt;/label&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
         &lt;div class&#x3D;&quot;form-group d-flex justify-content-end&quot;&gt;
-            &lt;button *ngIf&#x3D;&quot;lookupResults.length &gt; 0&quot; class&#x3D;&quot;btn btn-link btn-raised&quot;  type&#x3D;&quot;button&quot; (click)&#x3D;&quot;layout &#x3D; &#x27;AddExistingFav&#x27;&quot;
-            data-style&#x3D;&quot;zoom-in&quot;&gt;
-            {{ &#x27;FAVORITE.FAVORITE_MODAL.ADD_TO_EXISTING&#x27; | translate }}
+            &lt;button *ngIf&#x3D;&quot;lookupResults.length &gt; 0&quot; class&#x3D;&quot;btn btn-link btn-raised&quot; type&#x3D;&quot;button&quot;
+                (click)&#x3D;&quot;layout &#x3D; &#x27;AddExistingFav&#x27;&quot; data-style&#x3D;&quot;zoom-in&quot;&gt;
+                {{ &#x27;FAVORITE.FAVORITE_MODAL.ADD_TO_EXISTING&#x27; | translate }}
             &lt;/button&gt;
-            &lt;button class&#x3D;&quot;btn btn-primary btn-raised&quot;  type&#x3D;&quot;button&quot; (click)&#x3D;&quot;createFavorite()&quot; [ladda]&#x3D;&quot;loading&quot;
-            data-style&#x3D;&quot;zoom-in&quot;&gt;
-            {{ &#x27;FAVORITE.FAVORITE_MODAL.ADD_FAVORITE&#x27; | translate }}
+            &lt;button class&#x3D;&quot;btn btn-primary btn-raised&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;createFavorite()&quot; [ladda]&#x3D;&quot;loading&quot;
+                data-style&#x3D;&quot;zoom-in&quot;&gt;
+                {{ &#x27;FAVORITE.FAVORITE_MODAL.ADD_FAVORITE&#x27; | translate }}
             &lt;/button&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/ng-template&gt;
-</code></pre>
+&lt;/ng-template&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -797,100 +795,94 @@ adding the products or lineitems to the newly created favorite configuration.</p
                     <code>./favorite-modal.component.scss</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss">.ng-select.aptFavLookup {
-    font-size: 14px;
+  font-size: 14px;
 
-    &amp;.ng-select-focused:not(.ng-select-opened)
-    &gt;.ng-select-container {
-        border-color: transparent;
-        box-shadow: none;
+  &amp;.ng-select-focused:not(.ng-select-opened) &gt; .ng-select-container {
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+  .ng-select-container {
+    background-color: transparent;
+    border-radius: 0px;
+    min-height: 34px;
+    height: 34px;
+    border-width: 0px;
+
+    .ng-arrow-wrapper {
+      display: none;
     }
 
-    .ng-select-container {
-        background-color: transparent;
-        border-radius: 0px;
-        min-height: 34px;
-        height: 34px;
-        border-width: 0px;
-  
-        .ng-arrow-wrapper {
-            display: none;
-        }
+    apt-spinner {
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
 
-        apt-spinner {
-            svg {
-                width: 18px;
-                height: 18px;
-            }
-        }
-  
-        .ng-clear-wrapper {
-            width: 24px;
-            height: 24px;
-    
-            &amp;:hover
-            .ng-clear {
-                opacity: 1;
-            }
-    
-            .ng-clear {
-                width: 24px;
-                height: 24px;
-                color: transparent;
-                content: &#x27;&#x27;;
-                background-image: url(&quot;data:image/svg+xml,%3Csvg fill&#x3D;&#x27;%23000&#x27; xmlns&#x3D;&#x27;http://www.w3.org/2000/svg&#x27; xmlns:xlink&#x3D;&#x27;http://www.w3.org/1999/xlink&#x27; width&#x3D;&#x27;24&#x27; height&#x3D;&#x27;24&#x27; viewBox&#x3D;&#x27;0 0 24 24&#x27; class&#x3D;&#x27;ng-scope&#x27;%3E%3Cpolygon points&#x3D;&#x27;20 5.611 18.389 4 12 10.389 5.611 4 4 5.611 10.389 12 4 18.389 5.611 20 12 13.611 18.389 20 20 18.389 13.611 12&#x27;%3E%3C/polygon%3E%3C/svg%3E&quot;);
-                opacity: .5;
-            }
-        }
-  
-        &amp;::before {
-            width: 24px;
-            height: 24px;
-            content: &#x27;&#x27;;
-            background-image: url(&quot;data:image/svg+xml,%3Csvg fill&#x3D;&#x27;%23000&#x27; xmlns&#x3D;&#x27;http://www.w3.org/2000/svg&#x27; xmlns:xlink&#x3D;&#x27;http://www.w3.org/1999/xlink&#x27; width&#x3D;&#x27;24&#x27; height&#x3D;&#x27;24&#x27; viewBox&#x3D;&#x27;0 0 24 24&#x27; class&#x3D;&#x27;ng-scope&#x27;%3E%3Cpath d&#x3D;&#x27;M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z&#x27;%3E%3C/path%3E%3C/svg%3E&quot;);
-        }
-  
+    .ng-clear-wrapper {
+      width: 24px;
+      height: 24px;
+
+      &amp;:hover .ng-clear {
+        opacity: 1;
+      }
+
+      .ng-clear {
+        width: 24px;
+        height: 24px;
+        color: transparent;
+        content: &quot;&quot;;
+        background-image: url(&quot;data:image/svg+xml,%3Csvg fill&#x3D;&#x27;%23000&#x27; xmlns&#x3D;&#x27;http://www.w3.org/2000/svg&#x27; xmlns:xlink&#x3D;&#x27;http://www.w3.org/1999/xlink&#x27; width&#x3D;&#x27;24&#x27; height&#x3D;&#x27;24&#x27; viewBox&#x3D;&#x27;0 0 24 24&#x27; class&#x3D;&#x27;ng-scope&#x27;%3E%3Cpolygon points&#x3D;&#x27;20 5.611 18.389 4 12 10.389 5.611 4 4 5.611 10.389 12 4 18.389 5.611 20 12 13.611 18.389 20 20 18.389 13.611 12&#x27;%3E%3C/polygon%3E%3C/svg%3E&quot;);
+        opacity: 0.5;
+      }
     }
-  
-    &amp;.ng-select-single
-     .ng-select-container
-     .ng-value-container
-     .ng-input {
-        padding-left: 34px;
-        padding-right: 36px;
-        &amp; &gt; input {
-            cursor: text;
-        }
+
+    &amp;::before {
+      width: 24px;
+      height: 24px;
+      content: &quot;&quot;;
+      background-image: url(&quot;data:image/svg+xml,%3Csvg fill&#x3D;&#x27;%23000&#x27; xmlns&#x3D;&#x27;http://www.w3.org/2000/svg&#x27; xmlns:xlink&#x3D;&#x27;http://www.w3.org/1999/xlink&#x27; width&#x3D;&#x27;24&#x27; height&#x3D;&#x27;24&#x27; viewBox&#x3D;&#x27;0 0 24 24&#x27; class&#x3D;&#x27;ng-scope&#x27;%3E%3Cpath d&#x3D;&#x27;M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z&#x27;%3E%3C/path%3E%3C/svg%3E&quot;);
     }
-  
-    &amp;.contacts {
-        .ng-dropdown-panel {
-            bottom: auto !important;
-        }
+  }
+
+  &amp;.ng-select-single .ng-select-container .ng-value-container .ng-input {
+    padding-left: 34px;
+    padding-right: 36px;
+    &amp; &gt; input {
+      cursor: text;
     }
-  
+  }
+
+  &amp;.contacts {
     .ng-dropdown-panel {
-        .ng-dropdown-header {
-            font-size: 12px;
-            padding-left: 14px;
-            border: none;
-        }
-        .ng-dropdown-panel-items {
-    
-            .ng-option {
-                min-height: 40px;
-                padding: 4px 10px 4px 14px;
-    
-                .basicOption {
-                    line-height: 32px;
-                }
-        
-                .contactOption {
-                    height: 56px;
-                }
-            }
-        }
+      bottom: auto !important;
     }
-}</code></pre>
+  }
+
+  .ng-dropdown-panel {
+    .ng-dropdown-header {
+      font-size: 12px;
+      padding-left: 14px;
+      border: none;
+    }
+    .ng-dropdown-panel-items {
+      .ng-option {
+        min-height: 40px;
+        padding: 4px 10px 4px 14px;
+
+        .basicOption {
+          line-height: 32px;
+        }
+
+        .contactOption {
+          height: 56px;
+        }
+      }
+    }
+  }
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -918,7 +910,7 @@ adding the products or lineitems to the newly created favorite configuration.</p
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div>    <div class="modal-header">        <h4 class="modal-title d-flex align-items-center m-0 text-truncate">            {{ "FAVORITE.FAVORITE_MODAL.ADD_FAVORITE" | translate }}        </h4>        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">            <span aria-hidden="true">&times;</span>        </button>    </div>    <ng-container [ngSwitch]="layout">        <ng-container *ngSwitchCase="\'AddExistingFav\'">            <ng-container *ngTemplateOutlet="AddExistingFav;"></ng-container>        </ng-container>        <ng-container *ngSwitchCase="\'AddNewFav\'">            <ng-container *ngTemplateOutlet="AddNewFav;"></ng-container>        </ng-container>    </ng-container></div><ng-template #AddExistingFav>    <div class="modal-body">        <div class="row">            <div class="col-12 col-md-12">                <div class="form-group">                    <label  [class.col-form-label-sm]="small" class="font-weight-bold">{{\'FAVORITE.FAVORITE_MODAL.SEARCH_OR_ADD_FAV\' | translate}}</label>                    <ng-select                    class="form-control aptFavLookup p-0" [class.form-control-sm]="small"                    [(ngModel)]="value"                    [items]="lookupResults"                    bindLabel="Name"                    (search)="onLookupSearch($event)"                    bindValue="Id"                    bindLabel="Name"                    placeholder="{{\'FAVORITE.FAVORITE_MODAL.ENTER_FAVORITE_NAME\' | translate}}"                    [loading]="lookUpLoading"                    [ngClass]="{ \'is-invalid\': select.invalid && (select.touched || select.dirty) }"                    (clear)="setFavLookupFieldData()" (focus)="setFavLookupFieldData()"                    #select="ngModel" >                    <ng-template ng-option-tmp let-item="item" let-index="index" let-search="search">                        <div class="d-flex align-items-center">                            <div class="d-flex flex-column h-100 justify-content-around">                                <span [ngOptionHighlight]="search">{{item[\'Name\']}}</span>                                <i class="small" *ngIf="lookupOptions?.secondaryTextField">{{item[\'Name\']}}</i>                            </div>                        </div>                    </ng-template>                    <ng-template ng-footer-tmp let-search="search">                        <button  type="button"  class="btn btn-link" (click)="layout = \'AddNewFav\'">                            <small class="d-block">                                <i class="fa fa-plus mr-2" aria-hidden="true"></i>                                <small  [innerHTML]="\'FAVORITE.FAVORITE_MODAL.ADD_NEW_FAVORITE\' | translate: {search: searchTerm}"></small>                            </small>                        </button>                    </ng-template>                    <ng-template ng-loadingspinner-tmp>                        <apt-spinner></apt-spinner>                    </ng-template>                    </ng-select>                </div>            </div>        </div>    </div>    <div class="modal-footer">        <div class="form-group d-flex justify-content-end">            <button class="btn btn-primary btn-raised"  type="button"  (click)="addFavorite()" [disabled]="!value" [ladda]="loading"            data-style="zoom-in">{{ "COMMON.UPDATE" | translate }}</button>        </div>    </div></ng-template><ng-template #AddNewFav>    <div class="modal-body">        <div class="row">            <div class="col-12 col-md-12">                <div class="form-group">                    <apt-input-field  [entity]="favorite" [field]="\'Name\'"  [(ngModel)]="favoriteName" [label]="\'Name\'">                    </apt-input-field>                </div>                <div class="form-group">                    <apt-input-field  [entity]="favorite" [field]="\'Description\'"                     [(ngModel)]="favorite.Description"></apt-input-field>                </div>                <div class="form-group custom-control custom-checkbox pl-3">                    <input type="checkbox" [checked]="fav_checked" id="favScope" class="custom-control-input"                    [(ngModel)]="fav_checked" (ngModelChange)="fav_checked ? favorite.Scope = \'Public\': favorite.Scope = \'Private\'">                    <label class="ml-2 custom-control-label" for="favScope">{{\'FAVORITE.FAVORITE_MODAL.MAKE_PUBLICLY_VISIBILE\' | translate}}</label>                </div>            </div>        </div>    </div>    <div class="modal-footer">        <div class="form-group d-flex justify-content-end">            <button *ngIf="lookupResults.length > 0" class="btn btn-link btn-raised"  type="button" (click)="layout = \'AddExistingFav\'"            data-style="zoom-in">            {{ \'FAVORITE.FAVORITE_MODAL.ADD_TO_EXISTING\' | translate }}            </button>            <button class="btn btn-primary btn-raised"  type="button" (click)="createFavorite()" [ladda]="loading"            data-style="zoom-in">            {{ \'FAVORITE.FAVORITE_MODAL.ADD_FAVORITE\' | translate }}            </button>        </div>    </div></ng-template></div>'
+        var COMPONENT_TEMPLATE = '<div><div>    <div class="modal-header">        <h4 class="modal-title d-flex align-items-center m-0 text-truncate">            {{ "FAVORITE.FAVORITE_MODAL.ADD_FAVORITE" | translate }}        </h4>        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">            <span aria-hidden="true">&times;</span>        </button>    </div>    <ng-container [ngSwitch]="layout">        <ng-container *ngSwitchCase="\'AddExistingFav\'">            <ng-container *ngTemplateOutlet="AddExistingFav;"></ng-container>        </ng-container>        <ng-container *ngSwitchCase="\'AddNewFav\'">            <ng-container *ngTemplateOutlet="AddNewFav;"></ng-container>        </ng-container>    </ng-container></div><ng-template #AddExistingFav>    <div class="modal-body">        <div class="row">            <div class="col-12 col-md-12">                <div class="form-group">                    <label [class.col-form-label-sm]="small"                        class="font-weight-bold">{{\'FAVORITE.FAVORITE_MODAL.SEARCH_OR_ADD_FAV\' | translate}}</label>                    <ng-select class="form-control aptFavLookup p-0" [class.form-control-sm]="small" [(ngModel)]="value"                        [items]="lookupResults" bindLabel="Name" (search)="onLookupSearch($event)" bindValue="Id"                        bindLabel="Name" placeholder="{{\'FAVORITE.FAVORITE_MODAL.ENTER_FAVORITE_NAME\' | translate}}"                        [loading]="lookUpLoading"                        [ngClass]="{ \'is-invalid\': select.invalid && (select.touched || select.dirty) }"                        (clear)="setFavLookupFieldData()" (focus)="setFavLookupFieldData()" #select="ngModel">                        <ng-template ng-option-tmp let-item="item" let-index="index" let-search="search">                            <div class="d-flex align-items-center">                                <div class="d-flex flex-column h-100 justify-content-around">                                    <span [ngOptionHighlight]="search">{{item[\'Name\']}}</span>                                    <i class="small" *ngIf="lookupOptions?.secondaryTextField">{{item[\'Name\']}}</i>                                </div>                            </div>                        </ng-template>                        <ng-template ng-footer-tmp let-search="search">                            <button type="button" class="btn btn-link" (click)="layout = \'AddNewFav\'">                                <small class="d-block">                                    <i class="fa fa-plus mr-2" aria-hidden="true"></i>                                    <small                                        [innerHTML]="\'FAVORITE.FAVORITE_MODAL.ADD_NEW_FAVORITE\' | translate: {search: searchTerm}"></small>                                </small>                            </button>                        </ng-template>                        <ng-template ng-loadingspinner-tmp>                            <apt-spinner></apt-spinner>                        </ng-template>                    </ng-select>                </div>            </div>        </div>    </div>    <div class="modal-footer">        <div class="form-group d-flex justify-content-end">            <button class="btn btn-primary btn-raised" type="button" (click)="addFavorite()" [disabled]="!value"                [ladda]="loading" data-style="zoom-in">{{ "COMMON.UPDATE" | translate }}</button>        </div>    </div></ng-template><ng-template #AddNewFav>    <div class="modal-body">        <div class="row">            <div class="col-12 col-md-12">                <div class="form-group">                    <apt-input-field [entity]="favorite" [field]="\'Name\'" [(ngModel)]="favoriteName" [label]="\'Name\'">                    </apt-input-field>                </div>                <div class="form-group">                    <apt-input-field [entity]="favorite" [field]="\'Description\'" [(ngModel)]="favorite.Description">                    </apt-input-field>                </div>                <div class="form-group custom-control custom-checkbox pl-3">                    <input type="checkbox" [checked]="fav_checked" id="favScope" class="custom-control-input"                        [(ngModel)]="fav_checked"                        (ngModelChange)="fav_checked ? favorite.Scope = \'Public\': favorite.Scope = \'Private\'">                    <label class="ml-2 custom-control-label"                        for="favScope">{{\'FAVORITE.FAVORITE_MODAL.MAKE_PUBLICLY_VISIBILE\' | translate}}</label>                </div>            </div>        </div>    </div>    <div class="modal-footer">        <div class="form-group d-flex justify-content-end">            <button *ngIf="lookupResults.length > 0" class="btn btn-link btn-raised" type="button"                (click)="layout = \'AddExistingFav\'" data-style="zoom-in">                {{ \'FAVORITE.FAVORITE_MODAL.ADD_TO_EXISTING\' | translate }}            </button>            <button class="btn btn-primary btn-raised" type="button" (click)="createFavorite()" [ladda]="loading"                data-style="zoom-in">                {{ \'FAVORITE.FAVORITE_MODAL.ADD_FAVORITE\' | translate }}            </button>        </div>    </div></ng-template></div>'
     var COMPONENTS = [{'name': 'AdditionalInformationComponent', 'selector': 'apt-additional-information'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AlertComponent', 'selector': 'apt-alert'},{'name': 'AssetDropdownButtonComponent', 'selector': 'apt-asset-dropdown-button'},{'name': 'AssetListComponent', 'selector': 'apt-asset-list'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'CategoryFilterComponent', 'selector': 'apt-category-filter'},{'name': 'ChartComponent', 'selector': 'apt-chart'},{'name': 'ConstraintRuleAlertComponent', 'selector': 'apt-constraint-rule-alert'},{'name': 'ConstraintRuleSidebarComponent', 'selector': 'apt-constraint-rule-sidebar'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'DataFilterComponent', 'selector': 'apt-data-filter'},{'name': 'DotsComponent', 'selector': 'apt-dots'},{'name': 'FavoriteModalComponent', 'selector': 'apt-favorite-modal'},{'name': 'FilesComponent', 'selector': 'apt-files'},{'name': 'GenerateDocumentComponent', 'selector': 'apt-generate-document'},{'name': 'InputDateComponent', 'selector': 'apt-date-range-input'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputSelectComponent', 'selector': 'apt-input-select'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'LineitemCardComponent', 'selector': 'apt-lineitem-card'},{'name': 'LineItemMenuComponent', 'selector': 'apt-line-item-menu'},{'name': 'LineItemTableRowComponent', 'selector': 'apt-line-item-table-row'},{'name': 'LoginFormComponent', 'selector': 'apt-login-form'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'OutputFieldComponent', 'selector': 'apt-output-field'},{'name': 'PaymentComponent', 'selector': 'apt-payment'},{'name': 'PaymentIFrameComponent', 'selector': 'apt-payment-iframe'},{'name': 'PresentDocumentComponent', 'selector': 'apt-present-document'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'PriceModalComponent', 'selector': 'apt-price-modal'},{'name': 'PriceSummaryComponent', 'selector': 'apt-price-summary'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductCompareComponent', 'selector': 'apt-product-compare'},{'name': 'ProductConfigurationComponent', 'selector': 'apt-product-configuration'},{'name': 'ProductConfigurationSummaryComponent', 'selector': 'apt-product-configuration-summary'},{'name': 'ProductDrawerComponent', 'selector': 'apt-product-drawer'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'},{'name': 'ProductSearchComponent', 'selector': 'apt-product-search'},{'name': 'ProductTypeFilterComponent', 'selector': 'apt-product-type-filter'},{'name': 'PromotionComponent', 'selector': 'apt-promotion'},{'name': 'PromotionModalComponent', 'selector': 'apt-pr-modal'},{'name': 'RevalidateCartModalComponent', 'selector': 'apt-revalidate-cart-modal'},{'name': 'SelectAllComponent', 'selector': 'apt-select-all'},{'name': 'SpinnerComponent', 'selector': 'apt-spinner'},{'name': 'TableComponent', 'selector': 'apt-table'},{'name': 'TaxPopHoverComponent', 'selector': 'apt-tax-pophover'}];
     var DIRECTIVES = [{'name': 'AutoFocusDirective', 'selector': '[aptAutoFocus]'}];
     var ACTUAL_COMPONENT = {'name': 'FavoriteModalComponent'};

@@ -71,21 +71,25 @@
     </p>
     <p class="comment">
         <p>Output field component is used to create a label value paired output that can be displayed as an editable field with an optional popover that shows related information about the field.</p>
+<h3>Preview</h3>
+ <div>
+   <h4>Output field</h4>
+   <img src="https://raw.githubusercontent.com/Apttus-Ecom/Summer19/master/res/outputField.PNG" style="max-width: 100%">
+   <h4>Output field displayed as an editable field with popover</h4>
+   <img src="https://raw.githubusercontent.com/Apttus-Ecom/Summer19/master/res/outputFieldWithEditableField.PNG" style="max-width: 100%">
+ </div>
 <h3>Usage</h3>
 
 <div><pre class="line-numbers"><code class="language-typescript">import { OutputFieldModule } from &#39;&#64;congacommerce/elements&#39;;
 
 &#64;ngModule({
 imports: [OutputFieldModule, ...]
-})</code></pre></div><p>&lt;apt-output-field
+})</code></pre></div><div><pre class="line-numbers"><code class="language-typescript">&lt;apt-output-field
              [record]=&quot;quote&quot;
              [field]=&quot;CreatedDate&quot;
              layout=&quot;inline&quot;
-             [editable]=&quot;false&quot;</p>
-<blockquote>
-</apt-output-field>
-</blockquote>
-
+             [editable]=&quot;false&quot;
+&gt;&lt;/apt-output-field&gt;</code></pre></div>
     </p>
 
 

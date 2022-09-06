@@ -72,6 +72,9 @@
     <p class="comment">
         <p>Product configuration component is used to show the hierarchical view of the configurations for a given product or cart line item.
 This component is responsible for loading configuration of product</p>
+<h3>Preview</h3>
+<img src="https://raw.githubusercontent.com/Apttus-Ecom/Summer19/master/res/productConfiguration.png" style="max-width: 100%">
+
 <h3>Usage</h3>
 
 <div><pre class="line-numbers"><code class="language-typescript">import { ProductConfigurationModule } from &#39;&#64;congacommerce/elements&#39;;
@@ -79,14 +82,11 @@ This component is responsible for loading configuration of product</p>
 &#64;NgModule({
 imports: [ProductConfigurationModule, ...]
 })
-export class AppModule {}</code></pre></div><p>&lt;apt-product-configuration
+export class AppModule {}</code></pre></div><div><pre class="line-numbers"><code class="language-typescript">&lt;apt-product-configuration
               [product]=&quot;product.Id&quot;
               [relatedTo]=&quot;parent&quot;
-[accordion]=&quot;true&quot;</p>
-<blockquote>
-</apt-product-configuration>
-</blockquote>
-
+[accordion]=&quot;true&quot;
+&gt;&lt;/apt-product-configuration&gt;</code></pre></div>
     </p>
 
 

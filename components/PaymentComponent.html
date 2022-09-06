@@ -68,6 +68,10 @@
     </p>
     <p class="comment">
         <p>Payment component is used for processing order payments.</p>
+<h3>Preview</h3>
+ <div>
+   <img src="https://raw.githubusercontent.com/Apttus-Ecom/Summer19/master/res/payment.PNG" style="max-width: 100%">
+ </div>
 <h3>Usage</h3>
 
 <div><pre class="line-numbers"><code class="language-typescript">import { PaymentComponentModule } from &#39;&#64;congacommerce/elements&#39;;
@@ -75,14 +79,11 @@
 &#64;NgModule({
 imports: [PaymentComponentModule, ...]
 })
-export class AppModule {}</code></pre></div><p>&lt;apt-payment
+export class AppModule {}</code></pre></div><div><pre class="line-numbers"><code class="language-typescript">&lt;apt-payment
             [paymentTransaction]=&quot;paymentTransaction&quot;
             (onSelectingPayment)=&quot;handleSelectPayment($event)&quot;
-            (onPaymentComplete)=&quot;handlePaymentComplete($event)&quot;</p>
-<blockquote>
-</apt-payment>
-</blockquote>
-
+            (onPaymentComplete)=&quot;handlePaymentComplete($event)&quot;
+&gt;&lt;/apt-payment&gt;</code></pre></div>
     </p>
 
 

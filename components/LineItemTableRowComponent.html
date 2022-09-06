@@ -71,6 +71,8 @@
     </p>
     <p class="comment">
         <p>Line item table row component is used to display line items on cart, quote, and order detail pages.</p>
+<h3>Preview</h3>
+<img src="https://github.com/Apttus-Ecom/Summer19/blob/master/res/line-item-table-row.png" style="max-width: 100%">
 <h3>Usage</h3>
 
 <div><pre class="line-numbers"><code class="language-typescript">import { LineItemTableRowModule } from &#39;&#64;congacommerce/elements&#39;;
@@ -78,15 +80,12 @@
 &#64;NgModule({
 imports: [LineItemTableRowModule, ...]
 })
-export class AppModule {}</code></pre></div><p>&lt;apt-line-item-table-row
+export class AppModule {}</code></pre></div><div><pre class="line-numbers"><code class="language-typescript">&lt;apt-line-item-table-row
              [cart]=&quot;cart&quot;
              [parent]=&quot;parentItem&quot;
              [children]=&quot;childItems&quot;
-             [index]=&quot;index&quot;</p>
-<blockquote>
-</apt-line-item-table-row>
-</blockquote>
-
+             [index]=&quot;index&quot;
+&gt;&lt;/apt-line-item-table-row&gt;</code></pre></div>
     </p>
 
 
@@ -536,11 +535,11 @@ export class AppModule {}</code></pre></div><p>&lt;apt-line-item-table-row
         <pre class="line-numbers"><code class="language-html">&lt;ng-container *ngIf&#x3D;&quot;parent?.LineType &#x3D;&#x3D;&#x3D; &#x27;Product/Service&#x27; &amp;&amp; userView$ | async as userView&quot;&gt;
   &lt;tr [attr.data-index]&#x3D;&quot;index&quot;&gt;
     &lt;td width&#x3D;&quot;2%&quot; class&#x3D;&quot;pt-4 pr-0 pl-3&quot; *ngIf&#x3D;&quot;isCartLineItem(parent)&quot;&gt;
-        &lt;div class&#x3D;&quot;custom-control custom-checkbox custom-checkbox-lg card-title&quot;&gt;
-            &lt;input [id]&#x3D;&quot;parent.Id&quot; type&#x3D;&quot;checkbox&quot; class&#x3D;&quot;custom-control-input&quot; (change)&#x3D;&quot;handleCheckbox($event)&quot;
-            [checked]&#x3D;&quot;selected$ | async&quot;   /&gt;
-            &lt;label class&#x3D;&quot;custom-control-label d-flex justify-content-between&quot; [for]&#x3D;&quot;parent.Id&quot;&gt;&lt;/label&gt;
-          &lt;/div&gt;
+      &lt;div class&#x3D;&quot;custom-control custom-checkbox custom-checkbox-lg card-title&quot;&gt;
+        &lt;input [id]&#x3D;&quot;parent.Id&quot; type&#x3D;&quot;checkbox&quot; class&#x3D;&quot;custom-control-input&quot; (change)&#x3D;&quot;handleCheckbox($event)&quot;
+          [checked]&#x3D;&quot;selected$ | async&quot; /&gt;
+        &lt;label class&#x3D;&quot;custom-control-label d-flex justify-content-between&quot; [for]&#x3D;&quot;parent.Id&quot;&gt;&lt;/label&gt;
+      &lt;/div&gt;
     &lt;/td&gt;
     &lt;td width&#x3D;&quot;15%&quot; class&#x3D;&quot;pt-4&quot;&gt;
       &lt;img [src]&#x3D;&quot;parent?.Product?.IconId | image&quot; class&#x3D;&quot;w-100&quot; /&gt;
@@ -579,30 +578,30 @@ export class AppModule {}</code></pre></div><p>&lt;apt-line-item-table-row
         &lt;p class&#x3D;&quot;description&quot;&gt;
           {{parent?.Description}}
         &lt;/p&gt;
-        &lt;div class&#x3D;&quot;row&quot; *ngIf&#x3D;&quot;!isCartLineItem(parent)&quot; &gt;
-            &lt;!-- frequency --&gt;
-                &lt;div class&#x3D;&quot;col-sm-6 col-xl-3&quot; *ngIf&#x3D;&quot;parent?.PriceType !&#x3D;&#x3D; &#x27;One Time&#x27;&quot;&gt;
-                    &lt;apt-output-field [record]&#x3D;&quot;parent&quot;  layout&#x3D;&quot;stacked&quot; label&#x3D;&quot;Frequency&quot; field&#x3D;&quot;PricingFrequency&quot;
-                        [editable]&#x3D;&quot;editableFields&quot;&gt;&lt;/apt-output-field&gt;
-                &lt;/div&gt;
+        &lt;div class&#x3D;&quot;row&quot; *ngIf&#x3D;&quot;!isCartLineItem(parent)&quot;&gt;
+          &lt;!-- frequency --&gt;
+          &lt;div class&#x3D;&quot;col-sm-6 col-xl-3&quot; *ngIf&#x3D;&quot;parent?.PriceType !&#x3D;&#x3D; &#x27;One Time&#x27;&quot;&gt;
+            &lt;apt-output-field [record]&#x3D;&quot;parent&quot; layout&#x3D;&quot;stacked&quot; label&#x3D;&quot;Frequency&quot; field&#x3D;&quot;PricingFrequency&quot;
+              [editable]&#x3D;&quot;editableFields&quot;&gt;&lt;/apt-output-field&gt;
+          &lt;/div&gt;
 
-                &lt;!-- Price Type --&gt;
-                &lt;div class&#x3D;&quot;col-sm-6 col-xl-3&quot;&gt;
-                    &lt;apt-output-field [record]&#x3D;&quot;parent&quot;  layout&#x3D;&quot;stacked&quot; label&#x3D;&quot;Price Type&quot;  field&#x3D;&quot;PriceType&quot;
-                        [editable]&#x3D;&quot;editableFields&quot;&gt;&lt;/apt-output-field&gt;
-                &lt;/div&gt;
+          &lt;!-- Price Type --&gt;
+          &lt;div class&#x3D;&quot;col-sm-6 col-xl-3&quot;&gt;
+            &lt;apt-output-field [record]&#x3D;&quot;parent&quot; layout&#x3D;&quot;stacked&quot; label&#x3D;&quot;Price Type&quot; field&#x3D;&quot;PriceType&quot;
+              [editable]&#x3D;&quot;editableFields&quot;&gt;&lt;/apt-output-field&gt;
+          &lt;/div&gt;
 
-                &lt;!-- Selling Term --&gt;
-                &lt;div class&#x3D;&quot;col-sm-6 col-xl-3&quot;&gt;
-                    &lt;apt-output-field [record]&#x3D;&quot;parent&quot;  layout&#x3D;&quot;stacked&quot; label&#x3D;&quot;SellingTerm&quot; field&#x3D;&quot;SellingTerm&quot;
-                        [editable]&#x3D;&quot;editableFields&quot;&gt;
-                    &lt;/apt-output-field&gt;
-                &lt;/div&gt;
+          &lt;!-- Selling Term --&gt;
+          &lt;div class&#x3D;&quot;col-sm-6 col-xl-3&quot;&gt;
+            &lt;apt-output-field [record]&#x3D;&quot;parent&quot; layout&#x3D;&quot;stacked&quot; label&#x3D;&quot;SellingTerm&quot; field&#x3D;&quot;SellingTerm&quot;
+              [editable]&#x3D;&quot;editableFields&quot;&gt;
+            &lt;/apt-output-field&gt;
+          &lt;/div&gt;
         &lt;/div&gt;
 
         &lt;!-- Start Date / End Date --&gt;
         &lt;div class&#x3D;&quot;row&quot; *ngIf&#x3D;&quot;!isCartLineItem(parent); else displayFields&quot;&gt;
-          &lt;div class&#x3D;&quot;col-8&quot; &gt;
+          &lt;div class&#x3D;&quot;col-8&quot;&gt;
             &lt;apt-date-range-input *ngIf&#x3D;&quot;parent?.PriceType &#x3D;&#x3D;&#x3D; &#x27;Recurring&#x27; || parent?.PriceType &#x3D;&#x3D;&#x3D; &#x27;Usage&#x27;&quot;
               [disableStartDate]&#x3D;&quot;parent?.LineStatus?.toLowerCase() &#x3D;&#x3D;&#x3D;&#x27;cancelled&#x27; || parent?.LineStatus?.toLowerCase() &#x3D;&#x3D;&#x3D;&#x27;renewed&#x27;&quot;
               (onStartDateChange)&#x3D;&quot;changeItemQuantity(parent)&quot; (onEndDateChange)&#x3D;&quot;changeItemQuantity(parent)&quot;
@@ -612,7 +611,8 @@ export class AppModule {}</code></pre></div><p>&lt;apt-line-item-table-row
           &lt;div class&#x3D;&quot;col-8 d-flex align-items-end&quot;&gt;
             &lt;apt-input-field [(ngModel)]&#x3D;&quot;parent.Quantity&quot; field&#x3D;&quot;Quantity&quot; (change)&#x3D;&quot;changeItemQuantity(parent)&quot;
               [entity]&#x3D;&quot;parent&quot; [readonly]&#x3D;&quot;parent?.LineStatus?.toLowerCase() &#x3D;&#x3D;&#x3D;&#x27;cancelled&#x27;&quot;
-              [errorMsg]&#x3D;&quot;&#x27;ERROR.INVALID_QUANTITY&#x27;&quot; [asterisk]&#x3D;&quot;false&quot; [required]&#x3D;&quot;true&quot; class&#x3D;&quot;w-75&quot; *ngIf&#x3D;&quot;!readonly&quot; [small]&#x3D;&quot;true&quot;&gt;
+              [errorMsg]&#x3D;&quot;&#x27;ERROR.INVALID_QUANTITY&#x27;&quot; [asterisk]&#x3D;&quot;false&quot; [required]&#x3D;&quot;true&quot; class&#x3D;&quot;w-75&quot; *ngIf&#x3D;&quot;!readonly&quot;
+              [small]&#x3D;&quot;true&quot;&gt;
             &lt;/apt-input-field&gt;
             &lt;apt-output-field [record]&#x3D;&quot;parent&quot; field&#x3D;&quot;Quantity&quot; label&#x3D;&quot;Quantity&quot; class&#x3D;&quot;w-75&quot; *ngIf&#x3D;&quot;readonly&quot;
               [editable]&#x3D;&quot;editableFields&quot;&gt;
@@ -622,25 +622,31 @@ export class AppModule {}</code></pre></div><p>&lt;apt-line-item-table-row
         &lt;ng-template #displayFields&gt;
           &lt;div class&#x3D;&quot;row&quot;&gt;
             &lt;div class&#x3D;&quot;col-md-4&quot; *ngFor&#x3D;&quot;let view of userView; let i&#x3D;index&quot;&gt;
-                &lt;div *ngIf&#x3D;&quot;i &lt; 3&quot;&gt;
-                  &lt;!-- Render input field --&gt;
-                  &lt;ng-container *ngIf&#x3D;&quot;view?.label !&#x3D;&#x3D; &#x27;StartDate&#x27; &amp;&amp; view?.label !&#x3D;&#x3D; &#x27;EndDate&#x27;; else date&quot;&gt;
-                    &lt;apt-input-field *ngIf&#x3D;&quot;view.isEditable; else outputField&quot; [entity]&#x3D;&quot;parent&quot; [(ngModel)]&#x3D;&quot;parent[view.label]&quot; [small]&#x3D;&quot;true&quot; [class]&#x3D;&quot;view.label&quot; [field]&#x3D;&quot;view.label&quot; [rows]&#x3D;&quot;1&quot;
-                     (change)&#x3D;&quot;updateValues(view,parent)&quot;  [displayFieldType]&#x3D;&quot;&#x27;radio&#x27;&quot; &gt; 
-                    &lt;/apt-input-field&gt;
-                  &lt;/ng-container&gt;
-                  &lt;!-- Render output field --&gt;
-                  &lt;ng-template #outputField&gt;
-                    &lt;apt-output-field [record]&#x3D;&quot;parent&quot; [class]&#x3D;&quot;view.label&quot; layout&#x3D;&quot;stacked&quot; [label]&#x3D;&quot;view.label&quot; [editable]&#x3D;&quot;editableFields&quot; [field]&#x3D;&quot;view.label&quot;&gt;
-                    &lt;/apt-output-field&gt; 
-                  &lt;/ng-template&gt; 
-                  &lt;!-- Render Start/End date --&gt;
-                  &lt;ng-template #date &gt;
-                    &lt;apt-date-range-input [disableStartDate]&#x3D;&quot;parent?.LineStatus?.toLowerCase() &#x3D;&#x3D;&#x3D;&#x27;cancelled&#x27; || parent?.LineStatus?.toLowerCase() &#x3D;&#x3D;&#x3D;&#x27;renewed&#x27;&quot; (onStartDateChange)&#x3D;&quot;changeItemQuantity(parent)&quot; (onEndDateChange)&#x3D;&quot;changeItemQuantity(parent)&quot;
-                     [cartItem]&#x3D;&quot;parent&quot; small&#x3D;&quot;true&quot;  [readonly]&#x3D;&quot;!view?.isEditable || (parent?.PriceType !&#x3D;&#x3D; &#x27;Recurring&#x27; &amp;&amp; parent?.PriceType !&#x3D;&#x3D; &#x27;Usage&#x27;)&quot; [displayDate]&#x3D;&quot;view.label&quot;&gt;
-                    &lt;/apt-date-range-input&gt;
-                   &lt;/ng-template&gt;
-               &lt;/div&gt;
+              &lt;div *ngIf&#x3D;&quot;i &lt; 3&quot;&gt;
+                &lt;!-- Render input field --&gt;
+                &lt;ng-container *ngIf&#x3D;&quot;view?.label !&#x3D;&#x3D; &#x27;StartDate&#x27; &amp;&amp; view?.label !&#x3D;&#x3D; &#x27;EndDate&#x27;; else date&quot;&gt;
+                  &lt;apt-input-field *ngIf&#x3D;&quot;view.isEditable; else outputField&quot; [entity]&#x3D;&quot;parent&quot;
+                    [(ngModel)]&#x3D;&quot;parent[view.label]&quot; [small]&#x3D;&quot;true&quot; [class]&#x3D;&quot;view.label&quot; [field]&#x3D;&quot;view.label&quot; [rows]&#x3D;&quot;1&quot;
+                    (change)&#x3D;&quot;updateValues(view,parent)&quot; [displayFieldType]&#x3D;&quot;&#x27;radio&#x27;&quot;&gt;
+                  &lt;/apt-input-field&gt;
+                &lt;/ng-container&gt;
+                &lt;!-- Render output field --&gt;
+                &lt;ng-template #outputField&gt;
+                  &lt;apt-output-field [record]&#x3D;&quot;parent&quot; [class]&#x3D;&quot;view.label&quot; layout&#x3D;&quot;stacked&quot; [label]&#x3D;&quot;view.label&quot;
+                    [editable]&#x3D;&quot;editableFields&quot; [field]&#x3D;&quot;view.label&quot;&gt;
+                  &lt;/apt-output-field&gt;
+                &lt;/ng-template&gt;
+                &lt;!-- Render Start/End date --&gt;
+                &lt;ng-template #date&gt;
+                  &lt;apt-date-range-input
+                    [disableStartDate]&#x3D;&quot;parent?.LineStatus?.toLowerCase() &#x3D;&#x3D;&#x3D;&#x27;cancelled&#x27; || parent?.LineStatus?.toLowerCase() &#x3D;&#x3D;&#x3D;&#x27;renewed&#x27;&quot;
+                    (onStartDateChange)&#x3D;&quot;changeItemQuantity(parent)&quot; (onEndDateChange)&#x3D;&quot;changeItemQuantity(parent)&quot;
+                    [cartItem]&#x3D;&quot;parent&quot; small&#x3D;&quot;true&quot;
+                    [readonly]&#x3D;&quot;!view?.isEditable || (parent?.PriceType !&#x3D;&#x3D; &#x27;Recurring&#x27; &amp;&amp; parent?.PriceType !&#x3D;&#x3D; &#x27;Usage&#x27;)&quot;
+                    [displayDate]&#x3D;&quot;view.label&quot;&gt;
+                  &lt;/apt-date-range-input&gt;
+                &lt;/ng-template&gt;
+              &lt;/div&gt;
             &lt;/div&gt;
           &lt;/div&gt;
         &lt;/ng-template&gt;
@@ -658,7 +664,8 @@ export class AppModule {}</code></pre></div><p>&lt;apt-line-item-table-row
           &lt;div class&#x3D;&quot;d-flex justify-content-between align-items-center text-muted mt-1&quot;
             *ngIf&#x3D;&quot;parent?.IncentiveAdjustmentAmount &amp;&amp; storefront?.EnablePromotions&quot;&gt;
             &lt;button class&#x3D;&quot;btn btn-link text-primary btn-sm text-capitalize p-0&quot;
-              (click)&#x3D;&quot;promotionModal.openLineItemModal(parent)&quot;&gt;{{&#x27;PROMOTION.PROMOTION_APPLIED_TO&#x27; | translate}}&lt;/button&gt;
+              (click)&#x3D;&quot;promotionModal.openLineItemModal(parent)&quot;&gt;{{&#x27;PROMOTION.PROMOTION_APPLIED_TO&#x27; |
+              translate}}&lt;/button&gt;
             &lt;span&gt;{{parent?._metadata?.totalIncentiveAmount | localCurrency | async}}&lt;/span&gt;
           &lt;/div&gt;
           &lt;div class&#x3D;&quot;d-flex justify-content-between small mt-1 text-muted&quot;
@@ -701,17 +708,16 @@ export class AppModule {}</code></pre></div><p>&lt;apt-line-item-table-row
     &lt;td class&#x3D;&quot;border-0&quot; width&#x3D;&quot;15%&quot;&gt;&lt;/td&gt;
     &lt;td class&#x3D;&quot;border-0 pb-0&quot; colspan&#x3D;&quot;2&quot;&gt;
       &lt;div class&#x3D;&quot;accordion&quot;&gt;
-        
-        &lt;apt-table-row-sub-item
-            *ngFor&#x3D;&quot;let subItem of children; trackBy: trackByFn&quot;
-            [subItem]&#x3D;&quot;subItem&quot; [cart]&#x3D;&quot;cart&quot; [userView]&#x3D;&quot;userView&quot;
-            [editableFields]&#x3D;&quot;editableFields&quot; [showCustomFields]&#x3D;true&gt;&lt;/apt-table-row-sub-item&gt;
 
-             &lt;!-- Additional info section: show additional info section when custom fields are more than 3 --&gt;
-             &lt;div *ngIf&#x3D;&quot;isCartLineItem(parent) &amp;&amp; userView.length &gt; 3&quot;&gt;
-                  &lt;apt-additional-information [parent]&#x3D;&quot;parent&quot; [cart]&#x3D;&quot;cart&quot; [editableFields]&#x3D;&quot;editableFields&quot; [userView]&#x3D;&quot;userView&quot; [quantity]&#x3D;&quot;quantity&quot;&gt;
-                  &lt;/apt-additional-information&gt;
-            &lt;/div&gt;
+        &lt;apt-table-row-sub-item *ngFor&#x3D;&quot;let subItem of children; trackBy: trackByFn&quot; [subItem]&#x3D;&quot;subItem&quot; [cart]&#x3D;&quot;cart&quot;
+          [userView]&#x3D;&quot;userView&quot; [editableFields]&#x3D;&quot;editableFields&quot; [showCustomFields]&#x3D;true&gt;&lt;/apt-table-row-sub-item&gt;
+
+        &lt;!-- Additional info section: show additional info section when custom fields are more than 3 --&gt;
+        &lt;div *ngIf&#x3D;&quot;isCartLineItem(parent) &amp;&amp; userView.length &gt; 3&quot;&gt;
+          &lt;apt-additional-information [parent]&#x3D;&quot;parent&quot; [cart]&#x3D;&quot;cart&quot; [editableFields]&#x3D;&quot;editableFields&quot;
+            [userView]&#x3D;&quot;userView&quot; [quantity]&#x3D;&quot;quantity&quot;&gt;
+          &lt;/apt-additional-information&gt;
+        &lt;/div&gt;
       &lt;/div&gt;
     &lt;/td&gt;
   &lt;/tr&gt;
@@ -741,8 +747,8 @@ export class AppModule {}</code></pre></div><p>&lt;apt-line-item-table-row
 &lt;/ng-template&gt;
 
 &lt;apt-pr-modal #promotionModal&gt;&lt;/apt-pr-modal&gt;
-&lt;apt-product-configuration-summary *ngIf&#x3D;&quot;renderSummary&quot; [product]&#x3D;&quot;parent?.Product.Id&quot; [relatedTo]&#x3D;&quot;parent&quot; [showActionButtons]&#x3D;&quot;!isFavoriteConfigurationItem&quot;
-  #productConfiguration&gt;
+&lt;apt-product-configuration-summary *ngIf&#x3D;&quot;renderSummary&quot; [product]&#x3D;&quot;parent?.Product.Id&quot; [relatedTo]&#x3D;&quot;parent&quot;
+  [showActionButtons]&#x3D;&quot;!isFavoriteConfigurationItem&quot; #productConfiguration&gt;
 &lt;/apt-product-configuration-summary&gt;</code></pre>
     </div>
 
@@ -754,21 +760,21 @@ export class AppModule {}</code></pre></div><p>&lt;apt-line-item-table-row
   display: contents;
   font-size: smaller;
 }
-.description{
+.description {
   max-height: 50px;
   overflow-y: hidden;
 }
-.quantity{
+.quantity {
   width: 4rem;
 }
-u{
+u {
   text-decoration: underline;
   cursor: pointer;
 }
-.subtitle&gt;span:not(:last-child){
-  &amp;:after{
+.subtitle &gt; span:not(:last-child) {
+  &amp;:after {
     margin: 0 8px;
-    content: &#x27;|&#x27;;
+    content: &quot;|&quot;;
   }
 }
 
@@ -781,15 +787,11 @@ u{
     text-overflow: ellipsis;
   }
 }
-tr[data-index&#x3D;&quot;0&quot;]{
-  td{
+tr[data-index&#x3D;&quot;0&quot;] {
+  td {
     border-top: none;
   }
 }
-
-
-
-
 </code></pre>
     </div>
 
@@ -818,7 +820,7 @@ tr[data-index&#x3D;&quot;0&quot;]{
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="parent?.LineType === \'Product/Service\' && userView$ | async as userView">  <tr [attr.data-index]="index">    <td width="2%" class="pt-4 pr-0 pl-3" *ngIf="isCartLineItem(parent)">        <div class="custom-control custom-checkbox custom-checkbox-lg card-title">            <input [id]="parent.Id" type="checkbox" class="custom-control-input" (change)="handleCheckbox($event)"            [checked]="selected$ | async"   />            <label class="custom-control-label d-flex justify-content-between" [for]="parent.Id"></label>          </div>    </td>    <td width="15%" class="pt-4">      <img [src]="parent?.Product?.IconId | image" class="w-100" />    </td>    <td class="w-50 pt-4">      <div class="h-100 d-flex flex-column border-right pr-3">        <div class="d-flex align-items-center mb-2">          <h5 class="mr-2 mb-0">            <!-- For Orders and Proposal details page dont show line items as link. -->            <ng-container *ngIf="isOrderOrProposal(parent); else showLink">              <span *ngIf="parent?.Product && parent?.Product[identifier]">                {{parent?.Product?.Name}}              </span>            </ng-container>            <!-- For other pages show line items as link. -->            <ng-template #showLink>              <a href="javascript:void(0)" *ngIf="parent?.Product && parent?.Product[identifier]"                [routerLink]="isFavoriteConfigurationItem? [\'/products\', parent.Product[identifier]] : [\'/products\', parent.Product[identifier], parent.Id]">                {{parent?.Product?.Name}}              </a>            </ng-template>            <span *ngIf="parent?.HasAttributes || parent?.HasOptions">              <button class="text-muted btn btn-link btn-sm p-0" (click)="showSummary()">                <i class="fas fa-wrench"></i>              </button>            </span>          </h5>          <ng-template [ngTemplateOutlet]="statusBadge" [ngTemplateOutletContext]="{cartItem: parent}"></ng-template>        </div>        <p class="text-muted subtitle">          <span *ngIf="parent?.Product?.ProductCode" [innerHTML]="parent.Product?.ProductCode"></span>          <span *ngIf="parent?.Product?.Family" [innerHTML]="parent.Product?.Family"></span>          <span *ngIf="parent?.ChargeType" [innerHTML]="parent.ChargeType"></span>        </p>        <p class="description">          {{parent?.Description}}        </p>        <div class="row" *ngIf="!isCartLineItem(parent)" >            <!-- frequency -->                <div class="col-sm-6 col-xl-3" *ngIf="parent?.PriceType !== \'One Time\'">                    <apt-output-field [record]="parent"  layout="stacked" label="Frequency" field="PricingFrequency"                        [editable]="editableFields"></apt-output-field>                </div>                <!-- Price Type -->                <div class="col-sm-6 col-xl-3">                    <apt-output-field [record]="parent"  layout="stacked" label="Price Type"  field="PriceType"                        [editable]="editableFields"></apt-output-field>                </div>                <!-- Selling Term -->                <div class="col-sm-6 col-xl-3">                    <apt-output-field [record]="parent"  layout="stacked" label="SellingTerm" field="SellingTerm"                        [editable]="editableFields">                    </apt-output-field>                </div>        </div>        <!-- Start Date / End Date -->        <div class="row" *ngIf="!isCartLineItem(parent); else displayFields">          <div class="col-8" >            <apt-date-range-input *ngIf="parent?.PriceType === \'Recurring\' || parent?.PriceType === \'Usage\'"              [disableStartDate]="parent?.LineStatus?.toLowerCase() ===\'cancelled\' || parent?.LineStatus?.toLowerCase() ===\'renewed\'"              (onStartDateChange)="changeItemQuantity(parent)" (onEndDateChange)="changeItemQuantity(parent)"              class="d-block mr-3 mt-3" [cartItem]="parent" [readonly]="readonly" small="true">            </apt-date-range-input>          </div>          <div class="col-8 d-flex align-items-end">            <apt-input-field [(ngModel)]="parent.Quantity" field="Quantity" (change)="changeItemQuantity(parent)"              [entity]="parent" [readonly]="parent?.LineStatus?.toLowerCase() ===\'cancelled\'"              [errorMsg]="\'ERROR.INVALID_QUANTITY\'" [asterisk]="false" [required]="true" class="w-75" *ngIf="!readonly" [small]="true">            </apt-input-field>            <apt-output-field [record]="parent" field="Quantity" label="Quantity" class="w-75" *ngIf="readonly"              [editable]="editableFields">            </apt-output-field>          </div>        </div>        <ng-template #displayFields>          <div class="row">            <div class="col-md-4" *ngFor="let view of userView; let i=index">                <div *ngIf="i < 3">                  <!-- Render input field -->                  <ng-container *ngIf="view?.label !== \'StartDate\' && view?.label !== \'EndDate\'; else date">                    <apt-input-field *ngIf="view.isEditable; else outputField" [entity]="parent" [(ngModel)]="parent[view.label]" [small]="true" [class]="view.label" [field]="view.label" [rows]="1"                     (change)="updateValues(view,parent)"  [displayFieldType]="\'radio\'" >                     </apt-input-field>                  </ng-container>                  <!-- Render output field -->                  <ng-template #outputField>                    <apt-output-field [record]="parent" [class]="view.label" layout="stacked" [label]="view.label" [editable]="editableFields" [field]="view.label">                    </apt-output-field>                   </ng-template>                   <!-- Render Start/End date -->                  <ng-template #date >                    <apt-date-range-input [disableStartDate]="parent?.LineStatus?.toLowerCase() ===\'cancelled\' || parent?.LineStatus?.toLowerCase() ===\'renewed\'" (onStartDateChange)="changeItemQuantity(parent)" (onEndDateChange)="changeItemQuantity(parent)"                     [cartItem]="parent" small="true"  [readonly]="!view?.isEditable || (parent?.PriceType !== \'Recurring\' && parent?.PriceType !== \'Usage\')" [displayDate]="view.label">                    </apt-date-range-input>                   </ng-template>               </div>            </div>          </div>        </ng-template>      </div>    </td>    <td class="pt-4 w-25">      <div class="d-flex flex-column h-100 justify-content-between" *ngIf="(storefront$ | async) as storefront">        <div>          <div class="d-flex justify-content-between align-items-center text-muted mt-1">            <span> {{\'MANAGE_CART.CART_TABLE.STANDARD_PRICE\' | translate }} </span>            <span>              <apt-price [record]="parent" type="list"></apt-price>            </span>          </div>          <div class="d-flex justify-content-between align-items-center text-muted mt-1"            *ngIf="parent?.IncentiveAdjustmentAmount && storefront?.EnablePromotions">            <button class="btn btn-link text-primary btn-sm text-capitalize p-0"              (click)="promotionModal.openLineItemModal(parent)">{{\'PROMOTION.PROMOTION_APPLIED_TO\' | translate}}</button>            <span>{{parent?._metadata?.totalIncentiveAmount | localCurrency | async}}</span>          </div>          <div class="d-flex justify-content-between small mt-1 text-muted"            *ngIf="storefront?.EnableTaxCalculations && showTaxPopupLink();">            <span>              <button placement="auto" [popover]="popTemplate" [outsideClick]="true"                class="btn btn-link text-primary btn-sm text-capitalize p-0" data-toggle="popover"                data-placement="bottom" (click)="openEstimateTaxPopup()">                {{\'MANAGE_CART.CART_SUMMARY.TAX\' | translate }} </button>            </span>            <span>{{totalEstimatedTax | localCurrency | async}}</span>          </div>          <div class="d-flex justify-content-between align-items-center mt-1">            <apt-output-field [record]="parent" field="NetPrice" [labelOnly]="true" [labelClass]="\'font-weight-normal\'">            </apt-output-field>            <ng-container *ngIf="storefront?.EnableTaxCalculations && !showTaxPopupLink(); else showNetPrice">              <apt-price [record]="parent" type="baseExtended" [options]="options"></apt-price>            </ng-container>            <ng-template #showNetPrice>              <apt-price [record]="parent" type="net" [options]="options"></apt-price>            </ng-template>          </div>          <ng-template #popTemplate>            <apt-tax-pophover *ngIf="showTaxPopUp" [taxItems]="taxItems" [totalEstimatedTax]="totalEstimatedTax"              [showTaxPopUp]="true"></apt-tax-pophover>          </ng-template>        </div>        <div class="d-flex justify-content-end my-3">          <button *ngIf="parent?.IsPrimaryLine && !readonly" class="btn btn-outline-danger btn-sm"            (click)="removeCartItem(parent, $event)" [ladda]="parent?._metadata?._loading" data-style="zoom-in"            data-spinner-color="black">            {{\'MANAGE_CART.CART_TABLE.REMOVE\' | translate }}          </button>        </div>      </div>    </td>  </tr>  <tr *ngIf="children">    <td class="border-0" *ngIf="isCartLineItem(parent)"></td>    <td class="border-0" width="15%"></td>    <td class="border-0 pb-0" colspan="2">      <div class="accordion">                <apt-table-row-sub-item            *ngFor="let subItem of children; trackBy: trackByFn"            [subItem]="subItem" [cart]="cart" [userView]="userView"            [editableFields]="editableFields" [showCustomFields]=true></apt-table-row-sub-item>             <!-- Additional info section: show additional info section when custom fields are more than 3 -->             <div *ngIf="isCartLineItem(parent) && userView.length > 3">                  <apt-additional-information [parent]="parent" [cart]="cart" [editableFields]="editableFields" [userView]="userView" [quantity]="quantity">                  </apt-additional-information>            </div>      </div>    </td>  </tr></ng-container><ng-template #statusBadge let-cartItem="cartItem">  <ng-container [ngSwitch]="cartItem?.LineStatus">    <span class="badge ml-2 badge-danger" *ngSwitchCase="\'Cancelled\'">      {{cartItem?.LineStatus}}    </span>    <span class="badge ml-2 badge-warning" *ngSwitchCase="\'Renewed\'">      {{cartItem?.LineStatus}}    </span>    <span class="badge ml-2 badge-info" *ngSwitchCase="\'Upgraded\'">      {{cartItem?.LineStatus}}    </span>    <span class="badge ml-2 badge-warning" *ngSwitchCase="\'Amended\'">      {{cartItem?.LineStatus}}    </span>    <span class="badge ml-2 badge-warning" *ngSwitchCase="\'Incremented\'">      {{cartItem?.LineStatus}}    </span>    <span class="badge ml-2 badge-light" *ngSwitchCase="\'Existing\'">      {{cartItem?.LineStatus}}    </span>  </ng-container></ng-template><apt-pr-modal #promotionModal></apt-pr-modal><apt-product-configuration-summary *ngIf="renderSummary" [product]="parent?.Product.Id" [relatedTo]="parent" [showActionButtons]="!isFavoriteConfigurationItem"  #productConfiguration></apt-product-configuration-summary></div>'
+        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="parent?.LineType === \'Product/Service\' && userView$ | async as userView">  <tr [attr.data-index]="index">    <td width="2%" class="pt-4 pr-0 pl-3" *ngIf="isCartLineItem(parent)">      <div class="custom-control custom-checkbox custom-checkbox-lg card-title">        <input [id]="parent.Id" type="checkbox" class="custom-control-input" (change)="handleCheckbox($event)"          [checked]="selected$ | async" />        <label class="custom-control-label d-flex justify-content-between" [for]="parent.Id"></label>      </div>    </td>    <td width="15%" class="pt-4">      <img [src]="parent?.Product?.IconId | image" class="w-100" />    </td>    <td class="w-50 pt-4">      <div class="h-100 d-flex flex-column border-right pr-3">        <div class="d-flex align-items-center mb-2">          <h5 class="mr-2 mb-0">            <!-- For Orders and Proposal details page dont show line items as link. -->            <ng-container *ngIf="isOrderOrProposal(parent); else showLink">              <span *ngIf="parent?.Product && parent?.Product[identifier]">                {{parent?.Product?.Name}}              </span>            </ng-container>            <!-- For other pages show line items as link. -->            <ng-template #showLink>              <a href="javascript:void(0)" *ngIf="parent?.Product && parent?.Product[identifier]"                [routerLink]="isFavoriteConfigurationItem? [\'/products\', parent.Product[identifier]] : [\'/products\', parent.Product[identifier], parent.Id]">                {{parent?.Product?.Name}}              </a>            </ng-template>            <span *ngIf="parent?.HasAttributes || parent?.HasOptions">              <button class="text-muted btn btn-link btn-sm p-0" (click)="showSummary()">                <i class="fas fa-wrench"></i>              </button>            </span>          </h5>          <ng-template [ngTemplateOutlet]="statusBadge" [ngTemplateOutletContext]="{cartItem: parent}"></ng-template>        </div>        <p class="text-muted subtitle">          <span *ngIf="parent?.Product?.ProductCode" [innerHTML]="parent.Product?.ProductCode"></span>          <span *ngIf="parent?.Product?.Family" [innerHTML]="parent.Product?.Family"></span>          <span *ngIf="parent?.ChargeType" [innerHTML]="parent.ChargeType"></span>        </p>        <p class="description">          {{parent?.Description}}        </p>        <div class="row" *ngIf="!isCartLineItem(parent)">          <!-- frequency -->          <div class="col-sm-6 col-xl-3" *ngIf="parent?.PriceType !== \'One Time\'">            <apt-output-field [record]="parent" layout="stacked" label="Frequency" field="PricingFrequency"              [editable]="editableFields"></apt-output-field>          </div>          <!-- Price Type -->          <div class="col-sm-6 col-xl-3">            <apt-output-field [record]="parent" layout="stacked" label="Price Type" field="PriceType"              [editable]="editableFields"></apt-output-field>          </div>          <!-- Selling Term -->          <div class="col-sm-6 col-xl-3">            <apt-output-field [record]="parent" layout="stacked" label="SellingTerm" field="SellingTerm"              [editable]="editableFields">            </apt-output-field>          </div>        </div>        <!-- Start Date / End Date -->        <div class="row" *ngIf="!isCartLineItem(parent); else displayFields">          <div class="col-8">            <apt-date-range-input *ngIf="parent?.PriceType === \'Recurring\' || parent?.PriceType === \'Usage\'"              [disableStartDate]="parent?.LineStatus?.toLowerCase() ===\'cancelled\' || parent?.LineStatus?.toLowerCase() ===\'renewed\'"              (onStartDateChange)="changeItemQuantity(parent)" (onEndDateChange)="changeItemQuantity(parent)"              class="d-block mr-3 mt-3" [cartItem]="parent" [readonly]="readonly" small="true">            </apt-date-range-input>          </div>          <div class="col-8 d-flex align-items-end">            <apt-input-field [(ngModel)]="parent.Quantity" field="Quantity" (change)="changeItemQuantity(parent)"              [entity]="parent" [readonly]="parent?.LineStatus?.toLowerCase() ===\'cancelled\'"              [errorMsg]="\'ERROR.INVALID_QUANTITY\'" [asterisk]="false" [required]="true" class="w-75" *ngIf="!readonly"              [small]="true">            </apt-input-field>            <apt-output-field [record]="parent" field="Quantity" label="Quantity" class="w-75" *ngIf="readonly"              [editable]="editableFields">            </apt-output-field>          </div>        </div>        <ng-template #displayFields>          <div class="row">            <div class="col-md-4" *ngFor="let view of userView; let i=index">              <div *ngIf="i < 3">                <!-- Render input field -->                <ng-container *ngIf="view?.label !== \'StartDate\' && view?.label !== \'EndDate\'; else date">                  <apt-input-field *ngIf="view.isEditable; else outputField" [entity]="parent"                    [(ngModel)]="parent[view.label]" [small]="true" [class]="view.label" [field]="view.label" [rows]="1"                    (change)="updateValues(view,parent)" [displayFieldType]="\'radio\'">                  </apt-input-field>                </ng-container>                <!-- Render output field -->                <ng-template #outputField>                  <apt-output-field [record]="parent" [class]="view.label" layout="stacked" [label]="view.label"                    [editable]="editableFields" [field]="view.label">                  </apt-output-field>                </ng-template>                <!-- Render Start/End date -->                <ng-template #date>                  <apt-date-range-input                    [disableStartDate]="parent?.LineStatus?.toLowerCase() ===\'cancelled\' || parent?.LineStatus?.toLowerCase() ===\'renewed\'"                    (onStartDateChange)="changeItemQuantity(parent)" (onEndDateChange)="changeItemQuantity(parent)"                    [cartItem]="parent" small="true"                    [readonly]="!view?.isEditable || (parent?.PriceType !== \'Recurring\' && parent?.PriceType !== \'Usage\')"                    [displayDate]="view.label">                  </apt-date-range-input>                </ng-template>              </div>            </div>          </div>        </ng-template>      </div>    </td>    <td class="pt-4 w-25">      <div class="d-flex flex-column h-100 justify-content-between" *ngIf="(storefront$ | async) as storefront">        <div>          <div class="d-flex justify-content-between align-items-center text-muted mt-1">            <span> {{\'MANAGE_CART.CART_TABLE.STANDARD_PRICE\' | translate }} </span>            <span>              <apt-price [record]="parent" type="list"></apt-price>            </span>          </div>          <div class="d-flex justify-content-between align-items-center text-muted mt-1"            *ngIf="parent?.IncentiveAdjustmentAmount && storefront?.EnablePromotions">            <button class="btn btn-link text-primary btn-sm text-capitalize p-0"              (click)="promotionModal.openLineItemModal(parent)">{{\'PROMOTION.PROMOTION_APPLIED_TO\' |              translate}}</button>            <span>{{parent?._metadata?.totalIncentiveAmount | localCurrency | async}}</span>          </div>          <div class="d-flex justify-content-between small mt-1 text-muted"            *ngIf="storefront?.EnableTaxCalculations && showTaxPopupLink();">            <span>              <button placement="auto" [popover]="popTemplate" [outsideClick]="true"                class="btn btn-link text-primary btn-sm text-capitalize p-0" data-toggle="popover"                data-placement="bottom" (click)="openEstimateTaxPopup()">                {{\'MANAGE_CART.CART_SUMMARY.TAX\' | translate }} </button>            </span>            <span>{{totalEstimatedTax | localCurrency | async}}</span>          </div>          <div class="d-flex justify-content-between align-items-center mt-1">            <apt-output-field [record]="parent" field="NetPrice" [labelOnly]="true" [labelClass]="\'font-weight-normal\'">            </apt-output-field>            <ng-container *ngIf="storefront?.EnableTaxCalculations && !showTaxPopupLink(); else showNetPrice">              <apt-price [record]="parent" type="baseExtended" [options]="options"></apt-price>            </ng-container>            <ng-template #showNetPrice>              <apt-price [record]="parent" type="net" [options]="options"></apt-price>            </ng-template>          </div>          <ng-template #popTemplate>            <apt-tax-pophover *ngIf="showTaxPopUp" [taxItems]="taxItems" [totalEstimatedTax]="totalEstimatedTax"              [showTaxPopUp]="true"></apt-tax-pophover>          </ng-template>        </div>        <div class="d-flex justify-content-end my-3">          <button *ngIf="parent?.IsPrimaryLine && !readonly" class="btn btn-outline-danger btn-sm"            (click)="removeCartItem(parent, $event)" [ladda]="parent?._metadata?._loading" data-style="zoom-in"            data-spinner-color="black">            {{\'MANAGE_CART.CART_TABLE.REMOVE\' | translate }}          </button>        </div>      </div>    </td>  </tr>  <tr *ngIf="children">    <td class="border-0" *ngIf="isCartLineItem(parent)"></td>    <td class="border-0" width="15%"></td>    <td class="border-0 pb-0" colspan="2">      <div class="accordion">        <apt-table-row-sub-item *ngFor="let subItem of children; trackBy: trackByFn" [subItem]="subItem" [cart]="cart"          [userView]="userView" [editableFields]="editableFields" [showCustomFields]=true></apt-table-row-sub-item>        <!-- Additional info section: show additional info section when custom fields are more than 3 -->        <div *ngIf="isCartLineItem(parent) && userView.length > 3">          <apt-additional-information [parent]="parent" [cart]="cart" [editableFields]="editableFields"            [userView]="userView" [quantity]="quantity">          </apt-additional-information>        </div>      </div>    </td>  </tr></ng-container><ng-template #statusBadge let-cartItem="cartItem">  <ng-container [ngSwitch]="cartItem?.LineStatus">    <span class="badge ml-2 badge-danger" *ngSwitchCase="\'Cancelled\'">      {{cartItem?.LineStatus}}    </span>    <span class="badge ml-2 badge-warning" *ngSwitchCase="\'Renewed\'">      {{cartItem?.LineStatus}}    </span>    <span class="badge ml-2 badge-info" *ngSwitchCase="\'Upgraded\'">      {{cartItem?.LineStatus}}    </span>    <span class="badge ml-2 badge-warning" *ngSwitchCase="\'Amended\'">      {{cartItem?.LineStatus}}    </span>    <span class="badge ml-2 badge-warning" *ngSwitchCase="\'Incremented\'">      {{cartItem?.LineStatus}}    </span>    <span class="badge ml-2 badge-light" *ngSwitchCase="\'Existing\'">      {{cartItem?.LineStatus}}    </span>  </ng-container></ng-template><apt-pr-modal #promotionModal></apt-pr-modal><apt-product-configuration-summary *ngIf="renderSummary" [product]="parent?.Product.Id" [relatedTo]="parent"  [showActionButtons]="!isFavoriteConfigurationItem" #productConfiguration></apt-product-configuration-summary></div>'
     var COMPONENTS = [{'name': 'AdditionalInformationComponent', 'selector': 'apt-additional-information'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AlertComponent', 'selector': 'apt-alert'},{'name': 'AssetDropdownButtonComponent', 'selector': 'apt-asset-dropdown-button'},{'name': 'AssetListComponent', 'selector': 'apt-asset-list'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'CategoryFilterComponent', 'selector': 'apt-category-filter'},{'name': 'ChartComponent', 'selector': 'apt-chart'},{'name': 'ConstraintRuleAlertComponent', 'selector': 'apt-constraint-rule-alert'},{'name': 'ConstraintRuleSidebarComponent', 'selector': 'apt-constraint-rule-sidebar'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'DataFilterComponent', 'selector': 'apt-data-filter'},{'name': 'DotsComponent', 'selector': 'apt-dots'},{'name': 'FavoriteModalComponent', 'selector': 'apt-favorite-modal'},{'name': 'FilesComponent', 'selector': 'apt-files'},{'name': 'GenerateDocumentComponent', 'selector': 'apt-generate-document'},{'name': 'InputDateComponent', 'selector': 'apt-date-range-input'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputSelectComponent', 'selector': 'apt-input-select'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'LineitemCardComponent', 'selector': 'apt-lineitem-card'},{'name': 'LineItemMenuComponent', 'selector': 'apt-line-item-menu'},{'name': 'LineItemTableRowComponent', 'selector': 'apt-line-item-table-row'},{'name': 'LoginFormComponent', 'selector': 'apt-login-form'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'OutputFieldComponent', 'selector': 'apt-output-field'},{'name': 'PaymentComponent', 'selector': 'apt-payment'},{'name': 'PaymentIFrameComponent', 'selector': 'apt-payment-iframe'},{'name': 'PresentDocumentComponent', 'selector': 'apt-present-document'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'PriceModalComponent', 'selector': 'apt-price-modal'},{'name': 'PriceSummaryComponent', 'selector': 'apt-price-summary'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductCompareComponent', 'selector': 'apt-product-compare'},{'name': 'ProductConfigurationComponent', 'selector': 'apt-product-configuration'},{'name': 'ProductConfigurationSummaryComponent', 'selector': 'apt-product-configuration-summary'},{'name': 'ProductDrawerComponent', 'selector': 'apt-product-drawer'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'},{'name': 'ProductSearchComponent', 'selector': 'apt-product-search'},{'name': 'ProductTypeFilterComponent', 'selector': 'apt-product-type-filter'},{'name': 'PromotionComponent', 'selector': 'apt-promotion'},{'name': 'PromotionModalComponent', 'selector': 'apt-pr-modal'},{'name': 'RevalidateCartModalComponent', 'selector': 'apt-revalidate-cart-modal'},{'name': 'SelectAllComponent', 'selector': 'apt-select-all'},{'name': 'SpinnerComponent', 'selector': 'apt-spinner'},{'name': 'TableComponent', 'selector': 'apt-table'},{'name': 'TaxPopHoverComponent', 'selector': 'apt-tax-pophover'}];
     var DIRECTIVES = [{'name': 'AutoFocusDirective', 'selector': '[aptAutoFocus]'}];
     var ACTUAL_COMPONENT = {'name': 'LineItemTableRowComponent'};

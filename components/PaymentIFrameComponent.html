@@ -71,19 +71,24 @@
     </p>
     <p class="comment">
         <p>This payment Iframe component layout has iframe which will integrate with payment gateway to create payment method</p>
-<div><pre class="line-numbers"><code class="language-typescript">import { PaymentComponentModule } from &#39;../payment/payment.module&#39;;
+<h3>Preview</h3>
+ <div>
+   <img src="https://raw.githubusercontent.com/Apttus-Ecom/Summer19/master/res/paymentIFrame.PNG" style="max-width: 100%">
+ </div>
+```typescript
+import { PaymentComponentModule } from '../payment/payment.module';
 
-&#64;NgModule({
+<p>@NgModule({
 imports: [PaymentComponentModule, ...]
 })
-export class AppModule {}</code></pre></div><p>&lt;apt-payment-iframe
+export class AppModule {}</p>
+<div><pre class="line-numbers"><code class="language-none">
+```typescript
+&lt;apt-payment-iframe
              [account]=&quot;account&quot;
              [primaryContact]=&quot;primaryContact&quot;
-             [user]=&quot;user&quot;</p>
-<blockquote>
-</apt-payment-iframe>
-</blockquote>
-
+             [user]=&quot;user&quot;
+&gt;&lt;/apt-payment-iframe&gt;</code></pre></div>
     </p>
 
 
