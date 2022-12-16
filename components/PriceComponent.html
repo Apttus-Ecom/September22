@@ -9,7 +9,7 @@
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 	   <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="../styles/dark.css">
         <link rel="stylesheet" href="../styles/material.css">
     </head>
     <body>
@@ -68,12 +68,7 @@
     </p>
     <p class="comment">
         <p>Wrapper component for displaying the price of a record. Supports cart, product, cart item, product options and orders.
-Change detection on this component has been tuned, so use this component in favor of using the price pipes directly.
- <h3>Preview</h3>
- <div>
-   <h4>Price component used to display prices on mini cart</h4>
-   <img src="https://raw.githubusercontent.com/Apttus-Ecom/Summer19/master/res/price.PNG" style="max-width: 100%">
- </div></p>
+Change detection on this component has been tuned, so use this component in favor of using the price pipes directly.</p>
 <h3>Usage</h3>
 
 <div><pre class="line-numbers"><code class="language-typescript">import { PriceModule } from &#39;&#64;congacommerce/elements&#39;;
@@ -81,9 +76,11 @@ Change detection on this component has been tuned, so use this component in favo
 &#64;NgModule({
 imports: [PriceModule, ...]
 })
-export class AppModule {}</code></pre></div><p>// Basic Usage</p>
-<div><pre class="line-numbers"><code class="language-typescript">&lt;apt-price [record]=&quot;product&quot;&gt;&lt;/apt-price&gt;</code></pre></div><p>// All inputs and outputs.</p>
-<div><pre class="line-numbers"><code class="language-typescript">&lt;apt-price
+export class AppModule {}</code></pre></div><div><pre class="line-numbers"><code class="language-html">// Basic Usage
+```typescript
+&lt;apt-price [record]=&quot;product&quot;&gt;&lt;/apt-price&gt;</code></pre></div><div><pre class="line-numbers"><code class="language-none">// All inputs and outputs.
+```typescript
+&lt;apt-price
             [record]=&quot;product&quot;
             [quantity]=&quot;1&quot;
             [attributeValue]=&quot;attributeValue&quot;
@@ -106,7 +103,7 @@ export class AppModule {}</code></pre></div><p>// Basic Usage</p>
 
 <section>
     <h3>Metadata</h3>
-    <table class="table table-sm table-hover">
+    <table class="table table-sm table-hover metadata">
         <tbody>
 
             <tr>
@@ -358,7 +355,7 @@ export class AppModule {}</code></pre></div><p>// Basic Usage</p>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>The input option to display the price for line items. 
+                        <div class="io-description"><p>The input option to display the price for line items.
 option type Can be Array of asset line items or Array of quote line item or Array of order line items</p>
 </div>
                     </td>
@@ -529,6 +526,8 @@ option type Can be Array of asset line items or Array of quote line item or Arra
 
 
 
+
+
                    </div><div class="search-results">
     <div class="has-results">
         <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
@@ -542,6 +541,15 @@ option type Can be Array of asset line items or Array of quote line item or Arra
                <!-- END CONTENT -->
            </div>
        </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;

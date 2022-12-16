@@ -9,7 +9,7 @@
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 	   <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="../styles/dark.css">
         <link rel="stylesheet" href="../styles/material.css">
     </head>
     <body>
@@ -71,18 +71,17 @@
     </p>
     <p class="comment">
         <p>The LineItem Card component generates a card template which displays the LineItem information.</p>
-<h3>Preview</h3>
-<img src="https://github.com/Apttus-Ecom/Summer19/blob/master/res/line_item_card.png" style="max-width: 100%">
 <h3>Usage</h3>
 
 <div><pre class="line-numbers"><code class="language-typescript">import { LineItemCardModule } from &#39;&#64;congacommerce/elements&#39;;
-
 &#64;NgModule({
 imports: [LineItemCardModule, ...]
 })
-export class AppModule {}</code></pre></div><p>// Basic Usage</p>
-<div><pre class="line-numbers"><code class="language-typescript">&lt;apt-lineitem-card [lineItem]=&quot;lineItem&quot;&gt;&lt;/apt-lineitem-card&gt;</code></pre></div><p>// All inputs and outputs</p>
-<div><pre class="line-numbers"><code class="language-typescript">&lt;apt-lineitem-card
+export class AppModule {}</code></pre></div><div><pre class="line-numbers"><code class="language-html">// Basic Usage
+```typescript
+&lt;apt-lineitem-card [lineItem]=&quot;lineItem&quot;&gt;&lt;/apt-lineitem-card&gt;</code></pre></div><div><pre class="line-numbers"><code class="language-none">// All inputs and outputs
+```typescript
+&lt;apt-lineitem-card
              [lineItem]=&quot;lineItem&quot;
              [thumbnail]=&quot;showThumbnail&quot;
              [showPrice]=&quot;showingPrice&quot;
@@ -101,7 +100,7 @@ export class AppModule {}</code></pre></div><p>// Basic Usage</p>
 
 <section>
     <h3>Metadata</h3>
-    <table class="table table-sm table-hover">
+    <table class="table table-sm table-hover metadata">
         <tbody>
 
 
@@ -367,31 +366,28 @@ export class AppModule {}</code></pre></div><p>// Basic Usage</p>
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;ng-container *ngIf&#x3D;&quot;_lineItem &amp;&amp; _lineItem[identifier]&quot;&gt;
-  &lt;div class&#x3D;&quot;card&quot;&gt;
-    &lt;div class&#x3D;&quot;card-body readonly p-3&quot;&gt;
-      &lt;div class&#x3D;&quot;card-title d-flex justify-content-between align-items-start&quot;&gt;
-        &lt;p class&#x3D;&quot;m-0 card-title font-weight-bold text-break&quot; tooltip&#x3D;&quot;{{_product?.Name}}&quot; container&#x3D;&quot;body&quot;
-          placement&#x3D;&quot;top&quot;&gt;{{_product?.Name | truncate:30}}&lt;/p&gt;
-        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-link p-0 close&quot; aria-label&#x3D;&quot;Close&quot; (click)&#x3D;&quot;removeCartItem()&quot;
-          *ngIf&#x3D;&quot;selected$ | async&quot;&gt;
-          &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
-        &lt;/button&gt;
-      &lt;/div&gt;
-      &lt;a href&#x3D;&quot;javascript:void(0)&quot; [routerLink]&#x3D;&quot;[&#x27;/products&#x27;, _product[identifier], _lineItem[identifier]]&quot;
-        [state]&#x3D;&quot;_product&quot;&gt;
-        &lt;div class&#x3D;&quot;img-container&quot;&gt;
-          &lt;img class&#x3D;&quot;card-img-top w-100 m-auto d-flex align-self-center&quot; [src]&#x3D;&quot;_product.IconId | image&quot;
-            [alt]&#x3D;&quot;_product.Name&quot; *ngIf&#x3D;&quot;thumbnail&quot;&gt;
+    &lt;div class&#x3D;&quot;card&quot;&gt;
+      &lt;div class&#x3D;&quot;card-body readonly p-3&quot;&gt;
+        &lt;div class&#x3D;&quot;card-title d-flex justify-content-between align-items-start&quot;&gt;
+            &lt;p class&#x3D;&quot;m-0 card-title font-weight-bold text-break&quot; tooltip&#x3D;&quot;{{_product?.Name}}&quot; container&#x3D;&quot;body&quot; placement&#x3D;&quot;top&quot;&gt;{{_product?.Name | truncate:30}}&lt;/p&gt;
+            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-link p-0 close&quot; aria-label&#x3D;&quot;Close&quot; (click)&#x3D;&quot;removeCartItem()&quot; *ngIf&#x3D;&quot;selected$ | async&quot;&gt;
+              &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+            &lt;/button&gt;
         &lt;/div&gt;
-
-        &lt;span class&#x3D;&quot;card-text font-weight-bold d-flex flex-column justify-content-between mt-2&quot; *ngIf&#x3D;&quot;showPrice&quot;&gt;
-          &lt;span&gt;{{&#x27;COMMON.NET_PRICE&#x27; | translate}}&lt;/span&gt;
-          &lt;apt-price [record]&#x3D;&quot;_lineItem&quot; type&#x3D;&quot;net&quot;&gt;&lt;/apt-price&gt;
-        &lt;/span&gt;
-      &lt;/a&gt;
+        &lt;a href&#x3D;&quot;javascript:void(0)&quot; [routerLink]&#x3D;&quot;[&#x27;/products&#x27;, _product[identifier], _lineItem[identifier]]&quot; [state]&#x3D;&quot;_product&quot;&gt;
+          &lt;div class&#x3D;&quot;img-container&quot;&gt;
+            &lt;img class&#x3D;&quot;card-img-top w-100 m-auto d-flex align-self-center&quot; [src]&#x3D;&quot;_product.IconId | image&quot;
+              [alt]&#x3D;&quot;_product.Name&quot; *ngIf&#x3D;&quot;thumbnail&quot;&gt;
+          &lt;/div&gt;
+      
+          &lt;span class&#x3D;&quot;card-text font-weight-bold d-flex flex-column justify-content-between mt-2&quot; *ngIf&#x3D;&quot;showPrice&quot;&gt;
+            &lt;span&gt;{{&#x27;COMMON.NET_PRICE&#x27; | translate}}&lt;/span&gt;
+            &lt;apt-price [record]&#x3D;&quot;_lineItem&quot; type&#x3D;&quot;net&quot;&gt;&lt;/apt-price&gt;
+          &lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
     &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/ng-container&gt;</code></pre>
+  &lt;/ng-container&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -399,93 +395,93 @@ export class AppModule {}</code></pre></div><p>// Basic Usage</p>
                     <code>./lineitem-card.component.scss</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss">apt-lineitem-card {
-  :host {
-    display: block;
-    width: 100%; // Added to fix IE 11 issue
-  }
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  .card .card-body {
-    .card-title {
-      p {
-        height: 3rem;
-      }
+    :host{
+        display: block;
+        width: 100% // Added to fix IE 11 issue
     }
-    img {
-      max-height: 8rem;
-      max-width: 100%;
+    a{
+        text-decoration: none;
+        color: inherit;
     }
-    .img-container {
-      height: 8rem;
-    }
-    &amp;.readonly {
-      img {
-        max-height: 6rem;
-        max-width: 75%;
-      }
-      .img-container {
-        height: 6rem;
-      }
-      .card-text {
-        &gt; span {
-          font-size: 0.65rem;
+  
+    .card .card-body{
+        .card-title {
+            p {
+                height: 3rem;
+            }
         }
-        apt-price {
-          font-size: 1.1rem;
+        img{
+            max-height: 8rem;
+            max-width: 100%;
         }
-      }
+        .img-container{
+            height: 8rem;
+        }
+        &amp;.readonly{
+            img{
+                max-height: 6rem;
+                max-width: 75%;
+            }
+            .img-container{
+                height: 6rem;
+            }   
+            .card-text{
+                &gt; span{
+                    font-size: 0.65rem;
+                }
+                apt-price {
+                    font-size: 1.1rem;
+                }
+            } 
+        }
     }
-  }
-
-  .split-items &gt; * {
-    border-radius: 0;
-    border-right: 1px solid #000;
-    padding-right: 7px;
-    margin-right: 7px;
-    padding-bottom: 0;
-    line-height: 15px;
-    &amp;:last-child {
-      border-right: none;
+  
+    .split-items&gt;*{
+        border-radius: 0;
+        border-right: 1px solid #000;
+        padding-right: 7px;
+        margin-right: 7px;
+        padding-bottom: 0;
+        line-height: 15px;
+        &amp;:last-child{
+            border-right: none;
+        }
     }
-  }
-
-  button.btn.close {
-    margin-top: -5px;
-    line-height: 0.9;
-    font-size: 2rem;
-  }
-  .btn.btn-primary.dropdown-toggle.dropdown-toggle-split {
-    height: 31px;
-    padding-top: 3px;
-  }
-
-  .list-purchasedbucket {
-    font-size: 1rem;
-    font-weight: 400;
-    position: absolute;
-    padding-top: 3px;
-
-    .fa {
-      padding-left: 5px;
+    
+    button.btn.close{
+        margin-top: -5px;
+        line-height: 0.9;
+        font-size: 2rem;
     }
-  }
-
-  label {
-    &amp;::before,
-    &amp;::after {
-      top: 0.15rem;
+    .btn.btn-primary.dropdown-toggle.dropdown-toggle-split{
+        height: 31px;
+        padding-top: 3px;
     }
-    .icons {
-      white-space: nowrap;
-      i {
-        font-size: smaller;
-        margin-left: 5px;
-      }
+    
+    .list-purchasedbucket{  
+        font-size: 1rem;
+        font-weight: 400;
+        position: absolute;
+        padding-top: 3px;
+        
+        .fa{
+            padding-left: 5px;
+        }
     }
-  }
+    
+    label{
+        &amp;::before, &amp;::after{
+            top: 0.15rem;
+        }
+        .icons{
+            white-space: nowrap;
+            i{
+                font-size: smaller;
+                margin-left: 5px;
+            }
+        }
+    }
+    
 }
 </code></pre>
     </div>
@@ -515,12 +511,14 @@ export class AppModule {}</code></pre></div><p>// Basic Usage</p>
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="_lineItem && _lineItem[identifier]">  <div class="card">    <div class="card-body readonly p-3">      <div class="card-title d-flex justify-content-between align-items-start">        <p class="m-0 card-title font-weight-bold text-break" tooltip="{{_product?.Name}}" container="body"          placement="top">{{_product?.Name | truncate:30}}</p>        <button type="button" class="btn btn-link p-0 close" aria-label="Close" (click)="removeCartItem()"          *ngIf="selected$ | async">          <span aria-hidden="true">&times;</span>        </button>      </div>      <a href="javascript:void(0)" [routerLink]="[\'/products\', _product[identifier], _lineItem[identifier]]"        [state]="_product">        <div class="img-container">          <img class="card-img-top w-100 m-auto d-flex align-self-center" [src]="_product.IconId | image"            [alt]="_product.Name" *ngIf="thumbnail">        </div>        <span class="card-text font-weight-bold d-flex flex-column justify-content-between mt-2" *ngIf="showPrice">          <span>{{\'COMMON.NET_PRICE\' | translate}}</span>          <apt-price [record]="_lineItem" type="net"></apt-price>        </span>      </a>    </div>  </div></ng-container></div>'
+        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="_lineItem && _lineItem[identifier]">    <div class="card">      <div class="card-body readonly p-3">        <div class="card-title d-flex justify-content-between align-items-start">            <p class="m-0 card-title font-weight-bold text-break" tooltip="{{_product?.Name}}" container="body" placement="top">{{_product?.Name | truncate:30}}</p>            <button type="button" class="btn btn-link p-0 close" aria-label="Close" (click)="removeCartItem()" *ngIf="selected$ | async">              <span aria-hidden="true">&times;</span>            </button>        </div>        <a href="javascript:void(0)" [routerLink]="[\'/products\', _product[identifier], _lineItem[identifier]]" [state]="_product">          <div class="img-container">            <img class="card-img-top w-100 m-auto d-flex align-self-center" [src]="_product.IconId | image"              [alt]="_product.Name" *ngIf="thumbnail">          </div>                <span class="card-text font-weight-bold d-flex flex-column justify-content-between mt-2" *ngIf="showPrice">            <span>{{\'COMMON.NET_PRICE\' | translate}}</span>            <apt-price [record]="_lineItem" type="net"></apt-price>          </span>        </a>      </div>    </div>  </ng-container></div>'
     var COMPONENTS = [{'name': 'AdditionalInformationComponent', 'selector': 'apt-additional-information'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AlertComponent', 'selector': 'apt-alert'},{'name': 'AssetDropdownButtonComponent', 'selector': 'apt-asset-dropdown-button'},{'name': 'AssetListComponent', 'selector': 'apt-asset-list'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'CategoryFilterComponent', 'selector': 'apt-category-filter'},{'name': 'ChartComponent', 'selector': 'apt-chart'},{'name': 'ConstraintRuleAlertComponent', 'selector': 'apt-constraint-rule-alert'},{'name': 'ConstraintRuleSidebarComponent', 'selector': 'apt-constraint-rule-sidebar'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'DataFilterComponent', 'selector': 'apt-data-filter'},{'name': 'DotsComponent', 'selector': 'apt-dots'},{'name': 'FavoriteModalComponent', 'selector': 'apt-favorite-modal'},{'name': 'FilesComponent', 'selector': 'apt-files'},{'name': 'GenerateDocumentComponent', 'selector': 'apt-generate-document'},{'name': 'InputDateComponent', 'selector': 'apt-date-range-input'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputSelectComponent', 'selector': 'apt-input-select'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'LineitemCardComponent', 'selector': 'apt-lineitem-card'},{'name': 'LineItemMenuComponent', 'selector': 'apt-line-item-menu'},{'name': 'LineItemTableRowComponent', 'selector': 'apt-line-item-table-row'},{'name': 'LoginFormComponent', 'selector': 'apt-login-form'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'OutputFieldComponent', 'selector': 'apt-output-field'},{'name': 'PaymentComponent', 'selector': 'apt-payment'},{'name': 'PaymentIFrameComponent', 'selector': 'apt-payment-iframe'},{'name': 'PresentDocumentComponent', 'selector': 'apt-present-document'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'PriceModalComponent', 'selector': 'apt-price-modal'},{'name': 'PriceSummaryComponent', 'selector': 'apt-price-summary'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductCompareComponent', 'selector': 'apt-product-compare'},{'name': 'ProductConfigurationComponent', 'selector': 'apt-product-configuration'},{'name': 'ProductConfigurationSummaryComponent', 'selector': 'apt-product-configuration-summary'},{'name': 'ProductDrawerComponent', 'selector': 'apt-product-drawer'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'},{'name': 'ProductSearchComponent', 'selector': 'apt-product-search'},{'name': 'ProductTypeFilterComponent', 'selector': 'apt-product-type-filter'},{'name': 'PromotionComponent', 'selector': 'apt-promotion'},{'name': 'PromotionModalComponent', 'selector': 'apt-pr-modal'},{'name': 'RevalidateCartModalComponent', 'selector': 'apt-revalidate-cart-modal'},{'name': 'SelectAllComponent', 'selector': 'apt-select-all'},{'name': 'SpinnerComponent', 'selector': 'apt-spinner'},{'name': 'TableComponent', 'selector': 'apt-table'},{'name': 'TaxPopHoverComponent', 'selector': 'apt-tax-pophover'}];
     var DIRECTIVES = [{'name': 'AutoFocusDirective', 'selector': '[aptAutoFocus]'}];
     var ACTUAL_COMPONENT = {'name': 'LineitemCardComponent'};
 </script>
 <script src="../js/tree.js"></script>
+
+
 
 
 
@@ -549,6 +547,15 @@ export class AppModule {}</code></pre></div><p>// Basic Usage</p>
                <!-- END CONTENT -->
            </div>
        </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;

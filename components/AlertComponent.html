@@ -9,7 +9,7 @@
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 	   <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="../styles/dark.css">
         <link rel="stylesheet" href="../styles/material.css">
     </head>
     <body>
@@ -72,20 +72,19 @@
     <p class="comment">
         <p>The Alert component is used to display alert messages in the application. This alert display varies with the message type. Errors will be displayed as alert-danger.
 Warnings will be dispalyed as alert-warning.Information will be displayed as alert-info.</p>
-<h3>Preview</h3>
-<img src="https://raw.githubusercontent.com/Apttus-Ecom/Summer19/master/res/alert.png" style="max-width: 100%">
-
- <h3>Usage</h3>
+<h3>Usage</h3>
 
 <div><pre class="line-numbers"><code class="language-typescript">import { AlertModule } from &#39;&#64;congacommerce/elements&#39;;
 &#64;NgModule({
 imports: [AlertModule, ...]
 })
-export class AppModule {}</code></pre></div><div><pre class="line-numbers"><code class="language-typescript"> &lt;apt-alert
+export class AppModule {}</code></pre></div><div><pre class="line-numbers"><code class="language-html">```typescript
+ &lt;apt-alert
           [record]=&quot;record&quot;
           layout=&quot;alert&quot;
           message=&quot;error message&quot;
- &gt;&lt;/apt-alert&gt;</code></pre></div>
+ &gt;&lt;/apt-alert&gt;</code></pre></div><p>```</p>
+
     </p>
 
 
@@ -100,7 +99,7 @@ export class AppModule {}</code></pre></div><div><pre class="line-numbers"><code
 
 <section>
     <h3>Metadata</h3>
-    <table class="table table-sm table-hover">
+    <table class="table table-sm table-hover metadata">
         <tbody>
 
 
@@ -369,7 +368,7 @@ export class AppModule {}</code></pre></div><div><pre class="line-numbers"><code
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>Use to set the layout for error messages to be displayed 
+                        <div class="io-description"><p>Use to set the layout for error messages to be displayed
 either in alert with accordian or inline message.</p>
 </div>
                     </td>
@@ -815,6 +814,8 @@ button[aria-expanded&#x3D;&quot;true&quot;]:before{
 
 
 
+
+
                    </div><div class="search-results">
     <div class="has-results">
         <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
@@ -828,6 +829,15 @@ button[aria-expanded&#x3D;&quot;true&quot;]:before{
                <!-- END CONTENT -->
            </div>
        </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;

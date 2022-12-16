@@ -9,7 +9,7 @@
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 	   <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="../styles/dark.css">
         <link rel="stylesheet" href="../styles/material.css">
     </head>
     <body>
@@ -71,19 +71,19 @@
     </p>
     <p class="comment">
         <p>Login Form component is used to display login page where user can register or log into the application.</p>
-<h3>Preview</h3>
-<img src="https://github.com/Apttus-Ecom/Summer19/blob/master/res/login.png" style="max-width: 100%">
 <h3>Usage</h3>
 
 <div><pre class="line-numbers"><code class="language-typescript">import { LoginFormModule } from &#39;&#64;congacommerce/elements&#39;;
 &#64;NgModule({
 imports: [LoginFormModule, ...]
 })
-export class AppModule {}</code></pre></div><p>// Basic usage.</p>
-<div><pre class="line-numbers"><code class="language-typescript">&lt;apt-login-form
+export class AppModule {}</code></pre></div><div><pre class="line-numbers"><code class="language-html">// Basic usage.
+```typescript
+&lt;apt-login-form
             [type]=&quot;&#39;OAuth&#39;&quot;
             (onRegister)=&quot;handleOnRegisterChange()&quot;
-            (onLogin)=&quot;handleOnLoginChange()&quot;&gt;&lt;/apt-login-form&gt;</code></pre></div>
+            (onLogin)=&quot;handleOnLoginChange()&quot;&gt;&lt;/apt-login-form&gt;</code></pre></div><p>```</p>
+
     </p>
 
 
@@ -97,7 +97,7 @@ export class AppModule {}</code></pre></div><p>// Basic usage.</p>
 
 <section>
     <h3>Metadata</h3>
-    <table class="table table-sm table-hover">
+    <table class="table table-sm table-hover metadata">
         <tbody>
 
 
@@ -806,8 +806,8 @@ for the user.</p>
                     &lt;ul class&#x3D;&quot;nav nav-tabs justify-content-center&quot;&gt;
                         &lt;li class&#x3D;&quot;nav-item&quot;&gt;
                             &lt;a class&#x3D;&quot;nav-link&quot;
-                                [class.active]&#x3D;&quot;loginState &#x3D;&#x3D;&#x3D; &#x27;LOGIN&#x27; || loginState &#x3D;&#x3D;&#x3D; &#x27;RESET-PASSWORD&#x27;&quot; href&#x3D;&quot;#login&quot;
-                                data-toggle&#x3D;&quot;tab&quot; (click)&#x3D;&quot;loginState&#x3D;&#x27;LOGIN&#x27;&quot;&gt;
+                                [class.active]&#x3D;&quot;loginState &#x3D;&#x3D;&#x3D; &#x27;LOGIN&#x27; || loginState &#x3D;&#x3D;&#x3D; &#x27;RESET-PASSWORD&#x27;&quot;
+                                href&#x3D;&quot;#login&quot; data-toggle&#x3D;&quot;tab&quot; (click)&#x3D;&quot;loginState&#x3D;&#x27;LOGIN&#x27;&quot;&gt;
                                 LOGIN &lt;/a&gt;
                         &lt;/li&gt;
                         &lt;li class&#x3D;&quot;nav-item&quot;&gt;
@@ -818,39 +818,36 @@ for the user.</p>
                     &lt;/ul&gt;
                     &lt;div class&#x3D;&quot;tab-content pt-3&quot;&gt;
                         &lt;div class&#x3D;&quot;tab-pane&quot;
-                            [class.active]&#x3D;&quot;loginState &#x3D;&#x3D;&#x3D; &#x27;LOGIN&#x27; || loginState &#x3D;&#x3D;&#x3D; &#x27;RESET-PASSWORD&#x27; || loginState &#x3D;&#x3D;&#x3D; &#x27;RESET-CONFIRM&#x27;&quot;
-                            id&#x3D;&quot;login&quot;&gt;
+                            [class.active]&#x3D;&quot;loginState &#x3D;&#x3D;&#x3D; &#x27;LOGIN&#x27; || loginState &#x3D;&#x3D;&#x3D; &#x27;RESET-PASSWORD&#x27; || loginState &#x3D;&#x3D;&#x3D; &#x27;RESET-CONFIRM&#x27;&quot; id&#x3D;&quot;login&quot;&gt;
                             &lt;!-- LOGIN FORM --&gt;
                             &lt;form class&#x3D;&quot;center_form&quot; *ngIf&#x3D;&quot;loginState &#x3D;&#x3D;&#x3D; &#x27;LOGIN&#x27;&quot; (ngSubmit)&#x3D;&quot;doLogin()&quot;&gt;
                                 &lt;ng-container&gt;
                                     &lt;div class&#x3D;&quot;form-group&quot;&gt;
                                         &lt;label for&#x3D;&quot;email&quot;&gt;{{&#x27;COMMON.USERNAME&#x27; | translate}}&lt;/label&gt;
-                                        &lt;input autofocus type&#x3D;&quot;email&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;username&quot; name&#x3D;&quot;username&quot;
+                                        &lt;input autofocus type&#x3D;&quot;email&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;username&quot;
+                                            name&#x3D;&quot;username&quot;
                                             placeholder&#x3D;&quot;{{&#x27;MINI_PROFILE.ENTER_USERNAME&#x27; | translate}}&quot;
-                                            [(ngModel)]&#x3D;&quot;username&quot; required /&gt;
+                                            [(ngModel)]&#x3D;&quot;username&quot; required/&gt;
                                     &lt;/div&gt;
                                     &lt;div class&#x3D;&quot;form-group&quot;&gt;
                                         &lt;label for&#x3D;&quot;password&quot;&gt;{{&#x27;MINI_PROFILE.PASSWORD&#x27; | translate}}&lt;/label&gt;
                                         &lt;input type&#x3D;&quot;password&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;password&quot; name&#x3D;&quot;password&quot;
-                                            placeholder&#x3D;&quot;{{&#x27;MINI_PROFILE.PASSWORD&#x27; | translate}}&quot; [(ngModel)]&#x3D;&quot;password&quot;
-                                            required&gt;
+                                            placeholder&#x3D;&quot;{{&#x27;MINI_PROFILE.PASSWORD&#x27; | translate}}&quot;
+                                            [(ngModel)]&#x3D;&quot;password&quot; required&gt;
                                     &lt;/div&gt;
                                     &lt;div class&#x3D;&quot;mt-5&quot;&gt;
-                                        &lt;small class&#x3D;&quot;text-danger&quot;
-                                            *ngIf&#x3D;&quot;loginMessage; else sessionMessage&quot;&gt;{{loginMessage}}&lt;/small&gt;
+                                        &lt;small class&#x3D;&quot;text-danger&quot; *ngIf&#x3D;&quot;loginMessage; else sessionMessage&quot;&gt;{{loginMessage}}&lt;/small&gt;
                                         &lt;ng-template #sessionMessage&gt;
                                             &lt;small class&#x3D;&quot;text-danger&quot;&gt;{{sessionExpiryErrorMessage}}&lt;/small&gt;
                                         &lt;/ng-template&gt;
-                                        &lt;button class&#x3D;&quot;btn btn-primary btn-block btn-raised&quot; type&#x3D;&quot;submit&quot;
-                                            [ladda]&#x3D;&quot;loading&quot;&gt;
+                                        &lt;button class&#x3D;&quot;btn btn-primary btn-block btn-raised&quot; type&#x3D;&quot;submit&quot; [ladda]&#x3D;&quot;loading&quot;&gt;
                                             {{&#x27;COMMON.SUBMIT&#x27; | translate}}
                                         &lt;/button&gt;
                                     &lt;/div&gt;
                                     &lt;br /&gt;
                                     &lt;div class&#x3D;&quot;text-center&quot;&gt;
-                                        &lt;a href&#x3D;&quot;#reset_password&quot; data-toggle&#x3D;&quot;tab&quot;
-                                            (click)&#x3D;&quot;loginState&#x3D;&#x27;RESET-PASSWORD&#x27;&quot;&gt;
-                                            {{&#x27;MINI_PROFILE.FORGOT_PASSWORD&#x27; | translate}}? &lt;/a&gt;
+                                        &lt;a href&#x3D;&quot;#reset_password&quot; data-toggle&#x3D;&quot;tab&quot; (click)&#x3D;&quot;loginState&#x3D;&#x27;RESET-PASSWORD&#x27;&quot;&gt;
+                                        {{&#x27;MINI_PROFILE.FORGOT_PASSWORD&#x27; | translate}}? &lt;/a&gt;
                                     &lt;/div&gt;
                                 &lt;/ng-container&gt;
                                 &lt;!-- For GA release we dont need this --&gt;
@@ -864,8 +861,13 @@ for the user.</p>
                                 &lt;/ng-container&gt; --&gt;
                             &lt;/form&gt;
                             &lt;!-- RESET-PASSWORD FORM --&gt;
-                            &lt;form *ngIf&#x3D;&quot;loginState &#x3D;&#x3D;&#x3D; &#x27;RESET-PASSWORD&#x27;&quot; id&#x3D;&quot;reset_password&quot; class&#x3D;&quot;center_form&quot;
-                                (ngSubmit)&#x3D;&quot;resetForm.valid &amp;&amp; doResetPassword()&quot; #resetForm&#x3D;&quot;ngForm&quot;&gt;
+                            &lt;form
+                                *ngIf&#x3D;&quot;loginState &#x3D;&#x3D;&#x3D; &#x27;RESET-PASSWORD&#x27;&quot;
+                                id&#x3D;&quot;reset_password&quot;
+                                class&#x3D;&quot;center_form&quot;
+                                (ngSubmit)&#x3D;&quot;resetForm.valid &amp;&amp; doResetPassword()&quot;
+                                #resetForm&#x3D;&quot;ngForm&quot;
+                            &gt;
                                 &lt;div class&#x3D;&quot;card-body&quot;&gt;
                                     &lt;p&gt;{{&#x27;MINI_PROFILE.TROUBLE_LOGGINGIN&#x27; | translate}}&lt;/p&gt;
                                     &lt;ul&gt;
@@ -876,13 +878,10 @@ for the user.</p>
                                     &lt;div class&#x3D;&quot;form-group&quot;&gt;
                                         &lt;label for&#x3D;&quot;resetUsername&quot;&gt;{{&#x27;COMMON.USERNAME&#x27; | translate}}&lt;/label&gt;
                                         &lt;input type&#x3D;&quot;email&quot; [(ngModel)]&#x3D;&quot;resetUsername&quot; class&#x3D;&quot;form-control&quot;
-                                            name&#x3D;&quot;resetUsername&quot; placeholder&#x3D;&quot;{{&#x27;COMMON.USERNAME&#x27; | translate}}&quot;
-                                            required&gt;
+                                            name&#x3D;&quot;resetUsername&quot; placeholder&#x3D;&quot;{{&#x27;COMMON.USERNAME&#x27; | translate}}&quot; required&gt;
                                     &lt;/div&gt;
                                     &lt;small class&#x3D;&quot;text-danger &quot; *ngIf&#x3D;&quot;resetMessage&quot;&gt;{{resetMessage}}&lt;/small&gt;
-                                    &lt;small class&#x3D;&quot;text-danger&quot;
-                                        *ngIf&#x3D;&quot;(resetForm.dirty &amp;&amp; resetForm.invalid) || (resetForm.submitted &amp;&amp; resetForm.invalid)&quot;&gt;{{&#x27;MINI_PROFILE.PLEASE_ENTER_USERNAME&#x27;
-                                        | translate}}&lt;/small&gt;
+                                    &lt;small class&#x3D;&quot;text-danger&quot; *ngIf&#x3D;&quot;(resetForm.dirty &amp;&amp; resetForm.invalid) || (resetForm.submitted &amp;&amp; resetForm.invalid)&quot;&gt;{{&#x27;MINI_PROFILE.PLEASE_ENTER_USERNAME&#x27; | translate}}&lt;/small&gt;
                                 &lt;/div&gt;
                                 &lt;div class&#x3D;&quot;card-footer&quot;&gt;
                                     &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary col-sm-6 text-center&quot;
@@ -919,8 +918,9 @@ for the user.</p>
                                 &lt;/div&gt;
                                 &lt;div class&#x3D;&quot;form-group&quot;&gt;
                                     &lt;label for&#x3D;&quot;firstName&quot;&gt;{{&#x27;COMMON.FIRST_NAME&#x27; | translate}}&lt;/label&gt;
-                                    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;firstName&quot; [(ngModel)]&#x3D;&quot;user.FirstName&quot;
-                                        name&#x3D;&quot;firstName&quot; placeholder&#x3D;&quot;{{&#x27;COMMON.FIRST_NAME&#x27; | translate}}&quot;&gt;
+                                    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;firstName&quot;
+                                        [(ngModel)]&#x3D;&quot;user.FirstName&quot; name&#x3D;&quot;firstName&quot;
+                                        placeholder&#x3D;&quot;{{&#x27;COMMON.FIRST_NAME&#x27; | translate}}&quot;&gt;
                                 &lt;/div&gt;
                                 &lt;div class&#x3D;&quot;form-group&quot;&gt;
                                     &lt;label for&#x3D;&quot;lastName&quot;&gt;{{&#x27;COMMON.LAST_NAME&#x27; | translate}}&lt;/label&gt;
@@ -957,9 +957,9 @@ for the user.</p>
   color: black;
   text-align: center;
   height: 1.5em;
-  opacity: 0.5;
+  opacity: .5;
   &amp;:before {
-    content: &quot;&quot;;
+    content: &#x27;&#x27;;
     background: linear-gradient(to right, transparent, gray, transparent);
     position: absolute;
     left: 0;
@@ -973,7 +973,7 @@ for the user.</p>
     display: inline-block;
     color: black;
 
-    padding: 0 0.5em;
+    padding: 0 .5em;
     line-height: 1.5em;
     // this is really the only tricky part, you need to specify the background color of the container element...
     color: gray;
@@ -981,21 +981,20 @@ for the user.</p>
   }
 }
 .center_form {
-  min-height: 350px;
-  margin: 0 auto;
-  width: 80%;
+   min-height: 350px;
+   margin: 0 auto;
+   width:80%
 }
 
 /* Tabs panel and border around */
 .tabbable-panel {
-  border: 1px solid lightgrey;
+  border:1px solid lightgrey;
 }
 
 .tabbable-line &gt; .tab-content {
   background-color: white;
   border-top: 1px solid lightgrey;
-}
-</code></pre>
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -1023,12 +1022,14 @@ for the user.</p>
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container">    <div class="row">        <div class="col-md-12">            <div class="tabbable-panel p-3">                <div class="tabbable-line">                    <ul class="nav nav-tabs justify-content-center">                        <li class="nav-item">                            <a class="nav-link"                                [class.active]="loginState === \'LOGIN\' || loginState === \'RESET-PASSWORD\'" href="#login"                                data-toggle="tab" (click)="loginState=\'LOGIN\'">                                LOGIN </a>                        </li>                        <li class="nav-item">                            <a class="nav-link" [class.active]="loginState === \'REGISTER\'" href="#register"                                data-toggle="tab" (click)="loginState=\'REGISTER\'">                                REGISTER </a>                        </li>                    </ul>                    <div class="tab-content pt-3">                        <div class="tab-pane"                            [class.active]="loginState === \'LOGIN\' || loginState === \'RESET-PASSWORD\' || loginState === \'RESET-CONFIRM\'"                            id="login">                            <!-- LOGIN FORM -->                            <form class="center_form" *ngIf="loginState === \'LOGIN\'" (ngSubmit)="doLogin()">                                <ng-container>                                    <div class="form-group">                                        <label for="email">{{\'COMMON.USERNAME\' | translate}}</label>                                        <input autofocus type="email" class="form-control" id="username" name="username"                                            placeholder="{{\'MINI_PROFILE.ENTER_USERNAME\' | translate}}"                                            [(ngModel)]="username" required />                                    </div>                                    <div class="form-group">                                        <label for="password">{{\'MINI_PROFILE.PASSWORD\' | translate}}</label>                                        <input type="password" class="form-control" id="password" name="password"                                            placeholder="{{\'MINI_PROFILE.PASSWORD\' | translate}}" [(ngModel)]="password"                                            required>                                    </div>                                    <div class="mt-5">                                        <small class="text-danger"                                            *ngIf="loginMessage; else sessionMessage">{{loginMessage}}</small>                                        <ng-template #sessionMessage>                                            <small class="text-danger">{{sessionExpiryErrorMessage}}</small>                                        </ng-template>                                        <button class="btn btn-primary btn-block btn-raised" type="submit"                                            [ladda]="loading">                                            {{\'COMMON.SUBMIT\' | translate}}                                        </button>                                    </div>                                    <br />                                    <div class="text-center">                                        <a href="#reset_password" data-toggle="tab"                                            (click)="loginState=\'RESET-PASSWORD\'">                                            {{\'MINI_PROFILE.FORGOT_PASSWORD\' | translate}}? </a>                                    </div>                                </ng-container>                                <!-- For GA release we dont need this -->                                <!-- <ng-container>                                    <hr class="my-4 hr-text" data-content="OR" />                                    <button class="btn btn-outline-primary btn-raised btn-icon btn-block"                                        type="button" (click)="samlLogin()">                                        <i class="fab fa-windows mr-3"></i>                                        Login With Microsoft                                    </button>                                </ng-container> -->                            </form>                            <!-- RESET-PASSWORD FORM -->                            <form *ngIf="loginState === \'RESET-PASSWORD\'" id="reset_password" class="center_form"                                (ngSubmit)="resetForm.valid && doResetPassword()" #resetForm="ngForm">                                <div class="card-body">                                    <p>{{\'MINI_PROFILE.TROUBLE_LOGGINGIN\' | translate}}</p>                                    <ul>                                        <li>{{\'MINI_PROFILE.USERNAME_ARE_IN_EMAIL\' | translate}}</li>                                        <li>{{\'MINI_PROFILE.PASSWORDS_ARE_CASESENSITIVE\' | translate}}</li>                                    </ul>                                    <p>{{\'MINI_PROFILE.TO_RESET_PASSWORD_ENTER_USERNAME\' | translate}}</p>                                    <div class="form-group">                                        <label for="resetUsername">{{\'COMMON.USERNAME\' | translate}}</label>                                        <input type="email" [(ngModel)]="resetUsername" class="form-control"                                            name="resetUsername" placeholder="{{\'COMMON.USERNAME\' | translate}}"                                            required>                                    </div>                                    <small class="text-danger " *ngIf="resetMessage">{{resetMessage}}</small>                                    <small class="text-danger"                                        *ngIf="(resetForm.dirty && resetForm.invalid) || (resetForm.submitted && resetForm.invalid)">{{\'MINI_PROFILE.PLEASE_ENTER_USERNAME\'                                        | translate}}</small>                                </div>                                <div class="card-footer">                                    <button type="button" class="btn btn-secondary col-sm-6 text-center"                                        (click)="loginState = \'LOGIN\'">{{\'MINI_PROFILE.GO_BACK\' | translate}}</button>                                    <button type="submit" class="btn btn-raised btn-primary col-sm-6 text-center"                                        type="submit" [ladda]="loading">{{\'COMMON.SUBMIT\' | translate}}</button>                                </div>                            </form>                            <div *ngIf="loginState === \'RESET-CONFIRM\'">                                <!-- <div class="card-header">                                    <h5>{{\'MINI_PROFILE.PASSWORD_RESET\' | translate}}</h5>                                </div> -->                                <div class="card-body">                                    <p>{{\'MINI_PROFILE.PASSWORD_RESET_CONFIRM1\' | translate}}</p>                                    <p>{{\'MINI_PROFILE.PASSWORD_RESET_CONFIRM2\' | translate}}</p>                                    <p>{{\'MINI_PROFILE.PASSWORD_RESET_CONFIRM3\' | translate}}</p>                                </div>                                <div class="card-footer">                                    <button type="button" class="btn btn-secondary btn-block"                                        (click)="loginState = \'LOGIN\'">{{\'MINI_PROFILE.GO_BACK\' | translate}}</button>                                </div>                            </div>                        </div>                        <div class="tab-pane" [class.active]="loginState === \'REGISTER\'" id="register">                            <!-- REGISTER FORM -->                            <form *ngIf="loginState === \'REGISTER\'" class="center_form" (ngSubmit)="doRegister()">                                <div class="form-group">                                    <label for="exampleInputEmail1">{{\'COMMON.EMAIL_ADDRESS\' | translate}}&nbsp;                                        <a><i class="fa fa-info-circle"                                                title="{{\'MINI_PROFILE.NEVER_SHARE_YOUR_EMAIL\' | translate}}"></i></a></label>                                    <input type="email" [(ngModel)]="user.Email" class="form-control" name="email"                                        placeholder="{{\'MINI_PROFILE.ENTER_EMAIL\' | translate}}" required>                                </div>                                <div class="form-group">                                    <label for="firstName">{{\'COMMON.FIRST_NAME\' | translate}}</label>                                    <input type="text" class="form-control" id="firstName" [(ngModel)]="user.FirstName"                                        name="firstName" placeholder="{{\'COMMON.FIRST_NAME\' | translate}}">                                </div>                                <div class="form-group">                                    <label for="lastName">{{\'COMMON.LAST_NAME\' | translate}}</label>                                    <input type="text" class="form-control"                                        placeholder="{{\'COMMON.LAST_NAME\' | translate}}" [(ngModel)]="user.LastName"                                        name="lastName" id="lastName">                                </div>                                <small class="text-danger " *ngIf="registerMessage">{{registerMessage}}</small>                                <div class="card-footer">                                    <!-- <button type="button" class="btn btn-secondary col-sm-6 text-center"                                        (click)="loginState = \'LOGIN\'">{{\'MINI_PROFILE.GO_BACK\' | translate}}</button> -->                                    <button type="submit" class="btn btn-raised btn-primary btn-block text-center"                                        [ladda]="loading">{{\'COMMON.SUBMIT\' | translate}}</button>                                </div>                            </form>                        </div>                    </div>                </div>            </div>        </div>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container">    <div class="row">        <div class="col-md-12">            <div class="tabbable-panel p-3">                <div class="tabbable-line">                    <ul class="nav nav-tabs justify-content-center">                        <li class="nav-item">                            <a class="nav-link"                                [class.active]="loginState === \'LOGIN\' || loginState === \'RESET-PASSWORD\'"                                href="#login" data-toggle="tab" (click)="loginState=\'LOGIN\'">                                LOGIN </a>                        </li>                        <li class="nav-item">                            <a class="nav-link" [class.active]="loginState === \'REGISTER\'" href="#register"                                data-toggle="tab" (click)="loginState=\'REGISTER\'">                                REGISTER </a>                        </li>                    </ul>                    <div class="tab-content pt-3">                        <div class="tab-pane"                            [class.active]="loginState === \'LOGIN\' || loginState === \'RESET-PASSWORD\' || loginState === \'RESET-CONFIRM\'" id="login">                            <!-- LOGIN FORM -->                            <form class="center_form" *ngIf="loginState === \'LOGIN\'" (ngSubmit)="doLogin()">                                <ng-container>                                    <div class="form-group">                                        <label for="email">{{\'COMMON.USERNAME\' | translate}}</label>                                        <input autofocus type="email" class="form-control" id="username"                                            name="username"                                            placeholder="{{\'MINI_PROFILE.ENTER_USERNAME\' | translate}}"                                            [(ngModel)]="username" required/>                                    </div>                                    <div class="form-group">                                        <label for="password">{{\'MINI_PROFILE.PASSWORD\' | translate}}</label>                                        <input type="password" class="form-control" id="password" name="password"                                            placeholder="{{\'MINI_PROFILE.PASSWORD\' | translate}}"                                            [(ngModel)]="password" required>                                    </div>                                    <div class="mt-5">                                        <small class="text-danger" *ngIf="loginMessage; else sessionMessage">{{loginMessage}}</small>                                        <ng-template #sessionMessage>                                            <small class="text-danger">{{sessionExpiryErrorMessage}}</small>                                        </ng-template>                                        <button class="btn btn-primary btn-block btn-raised" type="submit" [ladda]="loading">                                            {{\'COMMON.SUBMIT\' | translate}}                                        </button>                                    </div>                                    <br />                                    <div class="text-center">                                        <a href="#reset_password" data-toggle="tab" (click)="loginState=\'RESET-PASSWORD\'">                                        {{\'MINI_PROFILE.FORGOT_PASSWORD\' | translate}}? </a>                                    </div>                                </ng-container>                                <!-- For GA release we dont need this -->                                <!-- <ng-container>                                    <hr class="my-4 hr-text" data-content="OR" />                                    <button class="btn btn-outline-primary btn-raised btn-icon btn-block"                                        type="button" (click)="samlLogin()">                                        <i class="fab fa-windows mr-3"></i>                                        Login With Microsoft                                    </button>                                </ng-container> -->                            </form>                            <!-- RESET-PASSWORD FORM -->                            <form                                *ngIf="loginState === \'RESET-PASSWORD\'"                                id="reset_password"                                class="center_form"                                (ngSubmit)="resetForm.valid && doResetPassword()"                                #resetForm="ngForm"                            >                                <div class="card-body">                                    <p>{{\'MINI_PROFILE.TROUBLE_LOGGINGIN\' | translate}}</p>                                    <ul>                                        <li>{{\'MINI_PROFILE.USERNAME_ARE_IN_EMAIL\' | translate}}</li>                                        <li>{{\'MINI_PROFILE.PASSWORDS_ARE_CASESENSITIVE\' | translate}}</li>                                    </ul>                                    <p>{{\'MINI_PROFILE.TO_RESET_PASSWORD_ENTER_USERNAME\' | translate}}</p>                                    <div class="form-group">                                        <label for="resetUsername">{{\'COMMON.USERNAME\' | translate}}</label>                                        <input type="email" [(ngModel)]="resetUsername" class="form-control"                                            name="resetUsername" placeholder="{{\'COMMON.USERNAME\' | translate}}" required>                                    </div>                                    <small class="text-danger " *ngIf="resetMessage">{{resetMessage}}</small>                                    <small class="text-danger" *ngIf="(resetForm.dirty && resetForm.invalid) || (resetForm.submitted && resetForm.invalid)">{{\'MINI_PROFILE.PLEASE_ENTER_USERNAME\' | translate}}</small>                                </div>                                <div class="card-footer">                                    <button type="button" class="btn btn-secondary col-sm-6 text-center"                                        (click)="loginState = \'LOGIN\'">{{\'MINI_PROFILE.GO_BACK\' | translate}}</button>                                    <button type="submit" class="btn btn-raised btn-primary col-sm-6 text-center"                                        type="submit" [ladda]="loading">{{\'COMMON.SUBMIT\' | translate}}</button>                                </div>                            </form>                            <div *ngIf="loginState === \'RESET-CONFIRM\'">                                <!-- <div class="card-header">                                    <h5>{{\'MINI_PROFILE.PASSWORD_RESET\' | translate}}</h5>                                </div> -->                                <div class="card-body">                                    <p>{{\'MINI_PROFILE.PASSWORD_RESET_CONFIRM1\' | translate}}</p>                                    <p>{{\'MINI_PROFILE.PASSWORD_RESET_CONFIRM2\' | translate}}</p>                                    <p>{{\'MINI_PROFILE.PASSWORD_RESET_CONFIRM3\' | translate}}</p>                                </div>                                <div class="card-footer">                                    <button type="button" class="btn btn-secondary btn-block"                                        (click)="loginState = \'LOGIN\'">{{\'MINI_PROFILE.GO_BACK\' | translate}}</button>                                </div>                            </div>                        </div>                        <div class="tab-pane" [class.active]="loginState === \'REGISTER\'" id="register">                            <!-- REGISTER FORM -->                            <form *ngIf="loginState === \'REGISTER\'" class="center_form" (ngSubmit)="doRegister()">                                <div class="form-group">                                    <label for="exampleInputEmail1">{{\'COMMON.EMAIL_ADDRESS\' | translate}}&nbsp;                                        <a><i class="fa fa-info-circle"                                                title="{{\'MINI_PROFILE.NEVER_SHARE_YOUR_EMAIL\' | translate}}"></i></a></label>                                    <input type="email" [(ngModel)]="user.Email" class="form-control" name="email"                                        placeholder="{{\'MINI_PROFILE.ENTER_EMAIL\' | translate}}" required>                                </div>                                <div class="form-group">                                    <label for="firstName">{{\'COMMON.FIRST_NAME\' | translate}}</label>                                    <input type="text" class="form-control" id="firstName"                                        [(ngModel)]="user.FirstName" name="firstName"                                        placeholder="{{\'COMMON.FIRST_NAME\' | translate}}">                                </div>                                <div class="form-group">                                    <label for="lastName">{{\'COMMON.LAST_NAME\' | translate}}</label>                                    <input type="text" class="form-control"                                        placeholder="{{\'COMMON.LAST_NAME\' | translate}}" [(ngModel)]="user.LastName"                                        name="lastName" id="lastName">                                </div>                                <small class="text-danger " *ngIf="registerMessage">{{registerMessage}}</small>                                <div class="card-footer">                                    <!-- <button type="button" class="btn btn-secondary col-sm-6 text-center"                                        (click)="loginState = \'LOGIN\'">{{\'MINI_PROFILE.GO_BACK\' | translate}}</button> -->                                    <button type="submit" class="btn btn-raised btn-primary btn-block text-center"                                        [ladda]="loading">{{\'COMMON.SUBMIT\' | translate}}</button>                                </div>                            </form>                        </div>                    </div>                </div>            </div>        </div>    </div></div></div>'
     var COMPONENTS = [{'name': 'AdditionalInformationComponent', 'selector': 'apt-additional-information'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AlertComponent', 'selector': 'apt-alert'},{'name': 'AssetDropdownButtonComponent', 'selector': 'apt-asset-dropdown-button'},{'name': 'AssetListComponent', 'selector': 'apt-asset-list'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'CategoryFilterComponent', 'selector': 'apt-category-filter'},{'name': 'ChartComponent', 'selector': 'apt-chart'},{'name': 'ConstraintRuleAlertComponent', 'selector': 'apt-constraint-rule-alert'},{'name': 'ConstraintRuleSidebarComponent', 'selector': 'apt-constraint-rule-sidebar'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'DataFilterComponent', 'selector': 'apt-data-filter'},{'name': 'DotsComponent', 'selector': 'apt-dots'},{'name': 'FavoriteModalComponent', 'selector': 'apt-favorite-modal'},{'name': 'FilesComponent', 'selector': 'apt-files'},{'name': 'GenerateDocumentComponent', 'selector': 'apt-generate-document'},{'name': 'InputDateComponent', 'selector': 'apt-date-range-input'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputSelectComponent', 'selector': 'apt-input-select'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'LineitemCardComponent', 'selector': 'apt-lineitem-card'},{'name': 'LineItemMenuComponent', 'selector': 'apt-line-item-menu'},{'name': 'LineItemTableRowComponent', 'selector': 'apt-line-item-table-row'},{'name': 'LoginFormComponent', 'selector': 'apt-login-form'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'OutputFieldComponent', 'selector': 'apt-output-field'},{'name': 'PaymentComponent', 'selector': 'apt-payment'},{'name': 'PaymentIFrameComponent', 'selector': 'apt-payment-iframe'},{'name': 'PresentDocumentComponent', 'selector': 'apt-present-document'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'PriceModalComponent', 'selector': 'apt-price-modal'},{'name': 'PriceSummaryComponent', 'selector': 'apt-price-summary'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductCompareComponent', 'selector': 'apt-product-compare'},{'name': 'ProductConfigurationComponent', 'selector': 'apt-product-configuration'},{'name': 'ProductConfigurationSummaryComponent', 'selector': 'apt-product-configuration-summary'},{'name': 'ProductDrawerComponent', 'selector': 'apt-product-drawer'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'},{'name': 'ProductSearchComponent', 'selector': 'apt-product-search'},{'name': 'ProductTypeFilterComponent', 'selector': 'apt-product-type-filter'},{'name': 'PromotionComponent', 'selector': 'apt-promotion'},{'name': 'PromotionModalComponent', 'selector': 'apt-pr-modal'},{'name': 'RevalidateCartModalComponent', 'selector': 'apt-revalidate-cart-modal'},{'name': 'SelectAllComponent', 'selector': 'apt-select-all'},{'name': 'SpinnerComponent', 'selector': 'apt-spinner'},{'name': 'TableComponent', 'selector': 'apt-table'},{'name': 'TaxPopHoverComponent', 'selector': 'apt-tax-pophover'}];
     var DIRECTIVES = [{'name': 'AutoFocusDirective', 'selector': '[aptAutoFocus]'}];
     var ACTUAL_COMPONENT = {'name': 'LoginFormComponent'};
 </script>
 <script src="../js/tree.js"></script>
+
+
 
 
 
@@ -1057,6 +1058,15 @@ for the user.</p>
                <!-- END CONTENT -->
            </div>
        </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
