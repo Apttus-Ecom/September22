@@ -57,29 +57,80 @@
 <h2 id="table-of-contents">Table Of Contents</h2>
 <ul>
 <li><a href="#upgrade-libs">Updating the libraries</a></li>
+<li><a href="#update-npmrc">Updating npmrc file</a></li>
+<li><a href="#updateRequestQuoteForm">Update request quote form component file</a></li>
+<li><a href="#translationFiles">Update translation files</a></li>
 </ul>
 <div id="upgrade-libs"/>
 
 <h2 id="updating-the-libraries">Updating the libraries</h2>
-<p>You must point these packages to the latest version:</p>
+<p>You must point below packages to the latest version:</p>
 <ul>
-<li><p><code>@congacommerce/core</code> <strong><em>^2203.x.x</em></strong></p>
-</li>
-<li><p><code>@congacommerce/ecommerce</code> <strong><em>^2203.x.x</em></strong></p>
-</li>
-<li><p><code>@congacommerce/elements</code> <strong><em>^2203.x.x</em></strong></p>
-</li>
+<li><code>@congacommerce/core</code> <strong><em>^2302.x.x</em></strong></li>
+<li><code>@congacommerce/ecommerce</code> <strong><em>^2302.x.x</em></strong></li>
+<li><code>@congacommerce/elements</code> <strong><em>^2302.x.x</em></strong></li>
 </ul>
 <p>After updating these packages, verify if your <code>package.json</code> under dependencies reflects the latest version as below:</p>
-<div><pre class="line-numbers"><code class="language-json">
-&quot;&#64;congacommerce/core&quot;: &quot;^2203.x.x&quot;,
+<div><pre class="line-numbers"><code class="language-json">    ...
+    &quot;&#64;congacommerce/core&quot;: &quot;^2302.x.x&quot;,
+    &quot;&#64;congacommerce/ecommerce&quot;: &quot;^2302.x.x&quot;,
+    &quot;&#64;congacommerce/elements&quot;: &quot;^2302.x.x&quot;,
+    ...</code></pre></div><div id="update-npmrc">
 
-&quot;&#64;congacommerce/ecommerce&quot;: &quot;^2203.x.x&quot;,
+<h2 id="updating-npmrc-file">Updating npmrc file</h2>
+<p>To install SDK libraries as npm packages, you must update <strong><em>.npmrc file</em></strong> to specify the github repository path where these packages are hosted.</p>
+<div><pre class="line-numbers"><code class="language-typescript">&#64;congacommerce:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken={{GITHUB AUTH TOKEN}}</code></pre></div><p>As this is a public github repository with read permissions, you don&#39;t need any access to install these packages.</p>
+<div id="updateRequestQuoteForm"/>
 
-&quot;&#64;congacommerce/elements&quot;: &quot;^2203.x.x&quot;,
 
-...
-</code></pre></div>
+<h2 id="update-request-quote-form-component">Update Request Quote Form component.</h2>
+<p>In February &#39;23 release, you must update shipToChange, billToChange and primaryContactChange methods in RequestQuoteForm component to handle PrimaryContact, ShipToAccount, BillToAccount field values when set to null in request quote page.</p>
+<p>1.) billToChange method:-</p>
+<p><strong><em>Before Change</em></strong></p>
+<div><pre class="line-numbers"><code class="language-typescript">billToChange() {
+    ...
+      this.onQuoteUpdate.emit(this.quote);
+  }</code></pre></div><p><strong><em>After Change</em></strong></p>
+<div><pre class="line-numbers"><code class="language-typescript"> billToChange() {
+    if (this.quote.BillToAccountId) {
+      ...
+    } else {
+      this.quote.BillToAccount = null;
+      this.billToAccount$= null;
+      this.onQuoteUpdate.emit(this.quote);
+    }
+  }</code></pre></div><p>2.) shipToChange method:-</p>
+<p><strong><em>Before Change</em></strong></p>
+<div><pre class="line-numbers"><code class="language-typescript">shipToChange() {
+    ...
+      this.onQuoteUpdate.emit(this.quote);
+  }</code></pre></div><p><strong><em>After Change</em></strong></p>
+<div><pre class="line-numbers"><code class="language-typescript"> shipToChange() {
+    if (this.quote.BillToAccountId) {
+      ...
+    } else {
+      this.quote.ShipToAccount = null;
+      this.shipToAccount$= null;
+      this.onQuoteUpdate.emit(this.quote);
+    }
+  }</code></pre></div><p>3.) primaryContactChange method:-</p>
+<p><strong><em>Before Change</em></strong></p>
+<div><pre class="line-numbers"><code class="language-typescript">primaryContactChange() {
+    ...
+  }</code></pre></div><p><strong><em>After Change</em></strong></p>
+<div><pre class="line-numbers"><code class="language-typescript">primaryContactChange() {
+  if (this.contactId) {
+    ...
+  } else {
+    this.quote.Primary_Contact = null;
+    this.onQuoteUpdate.emit(this.quote);
+  }
+}</code></pre></div><div id="translationFiles" />
+
+<h2 id="update-translation-files">Update translation files.</h2>
+<p>In February &#39;23 release, you must update translation files including <strong>en_US.json</strong>, <strong>es.json</strong>, <strong>fr.json</strong>, <strong>it.json</strong> to ensure static text and toast messages are translated based on the user locale.</p>
+
                    </div><div class="search-results">
     <div class="has-results">
         <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>

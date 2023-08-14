@@ -115,13 +115,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/ConstraintRuleModule.html" data-type="entity-link" >ConstraintRuleModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-ConstraintRuleModule-cbacea773f1f1008b46f46d057ceb30228810ddb0cb890165859bf22a64d66fd1f2586bab675723d9a55593dff0e5696e546ed76527a1c025438c2bed31fedf8"' : 'data-target="#xs-components-links-module-ConstraintRuleModule-cbacea773f1f1008b46f46d057ceb30228810ddb0cb890165859bf22a64d66fd1f2586bab675723d9a55593dff0e5696e546ed76527a1c025438c2bed31fedf8"' }>
+                                            'data-target="#components-links-module-ConstraintRuleModule-791e8405ce00b677c27a7983fd35fd776bcfda018214596d0cdde35e3fa051ca1126c6800c7438d0cb1361382f9032f4816baefb3ae891874a86c371d8624418"' : 'data-target="#xs-components-links-module-ConstraintRuleModule-791e8405ce00b677c27a7983fd35fd776bcfda018214596d0cdde35e3fa051ca1126c6800c7438d0cb1361382f9032f4816baefb3ae891874a86c371d8624418"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-ConstraintRuleModule-cbacea773f1f1008b46f46d057ceb30228810ddb0cb890165859bf22a64d66fd1f2586bab675723d9a55593dff0e5696e546ed76527a1c025438c2bed31fedf8"' :
-                                            'id="xs-components-links-module-ConstraintRuleModule-cbacea773f1f1008b46f46d057ceb30228810ddb0cb890165859bf22a64d66fd1f2586bab675723d9a55593dff0e5696e546ed76527a1c025438c2bed31fedf8"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-ConstraintRuleModule-791e8405ce00b677c27a7983fd35fd776bcfda018214596d0cdde35e3fa051ca1126c6800c7438d0cb1361382f9032f4816baefb3ae891874a86c371d8624418"' :
+                                            'id="xs-components-links-module-ConstraintRuleModule-791e8405ce00b677c27a7983fd35fd776bcfda018214596d0cdde35e3fa051ca1126c6800c7438d0cb1361382f9032f4816baefb3ae891874a86c371d8624418"' }>
                                             <li class="link">
                                                 <a href="components/CRIconComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >CRIconComponent</a>
                                             </li>
@@ -872,7 +872,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="injectables/CategoryService.html" data-type="entity-link" >CategoryService</a>
                                 </li>
                                 <li class="link">
+                                    <a href="injectables/ClientConstraintRuleService.html" data-type="entity-link" >ClientConstraintRuleService</a>
+                                </li>
+                                <li class="link">
                                     <a href="injectables/ConstraintRuleConditionService.html" data-type="entity-link" >ConstraintRuleConditionService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/ConstraintRuleMessageService.html" data-type="entity-link" >ConstraintRuleMessageService</a>
                                 </li>
                                 <li class="link">
                                     <a href="injectables/ConstraintRuleService.html" data-type="entity-link" >ConstraintRuleService</a>

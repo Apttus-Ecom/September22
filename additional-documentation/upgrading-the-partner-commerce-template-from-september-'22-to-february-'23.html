@@ -57,29 +57,75 @@
 <h2 id="table-of-contents">Table Of Contents</h2>
 <ul>
 <li><a href="#upgrade-libs">Updating the libraries</a></li>
+<li><a href="#updateRequestQuoteForm">Update request quote form component file</a></li>
 </ul>
 <div id="upgrade-libs"/>
 
 <h2 id="updating-the-libraries">Updating the libraries</h2>
 <p>You must point these packages to the latest version:</p>
 <ul>
-<li><p><code>@congacommerce/core</code> <strong><em>^2203.x.x</em></strong></p>
+<li><p><code>@congacommerce/core</code> <strong><em>^2302.x.x</em></strong></p>
 </li>
-<li><p><code>@congacommerce/ecommerce</code> <strong><em>^2203.x.x</em></strong></p>
+<li><p><code>@congacommerce/ecommerce</code> <strong><em>^2302.x.x</em></strong></p>
 </li>
-<li><p><code>@congacommerce/elements</code> <strong><em>^2203.x.x</em></strong></p>
+<li><p><code>@congacommerce/elements</code> <strong><em>^2302.x.x</em></strong></p>
 </li>
 </ul>
 <p>After updating these packages, verify if your <code>package.json</code> under dependencies reflects the latest version as below:</p>
 <div><pre class="line-numbers"><code class="language-json">
-&quot;&#64;congacommerce/core&quot;: &quot;^2203.x.x&quot;,
+&quot;&#64;congacommerce/core&quot;: &quot;^2302.x.x&quot;,
 
-&quot;&#64;congacommerce/ecommerce&quot;: &quot;^2203.x.x&quot;,
+&quot;&#64;congacommerce/ecommerce&quot;: &quot;^2302.x.x&quot;,
 
-&quot;&#64;congacommerce/elements&quot;: &quot;^2203.x.x&quot;,
+&quot;&#64;congacommerce/elements&quot;: &quot;^2302.x.x&quot;,
 
 ...
-</code></pre></div>
+</code></pre></div><div id="updateRequestQuoteForm"/>
+
+
+<h2 id="update-request-quote-form-component">Update Request Quote Form component.</h2>
+<p>In February &#39;23 release, you must update shipToChange, billToChange and primaryContactChange methods in RequestQuoteForm component to handle PrimaryContact, ShipToAccount, BillToAccount field values when set to null in request quote page.</p>
+<p>1.) billToChange method:-</p>
+<p><strong><em>Before Change</em></strong></p>
+<div><pre class="line-numbers"><code class="language-typescript">billToChange() {
+    ...
+      this.onQuoteUpdate.emit(this.quote);
+  }</code></pre></div><p><strong><em>After Change</em></strong></p>
+<div><pre class="line-numbers"><code class="language-typescript"> billToChange() {
+    if (this.quote.BillToAccountId) {
+      ...
+    } else {
+      this.quote.BillToAccount = null;
+      this.billToAccount$= null;
+      this.onQuoteUpdate.emit(this.quote);
+    }
+  }</code></pre></div><p>2.) shipToChange method:-</p>
+<p><strong><em>Before Change</em></strong></p>
+<div><pre class="line-numbers"><code class="language-typescript">shipToChange() {
+    ...
+      this.onQuoteUpdate.emit(this.quote);
+  }</code></pre></div><p><strong><em>After Change</em></strong></p>
+<div><pre class="line-numbers"><code class="language-typescript"> shipToChange() {
+    if (this.quote.BillToAccountId) {
+      ...
+    } else {
+      this.quote.ShipToAccount = null;
+      this.shipToAccount$= null;
+      this.onQuoteUpdate.emit(this.quote);
+    }
+  }</code></pre></div><p>3.) primaryContactChange method:-</p>
+<p><strong><em>Before Change</em></strong></p>
+<div><pre class="line-numbers"><code class="language-typescript">primaryContactChange() {
+    ...
+  }</code></pre></div><p><strong><em>After Change</em></strong></p>
+<div><pre class="line-numbers"><code class="language-typescript">primaryContactChange() {
+  if (this.contactId) {
+    ...
+  } else {
+    this.quote.Primary_Contact = null;
+    this.onQuoteUpdate.emit(this.quote);
+  }
+}</code></pre></div>
                    </div><div class="search-results">
     <div class="has-results">
         <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
